@@ -12,7 +12,7 @@ describe('check and split value method with different inputs', () => {
   })
   it('should return undefined if empty string is passed', () => {
     const input = '2870 gateway oaks sacramento, CA, 95833'
-    expect(checkAndSplitValue(input)).toEqual('*2870* *gateway* *oaks* *sacramento,* *CA,* *95833*')
+    expect(checkAndSplitValue(input)).toEqual('*2870* *gateway* *oaks* *sacramento* *CA* *95833*')
   })
   it('should return empty string if empty string is passed', () => {
     const input = ''
@@ -24,12 +24,12 @@ describe('check and split value method with different inputs', () => {
   })
   it('should return escape characters string if special character ( is passed', () => {
     const input = 'FST FFH (On Hold)'
-    const output = '*FST* *FFH* *\\(On* *Hold\\)*'
+    const output = '*FST* *FFH* *On* *Hold*'
     expect(checkAndSplitValue(input)).toEqual(output)
   })
   it('should return escape characters string if special character ( is passed', () => {
     const input = 'FST FFH (On Hold) [][][][]][][]][][[]][][][][]['
-    const output = '*FST* *FFH* *\\(On* *Hold\\)* *\\[\\]\\[\\]\\[\\]\\[\\]\\]\\[\\]\\[\\]\\]\\[\\]\\[\\[\\]\\]\\[\\]\\[\\]\\[\\]\\[\\]\\[*'
+    const output = '*FST* *FFH* *On* *Hold*'
     expect(checkAndSplitValue(input)).toEqual(output)
   })
 })
