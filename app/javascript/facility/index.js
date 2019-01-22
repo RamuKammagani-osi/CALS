@@ -6,6 +6,9 @@ import FacilityChildrenContainer from 'containers/facilityChildrenContainer'
 import FacilityComplaintsContainer from 'containers/facilityComplaintsContainer'
 
 export default class Facility extends React.Component {
+  componentDidMount () {
+    window.scrollTo(0, 0)
+  }
   render () {
     return (
       <div className='main_page'>
