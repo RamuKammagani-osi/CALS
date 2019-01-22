@@ -381,5 +381,45 @@ describe('facilityDataSelectors', () => {
         }]
       )
     })
+    it('should return complaints array with N/A', () => {
+      const state = {
+        facilityComplaints: {
+          'complaints': [{
+            'id': '',
+            'complaint_date': '2004-10-19 00:00:00',
+            'assigned_worker': null,
+            'control_number': null,
+            'status': null,
+            'pre_investigation_comments': 'PO Zamora not in today - contact made with Janice Featherston as described above.',
+            'post_investigation_comments': 'Left message on her voicemail informing her of the outcome of the investigation.',
+            'contact_summary': 'Assigned to LPA Jeffers.\r\nComplaint originally written on 10/15/04, under the wrong Olive Crest home.  LPA Jeffers re-wrote the complaint under the same control #.\r\n"10-day" visit completed 10/21/04.\r\nInterviews conducted with the 3 clients in placement at the time, with the staff alleged to be the perpetrator.',
+            'followup_comments': 'None at this time.',
+            'allegations': [{
+              'complaint_type_code': null,
+              'complaint_type_description': null,
+              'allegation': null,
+              'resolution_type_code': 'U',
+              'resolution_type_description': null
+            }]
+          }]
+        }
+      }
+      expect(getFacilityComplaints(state)).toEqual(
+        [{
+          approval_date: 'N/A',
+          assigned_worker: 'N/A',
+          complaint_date: '10/19/2004',
+          control_number: 'N/A',
+          priority_level: 'N/A',
+          status: 'N/A',
+          allegations: [{
+            'index_subcomponent': '1.',
+            'type_code': 'N/A - N/A',
+            'allegation': 'N/A',
+            'resolution_type_description': 'N/A'
+          }]
+        }]
+      )
+    })
   })
 })

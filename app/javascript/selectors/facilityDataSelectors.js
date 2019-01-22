@@ -78,11 +78,11 @@ const getFacilityChildrenData = (facilityChildren) => {
 const getFacilityComplaintsData = (facilityComplaints) => {
   return facilityComplaints.map((complaint) => ({
     approval_date: checkforDateOrNa(complaint.approval_date),
-    assigned_worker: complaint.assigned_worker,
+    assigned_worker: complaint.assigned_worker || 'N/A',
     complaint_date: checkforDateOrNa(complaint.complaint_date),
-    control_number: complaint.control_number,
+    control_number: complaint.control_number || 'N/A',
     priority_level: complaint.priority_level || 'N/A',
-    status: complaint.status,
+    status: complaint.status || 'N/A',
     allegations: getComplaintAllegations(complaint.allegations)
   })
   )
@@ -91,9 +91,9 @@ const getFacilityComplaintsData = (facilityComplaints) => {
 const getComplaintAllegations = (allegations) => {
   return allegations.map((allegation, index) => ({
     index_subcomponent: `${index + 1}.`,
-    type_code: `${allegation.complaint_type_code} - ${allegation.complaint_type_description}`,
-    allegation: allegation.allegation,
-    resolution_type_description: allegation.resolution_type_description
+    type_code: `${allegation.complaint_type_code || 'N/A'} - ${allegation.complaint_type_description || 'N/A'}`,
+    allegation: allegation.allegation || 'N/A',
+    resolution_type_description: allegation.resolution_type_description || 'N/A'
   }))
 }
 
