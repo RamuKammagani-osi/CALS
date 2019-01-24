@@ -2851,6 +2851,11 @@ ee-first@1.1.1:
   version "1.1.1"
   resolved "https://registry.yarnpkg.com/ee-first/-/ee-first-1.1.1.tgz#590c61156b0ae2f4f0255732a158b266bc56b21d"
 
+elasticsearch-sanitize@^2.0.0:
+  version "2.0.0"
+  resolved "https://registry.yarnpkg.com/elasticsearch-sanitize/-/elasticsearch-sanitize-2.0.0.tgz#02a7dfb9dac5220686c71fd28f14d18c7a09a5e1"
+  integrity sha1-AqffudrFIgaGxx/SjxTRjHoJpeE=
+
 electron-to-chromium@^1.2.7, electron-to-chromium@^1.3.30:
   version "1.3.32"
   resolved "https://registry.yarnpkg.com/electron-to-chromium/-/electron-to-chromium-1.3.32.tgz#11d0684c0840e003c4be8928f8ac5f35dbc2b4e6"
