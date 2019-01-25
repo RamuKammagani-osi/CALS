@@ -53,6 +53,14 @@
     "react/require-extension": "off",
     "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }]
   },
+  "overrides": [
+    {
+      "files": ["*_tests.js", "**/*.mocks.js"],
+      "rules": {
+        "no-magic-numbers": [0]
+      }
+   }
+  ],
   "env": {
     "browser": true,
     "es6": true,
