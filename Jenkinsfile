@@ -1,171 +1,265 @@
 #!/usr/bin/env groovy
-
+import groovy.transform.Field
 @Library('jenkins-pipeline-utils') _
 
-DOCKER_GROUP = 'cwds'
-DOCKER_APP_IMAGE = 'cals'
-DOCKER_TEST_IMAGE = 'cals_acceptance_test'
+@Field
+def newTag = ''
+@Field
+def branch
+@Field
+def appDockerImage
+@Field
+def DOCKER_GROUP = 'cwds'
+@Field
+def DOCKER_APP_IMAGE = 'cals'
+@Field
+def DOCKER_TEST_IMAGE = 'cals_acceptance_test'
+@Field
+def GITHUB_CREDENTIALS_ID = '433ac100-b3c2-4519-b4d6-207c029a103b'
+@Field
+def SUCCESS_COLOR = '#11AB1B'
+@Field
+def FAILURE_COLOR = '#FF0000'
 
-SUCCESS_COLOR = '#11AB1B'
-FAILURE_COLOR = '#FF0000'
-
-def notify(String tagNumber) {
-    def colorCode = currentBuild.currentResult == 'SUCCESS' ? SUCCESS_COLOR : FAILURE_COLOR
-    def tagMessage = (tagNumber != '') ? "\nDocker tag: ${tagNumber}" : ''
-
-    slackSend(
-        baseUrl: 'https://hooks.slack.com/services/',
-        tokenCredentialId: SLACK_CREDENTIALS_ID,
-        channel: '#tech-cals-updates',
-        color: colorCode,
-        message: "${env.JOB_NAME} #${env.BUILD_NUMBER} - *${currentBuild.currentResult}* after ${currentBuild.durationString}" +
-            "${tagMessage}" +
-            "\n(Details at ${env.BUILD_URL})"
-    )
+switch(env.BUILD_JOB_TYPE) {
+  case "master": buildMaster(); break;
+  case "release":releasePipeline(); break;
+  default: buildPullRequest();
 }
 
-
-def reports() {
-    // step([$class: 'JUnitResultArchiver', testResults: '**/reports/*.xml'])
-    publishHTML (target: [
-        allowMissing: false,
-        alwaysLinkToLastBuild: false,
-        keepAll: true,
-        reportDir: 'reports/coverage/karma',
-        reportFiles: 'index.html',
-        reportName: 'JS Code Coverage'
+def buildPullRequest() {
+  node('cals-slave') {
+    def triggerProperties = githubPullRequestBuilderTriggerProperties()
+    properties([
+      githubConfig(),
+      pipelineTriggers([triggerProperties])
     ])
+    env.DISABLE_SPRING = 1
+    branch = env.GIT_BRANCH
+    try {
+      deleteDir()
+      checkOutGithub()
+      verifySemVer()
+      buildDockerImage()
+      runTestInsideContainer()
+    } catch(Exception exception) {
+      currentBuild.result = 'FAILURE'
+      throw exception
+    } finally {
+      cleanUp()
+      notify(newTag)
+    }
+  }
+}
 
-    publishHTML (target: [
-        allowMissing: false,
-        alwaysLinkToLastBuild: false,
-        keepAll: true,
-        reportDir: 'reports/coverage/rspec',
-        reportFiles: 'index.html',
-        reportName: 'Ruby Code Coverage'
+def buildMaster() {
+  node('cals-slave') {
+    triggerProperties = pullRequestMergedTriggerProperties('VaNTgW28V7r6FxCn')
+    properties([
+      githubConfig(),
+      pipelineTriggers([triggerProperties])
     ])
+    env.DISABLE_SPRING = 1
+    branch = env.GIT_BRANCH
+    try {
+      deleteDir()
+      checkOutGithub()
+      buildDockerImage()
+      runTestInsideContainer()
+      incrementTag()
+      tagRepo()
+      dockerStages(newTag)
+      triggerReleasePipeline()
+    } catch(Exception exception) {
+      currentBuild.result = 'FAILURE'
+      throw exception
+    } finally {
+      cleanUp()
+      notify(newTag)
+    }
+  }
+}
+
+def releasePipeline() {
+  parameters([
+    string(name: 'APP_VERSION', defaultValue: '', description: 'App version to deploy')
+  ])
+
+  try {
+    deployWithSmoke('preint')
+    deployWithSmoke('integration')
+  } catch(Exception exception) {
+    currentBuild.result = "FAILURE"
+    throw exception
+  }
+}
+
+def checkOutGithub() {
+  stage ('Checkout Github') {
+    checkout scm
+  }
+}
+
+def buildDockerImage() {
+  stage('Build Docker Image') {
+    appDockerImage = docker.build("${DOCKER_GROUP}/${DOCKER_APP_IMAGE}:test-${env.BUILD_ID}",
+      "-f ./docker/test/Dockerfile .")
+  }
+}
+
+def runTestInsideContainer() {
+  appDockerImage.withRun { container ->
+    stage('Lint') {
+      sh "docker exec -t ${container.id} yarn lint"
+    }
+
+    stage('Test - Jasmine') {
+      sh "docker exec -t ${container.id} yarn karma-ci"
+    }
+
+    stage('Test - Rspec') {
+      def envVariablesRspec = 'CALS_API_URL=https://calsapi.preint.cwds.io' +
+        ' -e GEO_SERVICE_URL=https://geo.preint.cwds.io' +
+        ' -e BASE_SEARCH_API_URL=https://dora.preint.cwds.io' +
+        ' -e AUTHENTICATION_API_BASE_URL=https://web.preint.cwds.io/perry'
+        sh "docker exec -e ${envVariablesRspec} -t ${container.id} yarn spec-ci"
+    }
+
+    stage('Reports') {
+      sh "docker cp ${container.id}:cals/reports ./reports"
+        reports()
+    }
+  }
+}
+
+def verifySemVer() {
+  stage('Verify SemVer Label') {
+    checkForLabel('cals')
+  }
+}
+
+def incrementTag() {
+  stage("Increment Tag") {
+    newTag = newSemVer()
+  }
+}
+
+def tagRepo() {
+  stage('Tag Repo') {
+    tagGithubRepo(newTag, GITHUB_CREDENTIALS_ID)
+  }
 }
 
 def dockerStages(newTag) {
-    stage('Docker App Build Publish') {
-        pushToDocker(
-            "${DOCKER_GROUP}/${DOCKER_APP_IMAGE}:${newTag}",
-            "-f ./docker/release/Dockerfile .",
-            DOCKER_CREDENTIALS_ID
-            )
+  stage('Docker App Build Publish') {
+    pushToDocker(
+      "${DOCKER_GROUP}/${DOCKER_APP_IMAGE}:${newTag}",
+      "-f ./docker/release/Dockerfile .",
+      DOCKER_CREDENTIALS_ID
+    )
+  }
 
-    }
-    stage('Docker Test Build Publish') {
-        pushToDocker(
-            "${DOCKER_GROUP}/${DOCKER_TEST_IMAGE}:${newTag}",
-            "-f ./docker/acceptance-tests/Dockerfile .",
-            DOCKER_CREDENTIALS_ID
-            )
-    }
+  stage('Docker Test Build Publish') {
+    pushToDocker(
+      "${DOCKER_GROUP}/${DOCKER_TEST_IMAGE}:${newTag}",
+      "-f ./docker/acceptance-tests/Dockerfile .",
+      DOCKER_CREDENTIALS_ID
+    )
+  }
 }
 
 def pushToDocker(imageLocation, args, docker_credential_id) {
-    def app = docker.build(imageLocation, args)
-    withEnv(["DOCKER_CREDENTIALS_ID=${docker_credential_id}"]) {
-        withDockerRegistry([credentialsId: docker_credential_id]) {
-            app.push()
-        }
+  def app = docker.build(imageLocation, args)
+  withEnv(["DOCKER_CREDENTIALS_ID=${docker_credential_id}"]) {
+    withDockerRegistry([credentialsId: docker_credential_id]) {
+      app.push()
     }
+  }
 }
 
-node('cals-slave') {
-    env.DISABLE_SPRING = 1
+def cleanUp() {
+  stage('Clean Up') {
+    sh "docker rmi `docker images ${DOCKER_GROUP}/${DOCKER_APP_IMAGE} --filter 'before=${DOCKER_GROUP}/${DOCKER_APP_IMAGE}:test-${env.BUILD_ID}' -q` -f || true"
+    sh "docker rmi `docker images ${DOCKER_GROUP}/${DOCKER_TEST_IMAGE} --filter 'before=${DOCKER_GROUP}/${DOCKER_TEST_IMAGE}:${newTag}' -q` -f || true"
+    sh "docker rmi `docker images --filter 'dangling=true' -q` -f || true"
+  }
+}
 
-    final def MAIN_BRANCH = 'master'
-    def branch = env.GIT_BRANCH
-    String newTag = ''
+def reports() {
+  publishHTML (target: [
+    allowMissing: false,
+    alwaysLinkToLastBuild: false,
+    keepAll: true,
+    reportDir: 'reports/coverage/karma',
+    reportFiles: 'index.html',
+    reportName: 'JS Code Coverage'
+  ])
 
-    def appDockerImage
+  publishHTML (target: [
+    allowMissing: false,
+    alwaysLinkToLastBuild: false,
+    keepAll: true,
+    reportDir: 'reports/coverage/rspec',
+    reportFiles: 'index.html',
+    reportName: 'Ruby Code Coverage'
+  ])
+}
 
-    try {
-        deleteDir()
-        stage ('Checkout Github') {
-            checkout scm
-        }
+def notify(String tagNumber) {
+  def colorCode = currentBuild.currentResult == 'SUCCESS' ? SUCCESS_COLOR : FAILURE_COLOR
+  def tagMessage = (tagNumber != '') ? "\nDocker tag: ${tagNumber}" : ''
 
-        // build the container from current code
-        stage('Build Docker Image') {
-            appDockerImage = docker.build("${DOCKER_GROUP}/${DOCKER_APP_IMAGE}:test-${env.BUILD_ID}",
-                "-f ./docker/test/Dockerfile .")
-        }
+  slackSend(
+    baseUrl: 'https://hooks.slack.com/services/',
+    tokenCredentialId: SLACK_CREDENTIALS_ID,
+    channel: '#tech-cals-updates',
+    color: colorCode,
+    message: "${env.JOB_NAME} #${env.BUILD_NUMBER} - *${currentBuild.currentResult}* after ${currentBuild.durationString}" +
+      "${tagMessage}" +
+      "\n(Details at ${env.BUILD_URL})"
+  )
+}
 
-        // run all commands inside container
-        appDockerImage.withRun { container ->
-            stage('Lint') {
-                sh "docker exec -t ${container.id} yarn lint"
-            }
-            if (branch != MAIN_BRANCH) { // PR build
-                stage('Verify SemVer Label') {
-                    checkForLabel('cals')
-                }
-            }
-            stage('Test - Jasmine') {
-                sh "docker exec -t ${container.id} yarn karma-ci"
-            }
-            stage('Test - Rspec') {
-                def envVariablesRspec = 'CALS_API_URL=https://calsapi.preint.cwds.io' +
-                    ' -e GEO_SERVICE_URL=https://geo.preint.cwds.io' +
-                    ' -e BASE_SEARCH_API_URL=https://dora.preint.cwds.io' +
-                    ' -e AUTHENTICATION_API_BASE_URL=https://web.preint.cwds.io/perry'
-                sh "docker exec -e ${envVariablesRspec} -t ${container.id} yarn spec-ci"
-            }
-            stage('Reports') {
-                sh "docker cp ${container.id}:cals/reports ./reports"
-                reports()
-            }
-        }
+def githubConfig() {
+  githubConfigProperties('https://github.com/ca-cwds/CALS')
+}
 
-        if (branch == MAIN_BRANCH) {
-            // run test bubble
-            // commented till cals-api can work with perry v2
-            // stage('Test Bubble') {
-            //     withDockerRegistry([credentialsId: DOCKER_CREDENTIALS_ID]) {
-            //         sh "docker-compose -f ./docker/cals-test-bubble/docker-compose.yml up -d --build"
-            //         sh "sleep 120"
-            //         sh "docker-compose exec -T cals-test TEST_END_TO_END=true SELENIUM_BROWSER=HEADLESS_CHROME bundle exec rspec spec/features/global_header_test_spec.rb"
-            //     }
-            // }
-
-            stage("Increment Tag") {
-                newTag = newSemVer()
-            }
-
-            stage('Tag Repo') {
-                tagGithubRepo(newTag, GITHUB_CREDENTIALS_ID)
-            }
-
-            dockerStages(newTag)
-
-            stage('Deploy Preint') {
-                sh "curl -v 'http://${JENKINS_USER}:${JENKINS_API_TOKEN}@jenkins.mgmt.cwds.io:8080/job/preint/job/deploy-CALS/buildWithParameters" +
-                    "?" + "token=${JENKINS_TRIGGER_TOKEN}" + "&" + "cause=Caused%20by%20Build%20${env.BUILD_ID}" +
-                    "&" + "version=${newTag}'"
-            }
-
-            stage('Update Manifest Version') {
-                updateManifest("cals", "preint", GITHUB_CREDENTIALS_ID, newTag)
-            }
-        }
-
-        stage('Clean Up') {
-            sh "docker rmi `docker images ${DOCKER_GROUP}/${DOCKER_APP_IMAGE} --filter 'before=${DOCKER_GROUP}/${DOCKER_APP_IMAGE}:test-${env.BUILD_ID}' -q` -f || true"
-            sh "docker rmi `docker images ${DOCKER_GROUP}/${DOCKER_TEST_IMAGE} --filter 'before=${DOCKER_GROUP}/${DOCKER_TEST_IMAGE}:${newTag}' -q` -f || true"
-            sh "docker rmi `docker images --filter 'dangling=true' -q` -f || true"
-        }
+def triggerReleasePipeline() {
+  stage('Trigger Release Pipeline') {
+    withCredentials([usernameColonPassword(credentialsId: 'fa186416-faac-44c0-a2fa-089aed50ca17', variable: 'jenkinsauth')]) {
+      sh "curl -v -u $jenkinsauth 'http://jenkins.mgmt.cwds.io:8080/job/PreInt-Integration/job/deploy-cals-app/buildWithParameters" +
+      "?token=trigger-cals-deploy" +
+      "&cause=Caused%20by%20Build%20${env.BUILD_ID}" +
+      "&APP_VERSION=${newTag}'"
     }
-    catch (e) {
-        currentBuild.result = 'FAILURE'
-        newTag = ''
-        throw e
+  }
+}
+
+def checkOutStage() {
+  stage('Check Out Stage') {
+    git branch: 'master', credentialsId: GITHUB_CREDENTIALS_ID, url: 'git@github.com:ca-cwds/CALS.git'
+  }
+}
+
+def deployWithSmoke(environment) {
+  node(environment) {
+    checkOutStage()
+    deployToStage(environment, env.APP_VERSION)
+    updateManifestStage(environment, env.APP_VERSION)
+  }
+}
+
+def deployToStage(environment, version) {
+  stage("Deploy to $environment") {
+    ws {
+      git branch: "master", credentialsId: GITHUB_CREDENTIALS_ID, url: 'git@github.com:ca-cwds/de-ansible.git'
+      sh "ansible-playbook -e NEW_RELIC_AGENT=true -e CALS_APP_VERSION=$version -i inventories/$environment/hosts.yml deploy-cals.yml --vault-password-file ~/.ssh/vault.txt -vv"
     }
-    finally {
-        // bring all containers down
-        // sh "docker-compose -f ./docker/cals-test-bubble/docker-compose.yml down"
-        notify(newTag)
-    }
+  }
+}
+
+def updateManifestStage(environment, version) {
+  stage('Update Manifest Version') {
+    updateManifest("cals", environment, GITHUB_CREDENTIALS_ID, version)
+  }
 }
