@@ -4,6 +4,8 @@ import PageHeaderWrapperContainer from 'containers/pageHeaderWrapperContainer'
 import FacilityWrapperContainer from 'containers/facilityWrapperContainer'
 import FacilityChildrenContainer from 'containers/facilityChildrenContainer'
 import FacilityComplaintsContainer from 'containers/facilityComplaintsContainer'
+import '../../assets/stylesheets/facility.scss'
+import '@cwds/core/dist/styles'
 
 export default class Facility extends React.Component {
   componentDidMount () {

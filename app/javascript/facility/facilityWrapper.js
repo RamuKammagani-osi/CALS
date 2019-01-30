@@ -36,6 +36,11 @@ class FacilityWrapper extends React.Component {
               facilityName={facilityName}
               errors={errors}
             />
+            <FacilityAddress
+              facilityAddress={facilityAddress}
+              facilityPhones={facilityPhones}
+              otherFacilityData={otherFacilityData}
+            />
             <FacilityCapacityView
               label1='CAPACITY'
               label2='ADJUSTED CAPACITY'
@@ -45,11 +50,6 @@ class FacilityWrapper extends React.Component {
               value2={facilityData.adjusted_capacity}
               value3={facilityData.available_beds}
               value4={facilityData.capacity_last_changed}
-            />
-            <FacilityAddress
-              facilityAddress={facilityAddress}
-              facilityPhones={facilityPhones}
-              otherFacilityData={otherFacilityData}
             />
             <FacilitySectionView
               label1='LICENSING / APPROVAL WORKER'

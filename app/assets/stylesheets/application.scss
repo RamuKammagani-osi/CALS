@@ -5,7 +5,6 @@
 @import './sidebar.scss';
 @import './cards-main.scss';
 @import './application_relationship.scss';
-@import './facility.scss';
 @import './page-error.scss';
 @import './tracking.scss';
 @import './spinner.scss';
@@ -27,6 +26,10 @@ select:focus {
   border: 0.1rem solid;
   border-radius: 0.2rem;
   border-color: #2974a2; }
+
+  .breadCrumb {
+    font-size: 14px;
+  }
 
 /*
  * This is a manifest file that'll be compiled into application.css, which will include all the files

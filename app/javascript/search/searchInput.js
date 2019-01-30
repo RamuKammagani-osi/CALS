@@ -49,6 +49,7 @@ const SearchInput = ({
       <MultiSelect
         gridClassName='col-xs-12 col-sm-3 col-md-3 col-lg-3'
         label='License Status'
+        labelClassName= 'searchMultiSelect'
         className='my-react-select'
         disabled={isAllActive}
         clearable={true}

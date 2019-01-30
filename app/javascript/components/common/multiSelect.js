@@ -14,11 +14,12 @@ const MultiSelect = ({
   removeSelected,
   className,
   placeholder,
-  onChange
+  onChange,
+  labelClassName
 }) => {
   return (
     <div className={gridClassName}>
-      <label>{label}
+      <label className={labelClassName}>{label}
         <Select
           className={className}
           tabSelectsValue={false}
