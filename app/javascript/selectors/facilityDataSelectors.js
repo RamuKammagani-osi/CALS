@@ -61,16 +61,12 @@ const getFacilityDetails = (facilityState) => ({
 
 const getFacilityChildrenData = (facilityChildren) => {
   return facilityChildren.map((child) => ({
-    age: child.person.age,
     assigned_worker: checkfullNameorNA(child.assigned_worker),
     county_of_origin: child.county_of_origin || 'N/A',
-    date_of_birth: checkforDateOrNa(child.person.date_of_birth),
+    date_of_birth: `${checkforDateOrNa(child.person.date_of_birth)} (${child.person.age} yrs)`,
     date_of_placement: checkforDateOrNa(child.date_of_placement),
-    display_client_id: child.display_client_id,
-    first_name: child.person.first_name,
-    gender: child.person.gender,
-    id: child.id,
-    last_name: child.person.last_name
+    child_full_name: `${child.person.first_name} ${child.person.last_name}`,
+    gender: child.person.gender
   })
   )
 }

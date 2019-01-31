@@ -82,78 +82,12 @@
     padding: 20px;
 }
 
-.facility-children-block {
-    padding-right: 0;
-    padding-bottom: 0;
-    padding-left: 0;
-    border: 1px solid #ddd;
-    background-color: #f5f5f5;
-    margin-top: 20px;
+.ReactTable {
+    border-top: none;
 }
 
-.facility-children table {
-    border: #ddd;
-}
-
-.facility-children table tr td {
-    font-family: 'Source Sans Pro Bold', sans-serif;
-    vertical-align: middle;
-}
-
-.facility-children .table>tbody tr:nth-child(even) {
-    background-color: #f5f5f5;
-}
-
-
-.facility-children .ReactTable .rt-table .rt-tbody .-odd {
-    background-color: #ffffff;
-}
-
-.facility-children .ReactTable .rt-table .rt-tbody {
-    margin-top: 2px;
-}
-
-.facility-children .ReactTable .rt-thead .rt-tr {
-    color: #000;
-    border-top: 1px solid #ddd;
-    text-align: initial;
-}
-
-.facility-children .ReactTable {
-    border-top-width: 0px;
-}
-
-.facility-children .ReactTable .rt-thead .rt-tr .rt-th{
-    font-family: 'Source Sans Pro Bold', sans-serif;
-    font-weight: bold;
-}
-
-.facility-children .table>tbody tr:last-child {
-    padding-bottom: 25px;
-    border-bottom: 1px solid #ddd;
-}
-
-.facility-children .table>thead>tr>th {
-    font-family: 'Source Sans Pro Bold', sans-serif;
-}
-
-.facility-children .table>thead>tr {
-    color: #000;
-    border-top: 1px solid #ddd;
-}
-
-.facility-children .children-title {
-    font-family: 'Source Sans Pro ExtraLight', sans-serif;
-    font-size: 16px;
-    font-weight: 100;
-    margin-bottom: 0;
-    padding-left: 7px;
-    color: #8b8b8b;
-}
-
-.facility-children .children-title h3 {
-    font-family: 'Source Sans Pro ExtraLight', sans-serif;
-    font-weight: 100;
+.ReactTable .rt-tbody{
+    border-top: 2px outset;
 }
 
 @media only screen and (max-width: 787px) {

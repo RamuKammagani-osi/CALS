@@ -37,7 +37,7 @@
     ],
     "jsx-a11y/tabindex-no-positive": [2],
     "jsx-a11y/no-onchange": 0,
-    "no-console": [2],
+    
     "no-implicit-coercion": [2],
     "no-invalid-this": [2],
     "no-lonely-if": [2],

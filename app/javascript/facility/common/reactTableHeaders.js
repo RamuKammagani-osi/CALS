@@ -3,76 +3,58 @@ import {sortbyDate} from 'search/common/commonUtils'
 
 export const childrenColumns = [
   {
-    Header: props => <span> CLIENT ID <i className="fa fa-angle-down"/></span>,
-    accessor: 'display_client_id'
+    Header: props => <span> Name <i className="fa fa-angle-down"/></span>,
+    accessor: 'child_full_name'
   },
   {
-    Header: props => <span> FIRST NAME <i className="fa fa-angle-down"/></span>,
-    maxWidth: 164,
-    accessor: 'first_name'
-  },
-  {
-    Header: props => <span> LAST NAME <i className="fa fa-angle-down"/></span>,
-    maxWidth: 164,
-    accessor: 'last_name'
-  },
-  {
-    Header: props => <span> GENDER <i className="fa fa-angle-down"/></span>,
-    maxWidth: 76,
+    Header: props => <span>Gender<i className="fa fa-angle-down"/></span>,
+
     accessor: 'gender'
   },
   {
-    Header: props => <span> AGE <i className="fa fa-angle-down"/></span>,
-    maxWidth: 64,
-    accessor: 'age'
-  },
-  {
-    Header: props => <span> DATE OF BIRTH <i className="fa fa-angle-down"/></span>,
-    maxWidth: 141,
+    Header: props => <span>Date of Birth<i className="fa fa-angle-down"/></span>,
     accessor: 'date_of_birth',
     sortMethod: (a, b) => sortbyDate(a, b)
   },
   {
     id: 'dateOfPlacement',
-    Header: props => <span> DATE OF PLACEMENT <i className="fa fa-angle-down"/></span>,
-    maxWidth: 190,
+    Header: props => <span>Date of Placement<i className="fa fa-angle-down"/></span>,
     accessor: 'date_of_placement',
     sortMethod: (a, b) => sortbyDate(a, b)
   },
   {
-    Header: props => <span> CHILD'S SOCIAL WORKER <i className="fa fa-angle-down"/></span>,
-    maxWidth: 205,
+    Header: props => <span>Child's Social Worker<i className="fa fa-angle-down"/></span>,
     accessor: 'assigned_worker'
   },
   {
-    Header: props => <span> COUNTY OF ORIGIN <i className="fa fa-angle-down"/></span>,
+    Header: props => <span> County of Origin <i className="fa fa-angle-down"/></span>,
     accessor: 'county_of_origin'
   }
 ]
 
 export const complaintsColumns = [
   {
-    Header: 'COMPLAINT DATE',
+    Header: 'Date',
     accessor: 'complaint_date'
   },
   {
-    Header: 'ASSIGNED WORKER',
+    Header: 'Assigned Worker',
     accessor: 'assigned_worker'
   },
   {
-    Header: 'CONTROL NUMBER',
+    Header: 'Control Number',
     accessor: 'control_number'
   },
   {
-    Header: 'PRIORITY',
+    Header: 'Priority',
     accessor: 'priority_level'
   },
   {
-    Header: 'STATUS',
+    Header: 'Status',
     accessor: 'status'
   },
   {
-    Header: 'APPROVAL DATE',
+    Header: 'Approval Date',
     accessor: 'approval_date'
   }
 ]
@@ -85,17 +67,17 @@ export const allegationColumns = [
   },
   {
     maxWidth: 300,
-    Header: 'TYPE / CODE',
+    Header: 'Type / Code',
     accessor: 'type_code'
   },
   {
-    Header: 'ALLEGATION DESCRIPTION',
+    Header: 'Allegation Description',
     maxWidth: 700,
     accessor: 'allegation'
   },
   {
     maxWidth: 200,
-    Header: 'RESOLUTION CODE',
+    Header: 'Resolution Code',
     accessor: 'resolution_type_description'
   }
 ]
