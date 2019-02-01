@@ -34,7 +34,7 @@
 
 .small_inner_block p:first-child, .inner_block_address_titles  p:first-child {
     font-family: 'Source Sans Pro Bold', sans-serif;
-    font-size: 12px;
+    font-size: 14px;
     font-weight: 500;
     margin-bottom: 0;
     color: #8d8d8d;
@@ -86,6 +86,24 @@
     border-top: none;
 }
 
+ .facility-children .ReactTable .rt-thead .rt-tr {
+    text-align: initial;	
+}	
+
+ .facility-children .ReactTable {	
+    border-top-width: 0px;	
+}		
+
+ .facility-children .table>tbody tr:last-child {	
+    padding-bottom: 5px;	
+    border-bottom: 1px solid #ddd;	
+}	
+
+ .facility-children .table>thead>tr {	
+    color: #000;	
+    border-top: 1px solid #ddd;	
+}
+
 .ReactTable .rt-tbody{
     border-top: 2px outset;
 }
@@ -111,7 +129,7 @@
 }
 
 .sub-component{
-    padding: 20px;
+    padding: 0px 10px 10px 10px;
 }
 
 .rt-noData {

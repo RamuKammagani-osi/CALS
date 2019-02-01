@@ -8,7 +8,6 @@ export const childrenColumns = [
   },
   {
     Header: props => <span>Gender<i className="fa fa-angle-down"/></span>,
-
     accessor: 'gender'
   },
   {
@@ -62,22 +61,22 @@ export const complaintsColumns = [
 export const allegationColumns = [
   {
     Header: '',
-    maxWidth: 50,
+    maxWidth: 100,
     accessor: 'index_subcomponent'
   },
   {
-    maxWidth: 300,
     Header: 'Type / Code',
+    maxWidth: 300,
     accessor: 'type_code'
   },
   {
     Header: 'Allegation Description',
-    maxWidth: 700,
+    maxWidth: 900,
     accessor: 'allegation'
   },
   {
-    maxWidth: 200,
     Header: 'Resolution Code',
+    maxWidth: 200,
     accessor: 'resolution_type_description'
   }
 ]
