@@ -23,7 +23,7 @@ RSpec.configure do |config|
   config.before(:each, :set_auth_header => true) do
     if ENV['TEST_END_TO_END']
       visit root_path
-      authenticate_user_by_filling_in_form
+      fill_in_login()
     else
       stub_auth_tokens
     end
@@ -37,12 +37,39 @@ RSpec.configure do |config|
     page.execute_script 'sessionStorage.clear()'
   end
 
-  def authenticate_user_by_filling_in_form
-    if page.has_content?('Sign In')
-      fill_in('username', with: USERNAME)
-      # fill_in('password', with: PASSWORD)
-      click_button 'Sign In'
+  def fill_in_login
+    if ENV['CAPYBARA_APP_HOST'].include?('preint')
+      if page.has_content?('Sign In')
+        fill_in('username', with: USERNAME)
+        # fill_in('password', with: PASSWORD)
+        click_button 'Sign In'
+      end
+    else
+      Capybara.fill_in('Email', with: ENV['ACCEPTANCE_TEST_USER'])
+      Capybara.fill_in('Password', with: ENV['ACCEPTANCE_TEST_PASSWORD'])
+      if %i[selenium_ie selenium_edge].include?(Capybara.current_driver)
+        Capybara.execute_script('document.getElementsByTagName("button")[0].click()')
+      else
+        Capybara.click_button('Sign In')
+      end
+      multi_factor_auth
     end
+  end
+
+  def multi_factor_auth
+    return unless mfa_page?
+    Capybara.fill_in('Verification Code', with: ENV['VERIFICATION_CODE'])
+    if %i[selenium_ie selenium_edge].include?(Capybara.current_driver)
+      Capybara.execute_script('document.getElementById("validateButton").click()')
+    else
+      Capybara.click_button('Verify')
+    end
+  end
+
+  def mfa_page?
+    sleep ENV.fetch('MAX_WAIT', Capybara.default_max_wait_time).to_i
+    Wait.for_document
+    Capybara.current_url.include?('login')
   end
 
   def stub_auth_tokens
