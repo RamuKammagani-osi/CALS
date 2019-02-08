@@ -45,6 +45,7 @@ RSpec.configure do |config|
         click_button 'Sign In'
       end
     else
+      return unless need_login?
       Capybara.fill_in('Email', with: ENV['ACCEPTANCE_TEST_USER'])
       Capybara.fill_in('Password', with: ENV['ACCEPTANCE_TEST_PASSWORD'])
       if %i[selenium_ie selenium_edge].include?(Capybara.current_driver)
@@ -64,12 +65,15 @@ RSpec.configure do |config|
     else
       Capybara.click_button('Verify')
     end
+    find('button', text: 'SEARCH FOR FACILITY')
   end
 
   def mfa_page?
-    sleep ENV.fetch('MAX_WAIT', Capybara.default_max_wait_time).to_i
-    Wait.for_document
     Capybara.current_url.include?('login')
+  end
+
+  def need_login?
+    !page.has_content?('SEARCH FOR FACILITY', wait: 5)
   end
 
   def stub_auth_tokens
