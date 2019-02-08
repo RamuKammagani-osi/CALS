@@ -247,7 +247,7 @@ def deployWithSmoke(environment) {
     checkOutStage()
     deployToStage(environment, env.APP_VERSION)
     updateManifestStage(environment, env.APP_VERSION)
-    // smokeTest(environment)
+    smokeTest(environment)
   }
 }
 
