@@ -267,27 +267,24 @@ def updateManifestStage(environment, version) {
 }
 
  def smokeTest(environment) {
-  stage("Smoke test on $environment") {
-    if(environment == 'preint') {
-      withEnv(["CAPYBARA_APP_HOST=https://web.${environment}.cwds.io/cals",
-               "CAPYBARA_DRIVER=selenium",
-               "USERNAME=${USERNAME}"]) {
+   stage("Smoke test on $environment") {
+     if(environment == 'preint') {
+       withEnv(["CAPYBARA_APP_HOST=https://web.${environment}.cwds.io/cals",
+                "CAPYBARA_DRIVER=selenium",
+                "USERNAME=${USERNAME}"]) {
         sh "docker-compose -f docker/acceptance-tests/docker-compose.yml run -e SELENIUM_BROWSER=HEADLESS_CHROME -e TEST_END_TO_END=true cals_acceptance_test bundle exec rspec spec/acceptance/facilities"
-      }
-    } else {
-      withCredentials([
-        string(credentialsId: 'c24b6659-fd2c-4d31-8433-835528fce0d7', variable: 'ACCEPTANCE_TEST_USER'),
-        string(credentialsId: '48619eb9-4a74-4c84-bc25-81557ed9dd7d', variable: 'ACCEPTANCE_TEST_PASSWORD'),
-        string(credentialsId: 'f75da5fa-b2c8-4ca5-896a-b8a85fa30572', variable: 'VERIFICATION_CODE')
-      ]) {
-        withEnv(["CAPYBARA_APP_HOST=https://web.${environment}.cwds.io/cals",
-                 "CAPYBARA_DRIVER=selenium",
-                 "ACCEPTANCE_TEST_USER=${ACCEPTANCE_TEST_USER}",
-                 "ACCEPTANCE_TEST_PASSWORD=${ACCEPTANCE_TEST_PASSWORD}",
-                 "VERIFICATION_CODE=${VERIFICATION_CODE}"]) {
-          sh "docker-compose -f docker/acceptance-tests/docker-compose.yml run -e SELENIUM_BROWSER=HEADLESS_CHROME -e TEST_END_TO_END=true cals_acceptance_test bundle exec rspec spec/acceptance/facilities"
-        }
-      }
-    }
-  }
-}
+       }
+     } else {
+       withCredentials([
+         string(credentialsId: 'cals-app-smoke-email', variable: 'SMOKE_TEST_USER'),
+         string(credentialsId: 'cals-app-smoke-password', variable: 'SMOKE_TEST_PASSWORD'),
+         string(credentialsId: 'cals-app-smoke-verification-code', variable: 'SMOKE_VERIFICATION_CODE')
+       ]) {
+         withEnv(["CAPYBARA_APP_HOST=https://web.${environment}.cwds.io/cals",
+                  "CAPYBARA_DRIVER=selenium"]) {
+          sh "docker-compose -f docker/acceptance-tests/docker-compose.yml run -e SELENIUM_BROWSER=HEADLESS_CHROME -e TEST_END_TO_END=true -e ACCEPTANCE_TEST_USER=$SMOKE_TEST_USER -e ACCEPTANCE_TEST_PASSWORD=$SMOKE_TEST_PASSWORD -e VERIFICATION_CODE=$SMOKE_VERIFICATION_CODE cals_acceptance_test bundle exec rspec spec/acceptance/facilities"
+         }
+       }
+     }
+   }
+ }
