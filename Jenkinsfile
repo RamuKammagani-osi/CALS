@@ -32,7 +32,8 @@ def buildPullRequest() {
     def triggerProperties = githubPullRequestBuilderTriggerProperties()
     properties([
       githubConfig(),
-      pipelineTriggers([triggerProperties])
+      pipelineTriggers([triggerProperties]),
+      buildDiscarderDefaults()
     ])
     env.DISABLE_SPRING = 1
     branch = env.GIT_BRANCH
@@ -57,7 +58,8 @@ def buildMaster() {
     triggerProperties = pullRequestMergedTriggerProperties('VaNTgW28V7r6FxCn')
     properties([
       githubConfig(),
-      pipelineTriggers([triggerProperties])
+      pipelineTriggers([triggerProperties]),
+      buildDiscarderDefaults('master')
     ])
     env.DISABLE_SPRING = 1
     branch = env.GIT_BRANCH
