@@ -122,7 +122,7 @@ def runTestInsideContainer() {
     stage('Test - Rspec') {
       def envVariablesRspec = 'CALS_API_URL=https://calsapi.preint.cwds.io' +
         ' -e GEO_SERVICE_URL=https://geo.preint.cwds.io' +
-        ' -e BASE_SEARCH_API_URL=https://dora.preint.cwds.io' +
+        ' -e BASE_SEARCH_API_URL=https://doraapi.preint.cwds.io' +
         ' -e AUTHENTICATION_API_BASE_URL=https://web.preint.cwds.io/perry'
         sh "docker exec -e ${envVariablesRspec} -t ${container.id} yarn spec-ci"
     }

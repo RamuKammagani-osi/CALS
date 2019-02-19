@@ -10,7 +10,7 @@ http_interactions:
       Content-type:
       - application/json
       Authorization:
-      - 765b9edc-08d1-4dd4-9334-a1679dda2017
+      - 2f8387ba-54db-4b83-933f-b5f7c1ac8a94
   response:
     status:
       code: 200
@@ -21,9 +21,9 @@ http_interactions:
       content-type:
       - application/json
       date:
-      - Tue, 24 Jul 2018 00:27:00 GMT
+      - Thu, 14 Feb 2019 19:44:33 GMT
       set-cookie:
-      - rememberMe=deleteMe; Path=/; Max-Age=0; Expires=Mon, 23-Jul-2018 00:27:00
+      - rememberMe=deleteMe; Path=/; Max-Age=0; Expires=Wed, 13-Feb-2019 19:44:33
         GMT
       vary:
       - Accept-Encoding
@@ -221,7 +221,7 @@ http_interactions:
           } ]
         }
     http_version: 
-  recorded_at: Tue, 24 Jul 2018 00:27:00 GMT
+  recorded_at: Thu, 14 Feb 2019 19:44:32 GMT
 - request:
     method: get
     uri: https://calsapi.preint.cwds.io/dictionaries/facility-types
@@ -232,7 +232,7 @@ http_interactions:
       Content-type:
       - application/json
       Authorization:
-      - 765b9edc-08d1-4dd4-9334-a1679dda2017
+      - 2f8387ba-54db-4b83-933f-b5f7c1ac8a94
   response:
     status:
       code: 200
@@ -243,9 +243,9 @@ http_interactions:
       content-type:
       - application/json
       date:
-      - Tue, 24 Jul 2018 00:27:00 GMT
+      - Thu, 14 Feb 2019 19:44:33 GMT
       set-cookie:
-      - rememberMe=deleteMe; Path=/; Max-Age=0; Expires=Mon, 23-Jul-2018 00:27:00
+      - rememberMe=deleteMe; Path=/; Max-Age=0; Expires=Wed, 13-Feb-2019 19:44:33
         GMT
       vary:
       - Accept-Encoding
@@ -338,7 +338,7 @@ http_interactions:
           } ]
         }
     http_version: 
-  recorded_at: Tue, 24 Jul 2018 00:27:01 GMT
+  recorded_at: Thu, 14 Feb 2019 19:44:32 GMT
 - request:
     method: get
     uri: https://calsapi.preint.cwds.io/dictionaries/license-status-types
@@ -349,7 +349,7 @@ http_interactions:
       Content-type:
       - application/json
       Authorization:
-      - 765b9edc-08d1-4dd4-9334-a1679dda2017
+      - 2f8387ba-54db-4b83-933f-b5f7c1ac8a94
   response:
     status:
       code: 200
@@ -360,9 +360,9 @@ http_interactions:
       content-type:
       - application/json
       date:
-      - Tue, 24 Jul 2018 00:27:01 GMT
+      - Thu, 14 Feb 2019 19:44:33 GMT
       set-cookie:
-      - rememberMe=deleteMe; Path=/; Max-Age=0; Expires=Mon, 23-Jul-2018 00:27:01
+      - rememberMe=deleteMe; Path=/; Max-Age=0; Expires=Wed, 13-Feb-2019 19:44:33
         GMT
       vary:
       - Accept-Encoding
@@ -503,18 +503,18 @@ http_interactions:
           } ]
         }
     http_version: 
-  recorded_at: Tue, 24 Jul 2018 00:27:01 GMT
+  recorded_at: Thu, 14 Feb 2019 19:44:32 GMT
 - request:
     method: post
-    uri: https://dora.preint.cwds.io/dora/facilities/facility/_search
+    uri: https://doraapi.preint.cwds.io/dora/facilities/facility/_search
     body:
       encoding: UTF-8
-      string: '{"query":{"bool":{"should":[{"bool":{"must":[{"term":{"county.id":"19"}},{"match_phrase":{"license_number":"100000538"}}]}}]}},"from":"0","size":"10","sort":["_score",{"name.for_sort":{"order":"asc"}}]}'
+      string: '{"query":{"bool":{"should":[{"bool":{"must":[{"term":{"county.id":"19"}},{"match_phrase":{"license_number":"100000538"}}]}}]}},"from":"0","size":"50","sort":["_score",{"name.for_sort":{"order":"asc"}}]}'
     headers:
       Content-type:
       - application/json
       Authorization:
-      - 765b9edc-08d1-4dd4-9334-a1679dda2017
+      - 2f8387ba-54db-4b83-933f-b5f7c1ac8a94
   response:
     status:
       code: 200
@@ -523,28 +523,26 @@ http_interactions:
       content-type:
       - application/json
       date:
-      - Tue, 24 Jul 2018 00:27:02 GMT
+      - Thu, 14 Feb 2019 19:44:34 GMT
       set-cookie:
-      - rememberMe=deleteMe; Path=/; Max-Age=0; Expires=Mon, 23-Jul-2018 00:27:02
+      - rememberMe=deleteMe; Path=/; Max-Age=0; Expires=Wed, 13-Feb-2019 19:44:34
         GMT
       content-length:
-      - '1725'
+      - '2285'
       connection:
       - keep-alive
     body:
       encoding: UTF-8
-      string: '{"took":3,"timed_out":false,"_shards":{"total":1,"successful":1,"failed":0},"hits":{"total":1,"max_score":null,"hits":[{"_index":"facilities","_type":"facility","_id":"100000538","_score":8.790804,"_source":{"href":null,"id":"100000538","capacity_last_changed":null,"type":{"id":"3","value":"Foster
-        Family Agency"},"adoption_home_only_indicator":null,"name":"One Mind Home","licensee_name":"Saritha
+      string: '{"took":2,"timed_out":false,"_shards":{"total":1,"successful":1,"failed":0},"hits":{"total":1,"max_score":null,"hits":[{"_index":"facilities","_type":"facility","_id":"100000538","_score":8.653986,"_source":{"href":null,"id":"100000538","capacity_last_changed":{"year":2004,"month":"MAY","era":"CE","dayOfMonth":20,"dayOfWeek":"THURSDAY","dayOfYear":141,"leapYear":true,"monthValue":5,"chronology":{"calendarType":"iso8601","id":"ISO"}},"type":{"id":"4","value":"Foster
+        Family AG-Sub"},"adoption_home_only_indicator":null,"name":"One Mind Home","licensee_name":"Saritha
         Reddy","license_type":"C","assigned_worker":{"phones":[],"email":null,"full_name":null,"id":null},"district_office":{"number":"32","name":"LA
         & TRI-COASTAL CR"},"license_number":"100000538","status":{"active":false,"id":"15","value":"Closed,
-        Change of Location"},"capacity":4,"license_effective_date":null,"original_application_recieved_date":null,"last_visit_date":null,"last_deferred_visit_date":null,"email_address":null,"full_residential_address":"92
+        Change of Location"},"capacity":4,"adjusted_capacity":null,"available_beds":null,"license_effective_date":{"year":1997,"month":"DECEMBER","era":"CE","dayOfMonth":2,"dayOfWeek":"TUESDAY","dayOfYear":336,"leapYear":false,"monthValue":12,"chronology":{"calendarType":"iso8601","id":"ISO"}},"original_application_recieved_date":{"year":1997,"month":"DECEMBER","era":"CE","dayOfMonth":1,"dayOfWeek":"MONDAY","dayOfYear":335,"leapYear":false,"monthValue":12,"chronology":{"calendarType":"iso8601","id":"ISO"}},"last_visit_date":null,"last_deferred_visit_date":null,"email_address":null,"full_residential_address":"92
         High St. LA MIRADA CA 90638","full_mailing_address":"15651 E. IMPERIAL HWY.,#203
         LA MIRADA CA 90638","last_visit_reason":null,"last_deferred_visit_reason":null,"county":{"id":"19","value":"LOS
-        ANGELES","lis_code":null},"phones":[{"relation":"primary","type":"Cell","number":"(916)
-        538-"}],"addresses":[{"id":null,"type":"Residential","address":{"id":null,"longitude":null,"lattitude":null,"deliverable":null,"street_address":"92
+        ANGELES","lis_code":null},"phones":[{"relation":"primary","type":"Cell","number":"9160061108"}],"addresses":[{"id":null,"type":"Residential","address":{"id":null,"longitude":null,"lattitude":null,"deliverable":null,"street_address":"92
         High St.","city":"LA MIRADA","state":"CA","zip_code":"90638","zip_suffix_code":null}},{"id":null,"type":"Mailing","address":{"id":null,"longitude":null,"lattitude":null,"deliverable":null,"street_address":"15651
-        E. IMPERIAL HWY.,#203","city":"LA MIRADA","state":"CA","zip_code":"90638","zip_suffix_code":null}}],"visits":[],"annual_visit_year":null,"prelicensing_visit_date":null,"facility_source":"LIS"},"sort":[8.790804,"one
-        mind home"]}]}}'
+        E. IMPERIAL HWY.,#203","city":"LA MIRADA","state":"CA","zip_code":"90638","zip_suffix_code":null}}],"visits":[],"annual_visit_year":null,"prelicensing_visit_date":null,"facility_source":"LIS"},"sort":[8.653986,"home"]}]}}'
     http_version: 
-  recorded_at: Tue, 24 Jul 2018 00:27:02 GMT
-recorded_with: VCR 3.0.3
+  recorded_at: Thu, 14 Feb 2019 19:44:33 GMT
+recorded_with: VCR 4.0.0

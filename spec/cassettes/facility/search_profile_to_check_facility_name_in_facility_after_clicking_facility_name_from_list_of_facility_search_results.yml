@@ -10,7 +10,7 @@ http_interactions:
       Content-type:
       - application/json
       Authorization:
-      - dc32d731-ba17-48ed-9080-69af0b519470
+      - 2f8387ba-54db-4b83-933f-b5f7c1ac8a94
   response:
     status:
       code: 200
@@ -21,9 +21,9 @@ http_interactions:
       content-type:
       - application/json
       date:
-      - Mon, 30 Jul 2018 00:38:17 GMT
+      - Thu, 14 Feb 2019 19:47:15 GMT
       set-cookie:
-      - rememberMe=deleteMe; Path=/; Max-Age=0; Expires=Sun, 29-Jul-2018 00:38:17
+      - rememberMe=deleteMe; Path=/; Max-Age=0; Expires=Wed, 13-Feb-2019 19:47:15
         GMT
       vary:
       - Accept-Encoding
@@ -221,7 +221,7 @@ http_interactions:
           } ]
         }
     http_version: 
-  recorded_at: Mon, 30 Jul 2018 00:38:17 GMT
+  recorded_at: Thu, 14 Feb 2019 19:47:14 GMT
 - request:
     method: get
     uri: https://calsapi.preint.cwds.io/dictionaries/facility-types
@@ -232,7 +232,7 @@ http_interactions:
       Content-type:
       - application/json
       Authorization:
-      - dc32d731-ba17-48ed-9080-69af0b519470
+      - 2f8387ba-54db-4b83-933f-b5f7c1ac8a94
   response:
     status:
       code: 200
@@ -243,9 +243,9 @@ http_interactions:
       content-type:
       - application/json
       date:
-      - Mon, 30 Jul 2018 00:38:17 GMT
+      - Thu, 14 Feb 2019 19:47:15 GMT
       set-cookie:
-      - rememberMe=deleteMe; Path=/; Max-Age=0; Expires=Sun, 29-Jul-2018 00:38:17
+      - rememberMe=deleteMe; Path=/; Max-Age=0; Expires=Wed, 13-Feb-2019 19:47:15
         GMT
       vary:
       - Accept-Encoding
@@ -338,7 +338,7 @@ http_interactions:
           } ]
         }
     http_version: 
-  recorded_at: Mon, 30 Jul 2018 00:38:17 GMT
+  recorded_at: Thu, 14 Feb 2019 19:47:14 GMT
 - request:
     method: get
     uri: https://calsapi.preint.cwds.io/dictionaries/license-status-types
@@ -349,7 +349,7 @@ http_interactions:
       Content-type:
       - application/json
       Authorization:
-      - dc32d731-ba17-48ed-9080-69af0b519470
+      - 2f8387ba-54db-4b83-933f-b5f7c1ac8a94
   response:
     status:
       code: 200
@@ -360,9 +360,9 @@ http_interactions:
       content-type:
       - application/json
       date:
-      - Mon, 30 Jul 2018 00:38:17 GMT
+      - Thu, 14 Feb 2019 19:47:15 GMT
       set-cookie:
-      - rememberMe=deleteMe; Path=/; Max-Age=0; Expires=Sun, 29-Jul-2018 00:38:17
+      - rememberMe=deleteMe; Path=/; Max-Age=0; Expires=Wed, 13-Feb-2019 19:47:15
         GMT
       vary:
       - Accept-Encoding
@@ -503,10 +503,10 @@ http_interactions:
           } ]
         }
     http_version: 
-  recorded_at: Mon, 30 Jul 2018 00:38:17 GMT
+  recorded_at: Thu, 14 Feb 2019 19:47:14 GMT
 - request:
     method: post
-    uri: https://dora.preint.cwds.io/dora/facilities/facility/_search
+    uri: https://doraapi.preint.cwds.io/dora/facilities/facility/_search
     body:
       encoding: UTF-8
       string: '{"query":{"bool":{"should":[{"bool":{"must":[{"term":{"county.id":"1"}}]}}]}},"from":"0","size":"50","sort":["_score",{"name.for_sort":{"order":"asc"}}]}'
@@ -514,7 +514,7 @@ http_interactions:
       Content-type:
       - application/json
       Authorization:
-      - dc32d731-ba17-48ed-9080-69af0b519470
+      - 2f8387ba-54db-4b83-933f-b5f7c1ac8a94
   response:
     status:
       code: 200
@@ -523,9 +523,9 @@ http_interactions:
       content-type:
       - application/json
       date:
-      - Mon, 30 Jul 2018 00:38:18 GMT
+      - Thu, 14 Feb 2019 19:47:16 GMT
       set-cookie:
-      - rememberMe=deleteMe; Path=/; Max-Age=0; Expires=Sun, 29-Jul-2018 00:38:18
+      - rememberMe=deleteMe; Path=/; Max-Age=0; Expires=Wed, 13-Feb-2019 19:47:16
         GMT
       transfer-encoding:
       - chunked
@@ -533,252 +533,221 @@ http_interactions:
       - keep-alive
     body:
       encoding: UTF-8
-      string: '{"took":8,"timed_out":false,"_shards":{"total":1,"successful":1,"failed":0},"hits":{"total":202,"max_score":null,"hits":[{"_index":"facilities","_type":"facility","_id":"4zoRefh197","_score":1.0,"_source":{"href":null,"id":"4zoRefh197","capacity_last_changed":null,"type":{"id":"22","value":"Foster
-        Family Agency Certified Home"},"adoption_home_only_indicator":false,"name":"","licensee_name":"","license_type":null,"assigned_worker":{"phones":[],"email":null,"full_name":"","id":null},"district_office":null,"license_number":null,"status":null,"capacity":0,"license_effective_date":null,"original_application_recieved_date":null,"last_visit_date":null,"last_deferred_visit_date":null,"email_address":null,"full_residential_address":"16097
-        Mateo San Leandro CA 94578","full_mailing_address":null,"last_visit_reason":null,"last_deferred_visit_reason":null,"county":{"id":"01","value":"Alameda","lis_code":null},"phones":[],"addresses":[{"id":null,"type":"Residential","address":{"id":null,"longitude":null,"lattitude":null,"deliverable":null,"street_address":"16097
-        Mateo","city":"San Leandro","state":"CA","zip_code":"94578","zip_suffix_code":null}}],"visits":[],"annual_visit_year":null,"prelicensing_visit_date":null,"facility_source":"CWS/CMS"},"sort":[1.0,""]},{"_index":"facilities","_type":"facility","_id":"CIWAmbx197","_score":1.0,"_source":{"href":null,"id":"CIWAmbx197","capacity_last_changed":null,"type":{"id":"22","value":"Foster
-        Family Agency Certified Home"},"adoption_home_only_indicator":false,"name":"","licensee_name":"","license_type":null,"assigned_worker":{"phones":[],"email":null,"full_name":"","id":null},"district_office":null,"license_number":null,"status":null,"capacity":0,"license_effective_date":null,"original_application_recieved_date":null,"last_visit_date":null,"last_deferred_visit_date":null,"email_address":null,"full_residential_address":"2049
-        San Antonio Apt A Alameda CA 94501","full_mailing_address":null,"last_visit_reason":null,"last_deferred_visit_reason":null,"county":{"id":"01","value":"Alameda","lis_code":null},"phones":[],"addresses":[{"id":null,"type":"Residential","address":{"id":null,"longitude":null,"lattitude":null,"deliverable":null,"street_address":"2049
-        San Antonio Apt A","city":"Alameda","state":"CA","zip_code":"94501","zip_suffix_code":null}}],"visits":[],"annual_visit_year":null,"prelicensing_visit_date":null,"facility_source":"CWS/CMS"},"sort":[1.0,""]},{"_index":"facilities","_type":"facility","_id":"59ml3B3197","_score":1.0,"_source":{"href":null,"id":"59ml3B3197","capacity_last_changed":null,"type":{"id":"22","value":"Foster
-        Family Agency Certified Home"},"adoption_home_only_indicator":false,"name":"","licensee_name":"","license_type":null,"assigned_worker":{"phones":[],"email":null,"full_name":"","id":null},"district_office":null,"license_number":null,"status":null,"capacity":0,"license_effective_date":null,"original_application_recieved_date":null,"last_visit_date":null,"last_deferred_visit_date":null,"email_address":null,"full_residential_address":"16097
-        Mateo Apt 308 San Leandro CA 94578","full_mailing_address":null,"last_visit_reason":null,"last_deferred_visit_reason":null,"county":{"id":"01","value":"Alameda","lis_code":null},"phones":[],"addresses":[{"id":null,"type":"Residential","address":{"id":null,"longitude":null,"lattitude":null,"deliverable":null,"street_address":"16097
-        Mateo Apt 308","city":"San Leandro","state":"CA","zip_code":"94578","zip_suffix_code":null}}],"visits":[],"annual_visit_year":null,"prelicensing_visit_date":null,"facility_source":"CWS/CMS"},"sort":[1.0,""]},{"_index":"facilities","_type":"facility","_id":"QfxtGNv0GU","_score":1.0,"_source":{"href":null,"id":"QfxtGNv0GU","capacity_last_changed":null,"type":{"id":"6","value":"Foster
+      string: '{"took":5,"timed_out":false,"_shards":{"total":1,"successful":1,"failed":0},"hits":{"total":202,"max_score":null,"hits":[{"_index":"facilities","_type":"facility","_id":"GyAU1oHAWW","_score":1.0,"_source":{"href":null,"id":"GyAU1oHAWW","capacity_last_changed":null,"type":{"id":"22","value":"Foster
+        Family Agency Certified Home"},"adoption_home_only_indicator":false,"name":"Douglas,
+        William & Kim","licensee_name":"","license_type":null,"assigned_worker":{"phones":[],"email":null,"full_name":"","id":null},"district_office":null,"license_number":null,"status":null,"capacity":1,"adjusted_capacity":1,"available_beds":null,"license_effective_date":null,"original_application_recieved_date":null,"last_visit_date":null,"last_deferred_visit_date":null,"email_address":null,"full_residential_address":"35637
+        Scarborough Drive Newark CA 94560","full_mailing_address":null,"last_visit_reason":null,"last_deferred_visit_reason":null,"county":{"id":"01","value":"Alameda","lis_code":null},"phones":[{"relation":"primary","number":"5107930765"}],"addresses":[{"id":null,"type":"Residential","address":{"id":null,"longitude":null,"lattitude":null,"deliverable":null,"street_address":"35637
+        Scarborough Drive","city":"Newark","state":"CA","zip_code":"94560","zip_suffix_code":null}}],"visits":[],"annual_visit_year":null,"prelicensing_visit_date":null,"facility_source":"CWS/CMS"},"sort":[1.0,"&"]},{"_index":"facilities","_type":"facility","_id":"5TzNcP301S","_score":1.0,"_source":{"href":null,"id":"5TzNcP301S","capacity_last_changed":null,"type":{"id":"22","value":"Foster
+        Family Agency Certified Home"},"adoption_home_only_indicator":false,"name":"Blount,
+        Rejetta & Daniel","licensee_name":"","license_type":null,"assigned_worker":{"phones":[],"email":null,"full_name":"","id":null},"district_office":null,"license_number":null,"status":null,"capacity":0,"adjusted_capacity":0,"available_beds":null,"license_effective_date":null,"original_application_recieved_date":null,"last_visit_date":null,"last_deferred_visit_date":null,"email_address":null,"full_residential_address":"2103
+        B Santa Rosa Alameda CA 94501","full_mailing_address":null,"last_visit_reason":null,"last_deferred_visit_reason":null,"county":{"id":"01","value":"Alameda","lis_code":null},"phones":[],"addresses":[{"id":null,"type":"Residential","address":{"id":null,"longitude":null,"lattitude":null,"deliverable":null,"street_address":"2103
+        B Santa Rosa","city":"Alameda","state":"CA","zip_code":"94501","zip_suffix_code":null}}],"visits":[],"annual_visit_year":null,"prelicensing_visit_date":null,"facility_source":"CWS/CMS"},"sort":[1.0,"&"]},{"_index":"facilities","_type":"facility","_id":"Drm2csb43S","_score":1.0,"_source":{"href":null,"id":"Drm2csb43S","capacity_last_changed":null,"type":{"id":"22","value":"Foster
+        Family Agency Certified Home"},"adoption_home_only_indicator":false,"name":"Berg,
+        Andy & Janet","licensee_name":"","license_type":null,"assigned_worker":{"phones":[],"email":null,"full_name":"","id":null},"district_office":null,"license_number":null,"status":null,"capacity":0,"adjusted_capacity":0,"available_beds":null,"license_effective_date":null,"original_application_recieved_date":null,"last_visit_date":null,"last_deferred_visit_date":null,"email_address":null,"full_residential_address":"2825
+        Coleman Place Fremont CA 94555","full_mailing_address":null,"last_visit_reason":null,"last_deferred_visit_reason":null,"county":{"id":"01","value":"Alameda","lis_code":null},"phones":[{"relation":"primary","number":"5107947613"}],"addresses":[{"id":null,"type":"Residential","address":{"id":null,"longitude":null,"lattitude":null,"deliverable":null,"street_address":"2825
+        Coleman Place","city":"Fremont","state":"CA","zip_code":"94555","zip_suffix_code":null}}],"visits":[],"annual_visit_year":null,"prelicensing_visit_date":null,"facility_source":"CWS/CMS"},"sort":[1.0,"&"]},{"_index":"facilities","_type":"facility","_id":"L4z082r049","_score":1.0,"_source":{"href":null,"id":"L4z082r049","capacity_last_changed":null,"type":{"id":"22","value":"Foster
+        Family Agency Certified Home"},"adoption_home_only_indicator":false,"name":"Teodosio,
+        Imelda & Henry","licensee_name":"","license_type":null,"assigned_worker":{"phones":[],"email":null,"full_name":"","id":null},"district_office":null,"license_number":null,"status":null,"capacity":0,"adjusted_capacity":0,"available_beds":null,"license_effective_date":null,"original_application_recieved_date":null,"last_visit_date":null,"last_deferred_visit_date":null,"email_address":null,"full_residential_address":"35282
+        Preston Pl Newark CA 94560","full_mailing_address":null,"last_visit_reason":null,"last_deferred_visit_reason":null,"county":{"id":"01","value":"Alameda","lis_code":null},"phones":[{"relation":"primary","number":"5107971312"}],"addresses":[{"id":null,"type":"Residential","address":{"id":null,"longitude":null,"lattitude":null,"deliverable":null,"street_address":"35282
+        Preston Pl","city":"Newark","state":"CA","zip_code":"94560","zip_suffix_code":null}}],"visits":[],"annual_visit_year":null,"prelicensing_visit_date":null,"facility_source":"CWS/CMS"},"sort":[1.0,"&"]},{"_index":"facilities","_type":"facility","_id":"12CBo4v38A","_score":1.0,"_source":{"href":null,"id":"12CBo4v38A","capacity_last_changed":null,"type":{"id":"22","value":"Foster
+        Family Agency Certified Home"},"adoption_home_only_indicator":false,"name":"K.
+        Duir &  J. Skell","licensee_name":"","license_type":null,"assigned_worker":{"phones":[],"email":null,"full_name":"","id":null},"district_office":null,"license_number":null,"status":null,"capacity":0,"adjusted_capacity":0,"available_beds":null,"license_effective_date":null,"original_application_recieved_date":null,"last_visit_date":null,"last_deferred_visit_date":null,"email_address":null,"full_residential_address":"1818
+        Acton St Berkeley CA 94702","full_mailing_address":null,"last_visit_reason":null,"last_deferred_visit_reason":null,"county":{"id":"01","value":"Alameda","lis_code":null},"phones":[{"relation":"primary","number":"5108489147"}],"addresses":[{"id":null,"type":"Residential","address":{"id":null,"longitude":null,"lattitude":null,"deliverable":null,"street_address":"1818
+        Acton St","city":"Berkeley","state":"CA","zip_code":"94702","zip_suffix_code":null}}],"visits":[],"annual_visit_year":null,"prelicensing_visit_date":null,"facility_source":"CWS/CMS"},"sort":[1.0,"&"]},{"_index":"facilities","_type":"facility","_id":"M5ym5HF4Dx","_score":1.0,"_source":{"href":null,"id":"M5ym5HF4Dx","capacity_last_changed":null,"type":{"id":"22","value":"Foster
+        Family Agency Certified Home"},"adoption_home_only_indicator":false,"name":"Sipp,
+        Roy & Rebekkah","licensee_name":"","license_type":null,"assigned_worker":{"phones":[],"email":null,"full_name":"","id":null},"district_office":null,"license_number":null,"status":null,"capacity":0,"adjusted_capacity":0,"available_beds":null,"license_effective_date":null,"original_application_recieved_date":null,"last_visit_date":null,"last_deferred_visit_date":null,"email_address":null,"full_residential_address":"3040
+        Hyde St Oakland CA 94601","full_mailing_address":null,"last_visit_reason":null,"last_deferred_visit_reason":null,"county":{"id":"01","value":"Alameda","lis_code":null},"phones":[{"relation":"primary","number":"5105323272"}],"addresses":[{"id":null,"type":"Residential","address":{"id":null,"longitude":null,"lattitude":null,"deliverable":null,"street_address":"3040
+        Hyde St","city":"Oakland","state":"CA","zip_code":"94601","zip_suffix_code":null}}],"visits":[],"annual_visit_year":null,"prelicensing_visit_date":null,"facility_source":"CWS/CMS"},"sort":[1.0,"&"]},{"_index":"facilities","_type":"facility","_id":"3J1uJMH049","_score":1.0,"_source":{"href":null,"id":"3J1uJMH049","capacity_last_changed":null,"type":{"id":"22","value":"Foster
+        Family Agency Certified Home"},"adoption_home_only_indicator":false,"name":"Wright,
+        Shurvon & Rojar","licensee_name":"","license_type":null,"assigned_worker":{"phones":[],"email":null,"full_name":"","id":null},"district_office":null,"license_number":null,"status":null,"capacity":0,"adjusted_capacity":1,"available_beds":null,"license_effective_date":null,"original_application_recieved_date":null,"last_visit_date":null,"last_deferred_visit_date":null,"email_address":null,"full_residential_address":"26953
+        Hayward Blvd Unit 101 Hayward CA 94542","full_mailing_address":null,"last_visit_reason":null,"last_deferred_visit_reason":null,"county":{"id":"01","value":"Alameda","lis_code":null},"phones":[{"relation":"primary","number":"5108896992"}],"addresses":[{"id":null,"type":"Residential","address":{"id":null,"longitude":null,"lattitude":null,"deliverable":null,"street_address":"26953
+        Hayward Blvd Unit 101","city":"Hayward","state":"CA","zip_code":"94542","zip_suffix_code":null}}],"visits":[],"annual_visit_year":null,"prelicensing_visit_date":null,"facility_source":"CWS/CMS"},"sort":[1.0,"&"]},{"_index":"facilities","_type":"facility","_id":"FsljU9p4BR","_score":1.0,"_source":{"href":null,"id":"FsljU9p4BR","capacity_last_changed":null,"type":{"id":"22","value":"Foster
+        Family Agency Certified Home"},"adoption_home_only_indicator":false,"name":"Corbin,
+        Lewis & Carol","licensee_name":"","license_type":null,"assigned_worker":{"phones":[],"email":null,"full_name":"","id":null},"district_office":null,"license_number":null,"status":null,"capacity":0,"adjusted_capacity":0,"available_beds":null,"license_effective_date":null,"original_application_recieved_date":null,"last_visit_date":null,"last_deferred_visit_date":null,"email_address":null,"full_residential_address":"850
+        37th St Oakland CA 94608","full_mailing_address":null,"last_visit_reason":null,"last_deferred_visit_reason":null,"county":{"id":"01","value":"Alameda","lis_code":null},"phones":[],"addresses":[{"id":null,"type":"Residential","address":{"id":null,"longitude":null,"lattitude":null,"deliverable":null,"street_address":"850
+        37th St","city":"Oakland","state":"CA","zip_code":"94608","zip_suffix_code":null}}],"visits":[],"annual_visit_year":null,"prelicensing_visit_date":null,"facility_source":"CWS/CMS"},"sort":[1.0,"&"]},{"_index":"facilities","_type":"facility","_id":"P6wWCry4BR","_score":1.0,"_source":{"href":null,"id":"P6wWCry4BR","capacity_last_changed":null,"type":{"id":"22","value":"Foster
+        Family Agency Certified Home"},"adoption_home_only_indicator":false,"name":"Terry,
+        Ken & Hortence","licensee_name":"","license_type":null,"assigned_worker":{"phones":[],"email":null,"full_name":"","id":null},"district_office":null,"license_number":null,"status":null,"capacity":0,"adjusted_capacity":0,"available_beds":null,"license_effective_date":null,"original_application_recieved_date":null,"last_visit_date":null,"last_deferred_visit_date":null,"email_address":null,"full_residential_address":"11
+        Camisa Cir Oakland CA 94605","full_mailing_address":null,"last_visit_reason":null,"last_deferred_visit_reason":null,"county":{"id":"01","value":"Alameda","lis_code":null},"phones":[],"addresses":[{"id":null,"type":"Residential","address":{"id":null,"longitude":null,"lattitude":null,"deliverable":null,"street_address":"11
+        Camisa Cir","city":"Oakland","state":"CA","zip_code":"94605","zip_suffix_code":null}}],"visits":[],"annual_visit_year":null,"prelicensing_visit_date":null,"facility_source":"CWS/CMS"},"sort":[1.0,"&"]},{"_index":"facilities","_type":"facility","_id":"57BAp3S4BR","_score":1.0,"_source":{"href":null,"id":"57BAp3S4BR","capacity_last_changed":null,"type":{"id":"22","value":"Foster
+        Family Agency Certified Home"},"adoption_home_only_indicator":false,"name":"Johnson,
+        Luther & Diane","licensee_name":"","license_type":null,"assigned_worker":{"phones":[],"email":null,"full_name":"","id":null},"district_office":null,"license_number":null,"status":null,"capacity":0,"adjusted_capacity":0,"available_beds":null,"license_effective_date":null,"original_application_recieved_date":null,"last_visit_date":null,"last_deferred_visit_date":null,"email_address":null,"full_residential_address":"1070
+        65th St Oakland CA 94608","full_mailing_address":null,"last_visit_reason":null,"last_deferred_visit_reason":null,"county":{"id":"01","value":"Alameda","lis_code":null},"phones":[],"addresses":[{"id":null,"type":"Residential","address":{"id":null,"longitude":null,"lattitude":null,"deliverable":null,"street_address":"1070
+        65th St","city":"Oakland","state":"CA","zip_code":"94608","zip_suffix_code":null}}],"visits":[],"annual_visit_year":null,"prelicensing_visit_date":null,"facility_source":"CWS/CMS"},"sort":[1.0,"&"]},{"_index":"facilities","_type":"facility","_id":"TbYJkUz4AA","_score":1.0,"_source":{"href":null,"id":"TbYJkUz4AA","capacity_last_changed":null,"type":{"id":"22","value":"Foster
+        Family Agency Certified Home"},"adoption_home_only_indicator":false,"name":"Taylor,
+        Carol & JT","licensee_name":"","license_type":null,"assigned_worker":{"phones":[],"email":null,"full_name":"","id":null},"district_office":null,"license_number":null,"status":null,"capacity":0,"adjusted_capacity":0,"available_beds":null,"license_effective_date":null,"original_application_recieved_date":null,"last_visit_date":null,"last_deferred_visit_date":null,"email_address":null,"full_residential_address":"968
+        Logan St Livermore CA 94550","full_mailing_address":null,"last_visit_reason":null,"last_deferred_visit_reason":null,"county":{"id":"01","value":"Alameda","lis_code":null},"phones":[],"addresses":[{"id":null,"type":"Residential","address":{"id":null,"longitude":null,"lattitude":null,"deliverable":null,"street_address":"968
+        Logan St","city":"Livermore","state":"CA","zip_code":"94550","zip_suffix_code":null}}],"visits":[],"annual_visit_year":null,"prelicensing_visit_date":null,"facility_source":"CWS/CMS"},"sort":[1.0,"&"]},{"_index":"facilities","_type":"facility","_id":"QXngaRdAWW","_score":1.0,"_source":{"href":null,"id":"QXngaRdAWW","capacity_last_changed":null,"type":{"id":"22","value":"Foster
+        Family Agency Certified Home"},"adoption_home_only_indicator":false,"name":"Berg,
+        Andy & Janet","licensee_name":"","license_type":null,"assigned_worker":{"phones":[],"email":null,"full_name":"","id":null},"district_office":null,"license_number":null,"status":null,"capacity":3,"adjusted_capacity":3,"available_beds":null,"license_effective_date":null,"original_application_recieved_date":null,"last_visit_date":null,"last_deferred_visit_date":null,"email_address":null,"full_residential_address":"2825
+        Coleman Place Fremont CA 94555","full_mailing_address":null,"last_visit_reason":null,"last_deferred_visit_reason":null,"county":{"id":"01","value":"Alameda","lis_code":null},"phones":[{"relation":"primary","number":"5107947613"}],"addresses":[{"id":null,"type":"Residential","address":{"id":null,"longitude":null,"lattitude":null,"deliverable":null,"street_address":"2825
+        Coleman Place","city":"Fremont","state":"CA","zip_code":"94555","zip_suffix_code":null}}],"visits":[],"annual_visit_year":null,"prelicensing_visit_date":null,"facility_source":"CWS/CMS"},"sort":[1.0,"&"]},{"_index":"facilities","_type":"facility","_id":"1knKLo23EQ","_score":1.0,"_source":{"href":null,"id":"1knKLo23EQ","capacity_last_changed":null,"type":{"id":"22","value":"Foster
+        Family Agency Certified Home"},"adoption_home_only_indicator":false,"name":"Todd
+        & Raeann Moldenhauer","licensee_name":"","license_type":null,"assigned_worker":{"phones":[],"email":null,"full_name":"","id":null},"district_office":null,"license_number":null,"status":null,"capacity":0,"adjusted_capacity":0,"available_beds":null,"license_effective_date":null,"original_application_recieved_date":null,"last_visit_date":null,"last_deferred_visit_date":null,"email_address":null,"full_residential_address":"3468
+        Little Court Fremont CA 94538","full_mailing_address":null,"last_visit_reason":null,"last_deferred_visit_reason":null,"county":{"id":"01","value":"Alameda","lis_code":null},"phones":[{"relation":"alternate","number":"4082988787"}],"addresses":[{"id":null,"type":"Residential","address":{"id":null,"longitude":null,"lattitude":null,"deliverable":null,"street_address":"3468
+        Little Court","city":"Fremont","state":"CA","zip_code":"94538","zip_suffix_code":null}}],"visits":[],"annual_visit_year":null,"prelicensing_visit_date":null,"facility_source":"CWS/CMS"},"sort":[1.0,"&"]},{"_index":"facilities","_type":"facility","_id":"C41I9gHAWW","_score":1.0,"_source":{"href":null,"id":"C41I9gHAWW","capacity_last_changed":null,"type":{"id":"22","value":"Foster
+        Family Agency Certified Home"},"adoption_home_only_indicator":false,"name":"Celler,
+        Orrin & Tina","licensee_name":"","license_type":null,"assigned_worker":{"phones":[],"email":null,"full_name":"","id":null},"district_office":null,"license_number":null,"status":null,"capacity":1,"adjusted_capacity":1,"available_beds":null,"license_effective_date":null,"original_application_recieved_date":null,"last_visit_date":null,"last_deferred_visit_date":null,"email_address":null,"full_residential_address":"45113
+        Pawnee Drive Fremont CA 94539","full_mailing_address":null,"last_visit_reason":null,"last_deferred_visit_reason":null,"county":{"id":"01","value":"Alameda","lis_code":null},"phones":[{"relation":"primary","number":"5104904530"}],"addresses":[{"id":null,"type":"Residential","address":{"id":null,"longitude":null,"lattitude":null,"deliverable":null,"street_address":"45113
+        Pawnee Drive","city":"Fremont","state":"CA","zip_code":"94539","zip_suffix_code":null}}],"visits":[],"annual_visit_year":null,"prelicensing_visit_date":null,"facility_source":"CWS/CMS"},"sort":[1.0,"&"]},{"_index":"facilities","_type":"facility","_id":"4hyoezj0GD","_score":1.0,"_source":{"href":null,"id":"4hyoezj0GD","capacity_last_changed":null,"type":{"id":"6","value":"Foster
+        Family Home"},"adoption_home_only_indicator":false,"name":"RTS 7056 Home -
+        Alameda","licensee_name":"","license_type":null,"assigned_worker":{"phones":[],"email":null,"full_name":"","id":null},"district_office":null,"license_number":null,"status":null,"capacity":0,"adjusted_capacity":0,"available_beds":null,"license_effective_date":null,"original_application_recieved_date":null,"last_visit_date":null,"last_deferred_visit_date":null,"email_address":null,"full_residential_address":"123
+        that way CA 63634","full_mailing_address":null,"last_visit_reason":null,"last_deferred_visit_reason":null,"county":{"id":"01","value":"Alameda","lis_code":null},"phones":[],"addresses":[{"id":null,"type":"Residential","address":{"id":null,"longitude":null,"lattitude":null,"deliverable":null,"street_address":"123
+        that","city":"way","state":"CA","zip_code":"63634","zip_suffix_code":null}}],"visits":[],"annual_visit_year":null,"prelicensing_visit_date":null,"facility_source":"CWS/CMS"},"sort":[1.0,"-"]},{"_index":"facilities","_type":"facility","_id":"66ys6hV0GE","_score":1.0,"_source":{"href":null,"id":"66ys6hV0GE","capacity_last_changed":null,"type":{"id":"17","value":"Court
+        Specified Home"},"adoption_home_only_indicator":false,"name":"Pl Home 1","licensee_name":"","license_type":null,"assigned_worker":{"phones":[],"email":null,"full_name":"","id":null},"district_office":null,"license_number":null,"status":null,"capacity":0,"adjusted_capacity":0,"available_beds":null,"license_effective_date":null,"original_application_recieved_date":null,"last_visit_date":null,"last_deferred_visit_date":null,"email_address":null,"full_residential_address":"A
+        Napa CA 95888","full_mailing_address":null,"last_visit_reason":null,"last_deferred_visit_reason":null,"county":{"id":"01","value":"Alameda","lis_code":null},"phones":[],"addresses":[{"id":null,"type":"Residential","address":{"id":null,"longitude":null,"lattitude":null,"deliverable":null,"street_address":"A","city":"Napa","state":"CA","zip_code":"95888","zip_suffix_code":null}}],"visits":[],"annual_visit_year":null,"prelicensing_visit_date":null,"facility_source":"CWS/CMS"},"sort":[1.0,"1"]},{"_index":"facilities","_type":"facility","_id":"8UNoMas0MR","_score":1.0,"_source":{"href":null,"id":"8UNoMas0MR","capacity_last_changed":null,"type":{"id":"6","value":"Foster
+        Family Home"},"adoption_home_only_indicator":false,"name":"Sac Placement Home
+        1","licensee_name":"","license_type":null,"assigned_worker":{"phones":[],"email":null,"full_name":"","id":null},"district_office":null,"license_number":null,"status":null,"capacity":0,"adjusted_capacity":0,"available_beds":null,"license_effective_date":null,"original_application_recieved_date":null,"last_visit_date":null,"last_deferred_visit_date":null,"email_address":null,"full_residential_address":"Sac
+        PH St1 cty1 CA 95834","full_mailing_address":null,"last_visit_reason":null,"last_deferred_visit_reason":null,"county":{"id":"01","value":"Alameda","lis_code":null},"phones":[],"addresses":[{"id":null,"type":"Residential","address":{"id":null,"longitude":null,"lattitude":null,"deliverable":null,"street_address":"Sac
+        PH St1","city":"cty1","state":"CA","zip_code":"95834","zip_suffix_code":null}}],"visits":[],"annual_visit_year":null,"prelicensing_visit_date":null,"facility_source":"CWS/CMS"},"sort":[1.0,"1"]},{"_index":"facilities","_type":"facility","_id":"QfxtGNv0GU","_score":1.0,"_source":{"href":null,"id":"QfxtGNv0GU","capacity_last_changed":null,"type":{"id":"6","value":"Foster
         Family Home"},"adoption_home_only_indicator":false,"name":"Accept 11/15","licensee_name":"","license_type":null,"assigned_worker":{"phones":[{"relation":"primary","number":"1115111511"}],"email":null,"full_name":"2
-        cstk","id":null},"district_office":{"number":"99","name":"State of California"},"license_number":null,"status":{"active":true,"id":"2","value":"Pending"},"capacity":6,"license_effective_date":null,"original_application_recieved_date":{"year":1999,"month":"NOVEMBER","era":"CE","dayOfMonth":15,"dayOfWeek":"MONDAY","dayOfYear":319,"leapYear":false,"monthValue":11,"chronology":{"calendarType":"iso8601","id":"ISO"}},"last_visit_date":null,"last_deferred_visit_date":null,"email_address":null,"full_residential_address":"Accept
+        cstk","id":null},"district_office":{"number":"99","name":"State of California"},"license_number":null,"status":{"active":true,"id":"2","value":"Pending"},"capacity":0,"adjusted_capacity":6,"available_beds":null,"license_effective_date":null,"original_application_recieved_date":{"year":1999,"month":"NOVEMBER","era":"CE","dayOfMonth":15,"dayOfWeek":"MONDAY","dayOfYear":319,"leapYear":false,"monthValue":11,"chronology":{"id":"ISO","calendarType":"iso8601"}},"last_visit_date":null,"last_deferred_visit_date":null,"email_address":null,"full_residential_address":"Accept
         11/15 Accept 11/15 CA 11151","full_mailing_address":null,"last_visit_reason":null,"last_deferred_visit_reason":null,"county":{"id":"01","value":"Alameda","lis_code":null},"phones":[],"addresses":[{"id":null,"type":"Residential","address":{"id":null,"longitude":null,"lattitude":null,"deliverable":null,"street_address":"Accept
-        11/15","city":"Accept 11/15","state":"CA","zip_code":"11151","zip_suffix_code":null}}],"visits":[],"annual_visit_year":null,"prelicensing_visit_date":null,"facility_source":"CWS/CMS"},"sort":[1.0,"accept
-        11/15"]},{"_index":"facilities","_type":"facility","_id":"OJKHeID197","_score":1.0,"_source":{"href":null,"id":"OJKHeID197","capacity_last_changed":null,"type":{"id":"22","value":"Foster
+        11/15","city":"Accept 11/15","state":"CA","zip_code":"11151","zip_suffix_code":null}}],"visits":[],"annual_visit_year":null,"prelicensing_visit_date":null,"facility_source":"CWS/CMS"},"sort":[1.0,"11/15"]},{"_index":"facilities","_type":"facility","_id":"MeFzVgo0Dw","_score":1.0,"_source":{"href":null,"id":"MeFzVgo0Dw","capacity_last_changed":null,"type":{"id":"6","value":"Foster
+        Family Home"},"adoption_home_only_indicator":false,"name":"SOC 158 Foster
+        Family Home","licensee_name":"","license_type":null,"assigned_worker":{"phones":[],"email":null,"full_name":"","id":null},"district_office":null,"license_number":null,"status":{"active":true,"id":"2","value":"Pending"},"capacity":0,"adjusted_capacity":6,"available_beds":null,"license_effective_date":null,"original_application_recieved_date":null,"last_visit_date":null,"last_deferred_visit_date":null,"email_address":null,"full_residential_address":"222
+        Brazil Wan Walnut Creek CA 94552","full_mailing_address":null,"last_visit_reason":null,"last_deferred_visit_reason":null,"county":{"id":"01","value":"Alameda","lis_code":null},"phones":[],"addresses":[{"id":null,"type":"Residential","address":{"id":null,"longitude":null,"lattitude":null,"deliverable":null,"street_address":"222
+        Brazil Wan","city":"Walnut Creek","state":"CA","zip_code":"94552","zip_suffix_code":null}}],"visits":[],"annual_visit_year":null,"prelicensing_visit_date":null,"facility_source":"CWS/CMS"},"sort":[1.0,"158"]},{"_index":"facilities","_type":"facility","_id":"DMYeKqU0Mb","_score":1.0,"_source":{"href":null,"id":"DMYeKqU0Mb","capacity_last_changed":null,"type":{"id":"6","value":"Foster
+        Family Home"},"adoption_home_only_indicator":false,"name":"PTS 20494 FFH","licensee_name":"","license_type":null,"assigned_worker":{"phones":[{"relation":"primary","number":"1234564568"}],"email":null,"full_name":"John
+        Williams","id":null},"district_office":{"number":"01","name":"Alameda"},"license_number":"A5b6c7d8","status":{"active":false,"id":"20","value":"Licensee
+        initiated closure"},"capacity":2,"adjusted_capacity":0,"available_beds":null,"license_effective_date":{"year":2002,"month":"NOVEMBER","era":"CE","dayOfMonth":14,"dayOfWeek":"THURSDAY","dayOfYear":318,"leapYear":false,"monthValue":11,"chronology":{"id":"ISO","calendarType":"iso8601"}},"original_application_recieved_date":{"year":2002,"month":"NOVEMBER","era":"CE","dayOfMonth":14,"dayOfWeek":"THURSDAY","dayOfYear":318,"leapYear":false,"monthValue":11,"chronology":{"id":"ISO","calendarType":"iso8601"}},"last_visit_date":null,"last_deferred_visit_date":null,"email_address":null,"full_residential_address":"879
+        Hollister Way Alameda CA 90038","full_mailing_address":null,"last_visit_reason":null,"last_deferred_visit_reason":null,"county":{"id":"01","value":"Alameda","lis_code":null},"phones":[],"addresses":[{"id":null,"type":"Residential","address":{"id":null,"longitude":null,"lattitude":null,"deliverable":null,"street_address":"879
+        Hollister Way","city":"Alameda","state":"CA","zip_code":"90038","zip_suffix_code":null}}],"visits":[],"annual_visit_year":null,"prelicensing_visit_date":null,"facility_source":"CWS/CMS"},"sort":[1.0,"20494"]},{"_index":"facilities","_type":"facility","_id":"ISDSL8o0Mb","_score":1.0,"_source":{"href":null,"id":"ISDSL8o0Mb","capacity_last_changed":null,"type":{"id":"6","value":"Foster
+        Family Home"},"adoption_home_only_indicator":false,"name":"PTS 20494 FFH","licensee_name":"","license_type":null,"assigned_worker":{"phones":[{"relation":"primary","number":"1234564568"}],"email":null,"full_name":"John
+        Williams","id":null},"district_office":{"number":"01","name":"Alameda"},"license_number":"a5b6c7d8","status":{"active":true,"id":"3","value":"Licensed"},"capacity":2,"adjusted_capacity":0,"available_beds":null,"license_effective_date":{"year":2002,"month":"NOVEMBER","era":"CE","dayOfMonth":15,"dayOfWeek":"FRIDAY","dayOfYear":319,"leapYear":false,"monthValue":11,"chronology":{"id":"ISO","calendarType":"iso8601"}},"original_application_recieved_date":{"year":2002,"month":"NOVEMBER","era":"CE","dayOfMonth":15,"dayOfWeek":"FRIDAY","dayOfYear":319,"leapYear":false,"monthValue":11,"chronology":{"id":"ISO","calendarType":"iso8601"}},"last_visit_date":null,"last_deferred_visit_date":null,"email_address":null,"full_residential_address":"Hampshire
+        Hills Way Alameda CA 90037","full_mailing_address":null,"last_visit_reason":null,"last_deferred_visit_reason":null,"county":{"id":"01","value":"Alameda","lis_code":null},"phones":[],"addresses":[{"id":null,"type":"Residential","address":{"id":null,"longitude":null,"lattitude":null,"deliverable":null,"street_address":"Hampshire
+        Hills Way","city":"Alameda","state":"CA","zip_code":"90037","zip_suffix_code":null}}],"visits":[],"annual_visit_year":null,"prelicensing_visit_date":null,"facility_source":"CWS/CMS"},"sort":[1.0,"20494"]},{"_index":"facilities","_type":"facility","_id":"39PmwWE0Mb","_score":1.0,"_source":{"href":null,"id":"39PmwWE0Mb","capacity_last_changed":null,"type":{"id":"6","value":"Foster
+        Family Home"},"adoption_home_only_indicator":false,"name":"PTS 20494 FFH","licensee_name":"","license_type":null,"assigned_worker":{"phones":[{"relation":"primary","number":"1234564568"}],"email":null,"full_name":"John
+        Williams","id":null},"district_office":{"number":"01","name":"Alameda"},"license_number":"5A6b7c8d","status":{"active":false,"id":"20","value":"Licensee
+        initiated closure"},"capacity":2,"adjusted_capacity":0,"available_beds":null,"license_effective_date":{"year":2001,"month":"NOVEMBER","era":"CE","dayOfMonth":13,"dayOfWeek":"TUESDAY","dayOfYear":317,"leapYear":false,"monthValue":11,"chronology":{"id":"ISO","calendarType":"iso8601"}},"original_application_recieved_date":{"year":2001,"month":"OCTOBER","era":"CE","dayOfMonth":13,"dayOfWeek":"SATURDAY","dayOfYear":286,"leapYear":false,"monthValue":10,"chronology":{"id":"ISO","calendarType":"iso8601"}},"last_visit_date":null,"last_deferred_visit_date":null,"email_address":null,"full_residential_address":"125
+        Hillcrest Blvd Alameda CA 90039","full_mailing_address":null,"last_visit_reason":null,"last_deferred_visit_reason":null,"county":{"id":"01","value":"Alameda","lis_code":null},"phones":[],"addresses":[{"id":null,"type":"Residential","address":{"id":null,"longitude":null,"lattitude":null,"deliverable":null,"street_address":"125
+        Hillcrest Blvd","city":"Alameda","state":"CA","zip_code":"90039","zip_suffix_code":null}}],"visits":[],"annual_visit_year":null,"prelicensing_visit_date":null,"facility_source":"CWS/CMS"},"sort":[1.0,"20494"]},{"_index":"facilities","_type":"facility","_id":"OJKHeID197","_score":1.0,"_source":{"href":null,"id":"OJKHeID197","capacity_last_changed":null,"type":{"id":"22","value":"Foster
         Family Agency Certified Home"},"adoption_home_only_indicator":false,"name":"Adopt
-        A Special Kid(aask)","licensee_name":"","license_type":null,"assigned_worker":{"phones":[],"email":null,"full_name":"","id":null},"district_office":null,"license_number":null,"status":null,"capacity":0,"license_effective_date":null,"original_application_recieved_date":null,"last_visit_date":null,"last_deferred_visit_date":null,"email_address":null,"full_residential_address":"2201
+        A Special Kid(aask)","licensee_name":"","license_type":null,"assigned_worker":{"phones":[],"email":null,"full_name":"","id":null},"district_office":null,"license_number":null,"status":null,"capacity":0,"adjusted_capacity":0,"available_beds":null,"license_effective_date":null,"original_application_recieved_date":null,"last_visit_date":null,"last_deferred_visit_date":null,"email_address":null,"full_residential_address":"2201
         Broadway Suite 70 Oakland CA 94612","full_mailing_address":null,"last_visit_reason":null,"last_deferred_visit_reason":null,"county":{"id":"01","value":"Alameda","lis_code":null},"phones":[{"relation":"primary","number":"5104511748"}],"addresses":[{"id":null,"type":"Residential","address":{"id":null,"longitude":null,"lattitude":null,"deliverable":null,"street_address":"2201
-        Broadway Suite 70","city":"Oakland","state":"CA","zip_code":"94612","zip_suffix_code":null}}],"visits":[],"annual_visit_year":null,"prelicensing_visit_date":null,"facility_source":"CWS/CMS"},"sort":[1.0,"adopt
-        a special kid(aask)"]},{"_index":"facilities","_type":"facility","_id":"100000002","_score":1.0,"_source":{"href":null,"id":"100000002","capacity_last_changed":null,"type":{"id":"5","value":"Small
-        Family Home"},"adoption_home_only_indicator":null,"name":"All As One Home","licensee_name":"Anil
+        Broadway Suite 70","city":"Oakland","state":"CA","zip_code":"94612","zip_suffix_code":null}}],"visits":[],"annual_visit_year":null,"prelicensing_visit_date":null,"facility_source":"CWS/CMS"},"sort":[1.0,"a"]},{"_index":"facilities","_type":"facility","_id":"GVk6LPm4xL","_score":1.0,"_source":{"href":null,"id":"GVk6LPm4xL","capacity_last_changed":null,"type":{"id":"22","value":"Foster
+        Family Agency Certified Home"},"adoption_home_only_indicator":false,"name":"Jones,
+        Abbie","licensee_name":"","license_type":null,"assigned_worker":{"phones":[],"email":null,"full_name":"","id":null},"district_office":null,"license_number":null,"status":null,"capacity":0,"adjusted_capacity":0,"available_beds":null,"license_effective_date":null,"original_application_recieved_date":null,"last_visit_date":null,"last_deferred_visit_date":null,"email_address":null,"full_residential_address":"1639
+        Mac Arthur Blvd. Oakland CA 94602","full_mailing_address":null,"last_visit_reason":null,"last_deferred_visit_reason":null,"county":{"id":"01","value":"Alameda","lis_code":null},"phones":[{"relation":"primary","number":"9254843263"}],"addresses":[{"id":null,"type":"Residential","address":{"id":null,"longitude":null,"lattitude":null,"deliverable":null,"street_address":"1639
+        Mac Arthur Blvd.","city":"Oakland","state":"CA","zip_code":"94602","zip_suffix_code":null}}],"visits":[],"annual_visit_year":null,"prelicensing_visit_date":null,"facility_source":"CWS/CMS"},"sort":[1.0,"abbie"]},{"_index":"facilities","_type":"facility","_id":"8MzMYMb4BP","_score":1.0,"_source":{"href":null,"id":"8MzMYMb4BP","capacity_last_changed":null,"type":{"id":"22","value":"Foster
+        Family Agency Certified Home"},"adoption_home_only_indicator":false,"name":"Allen,
+        Alberta","licensee_name":"","license_type":null,"assigned_worker":{"phones":[],"email":null,"full_name":"","id":null},"district_office":null,"license_number":null,"status":null,"capacity":0,"adjusted_capacity":0,"available_beds":null,"license_effective_date":null,"original_application_recieved_date":null,"last_visit_date":null,"last_deferred_visit_date":null,"email_address":null,"full_residential_address":"3219
+        King St Berkeley CA 94703","full_mailing_address":null,"last_visit_reason":null,"last_deferred_visit_reason":null,"county":{"id":"01","value":"Alameda","lis_code":null},"phones":[],"addresses":[{"id":null,"type":"Residential","address":{"id":null,"longitude":null,"lattitude":null,"deliverable":null,"street_address":"3219
+        King St","city":"Berkeley","state":"CA","zip_code":"94703","zip_suffix_code":null}}],"visits":[],"annual_visit_year":null,"prelicensing_visit_date":null,"facility_source":"CWS/CMS"},"sort":[1.0,"alberta"]},{"_index":"facilities","_type":"facility","_id":"AhTHWpV01S","_score":1.0,"_source":{"href":null,"id":"AhTHWpV01S","capacity_last_changed":null,"type":{"id":"22","value":"Foster
+        Family Agency Certified Home"},"adoption_home_only_indicator":false,"name":"Alva,
+        Alicia","licensee_name":"","license_type":null,"assigned_worker":{"phones":[],"email":null,"full_name":"","id":null},"district_office":null,"license_number":null,"status":null,"capacity":0,"adjusted_capacity":0,"available_beds":null,"license_effective_date":null,"original_application_recieved_date":null,"last_visit_date":null,"last_deferred_visit_date":null,"email_address":null,"full_residential_address":"1830
+        8th Av Oakland CA 94606","full_mailing_address":null,"last_visit_reason":null,"last_deferred_visit_reason":null,"county":{"id":"01","value":"Alameda","lis_code":null},"phones":[{"relation":"primary","number":"5102681421"}],"addresses":[{"id":null,"type":"Residential","address":{"id":null,"longitude":null,"lattitude":null,"deliverable":null,"street_address":"1830
+        8th Av","city":"Oakland","state":"CA","zip_code":"94606","zip_suffix_code":null}}],"visits":[],"annual_visit_year":null,"prelicensing_visit_date":null,"facility_source":"CWS/CMS"},"sort":[1.0,"alicia"]},{"_index":"facilities","_type":"facility","_id":"100000002","_score":1.0,"_source":{"href":null,"id":"100000002","capacity_last_changed":null,"type":{"id":"7","value":"Crisis
+        Nursery"},"adoption_home_only_indicator":null,"name":"All As One Home","licensee_name":"Anil
         Gunti","license_type":"A","assigned_worker":{"phones":[],"email":null,"full_name":null,"id":null},"district_office":{"number":"14","name":"SF
         COASTAL AC/SC"},"license_number":"100000002","status":{"active":false,"id":"8","value":"Application
-        Denied"},"capacity":6,"license_effective_date":null,"original_application_recieved_date":null,"last_visit_date":null,"last_deferred_visit_date":null,"email_address":null,"full_residential_address":"221
+        Denied"},"capacity":6,"adjusted_capacity":null,"available_beds":null,"license_effective_date":null,"original_application_recieved_date":null,"last_visit_date":null,"last_deferred_visit_date":null,"email_address":null,"full_residential_address":"221
         Glamford Rd. BERKELEY CA 94707","full_mailing_address":"1920 YOLO AVENUE BERKELEY
-        CA 94707","last_visit_reason":null,"last_deferred_visit_reason":null,"county":{"id":"1","value":"ALAMEDA","lis_code":null},"phones":[{"relation":"primary","type":"Cell","number":"(916)
-        002-"}],"addresses":[{"id":null,"type":"Residential","address":{"id":null,"longitude":null,"lattitude":null,"deliverable":null,"street_address":"221
+        CA 94707","last_visit_reason":null,"last_deferred_visit_reason":null,"county":{"id":"1","value":"ALAMEDA","lis_code":null},"phones":[{"relation":"primary","type":"Cell","number":"9160061111"}],"addresses":[{"id":null,"type":"Residential","address":{"id":null,"longitude":null,"lattitude":null,"deliverable":null,"street_address":"221
         Glamford Rd.","city":"BERKELEY","state":"CA","zip_code":"94707","zip_suffix_code":null}},{"id":null,"type":"Mailing","address":{"id":null,"longitude":null,"lattitude":null,"deliverable":null,"street_address":"1920
-        YOLO AVENUE","city":"BERKELEY","state":"CA","zip_code":"94707","zip_suffix_code":null}}],"visits":[],"annual_visit_year":null,"prelicensing_visit_date":null,"facility_source":"LIS"},"sort":[1.0,"all
-        as one home"]},{"_index":"facilities","_type":"facility","_id":"8MzMYMb4BP","_score":1.0,"_source":{"href":null,"id":"8MzMYMb4BP","capacity_last_changed":null,"type":{"id":"22","value":"Foster
-        Family Agency Certified Home"},"adoption_home_only_indicator":false,"name":"Allen,
-        Alberta","licensee_name":"","license_type":null,"assigned_worker":{"phones":[],"email":null,"full_name":"","id":null},"district_office":null,"license_number":null,"status":null,"capacity":0,"license_effective_date":null,"original_application_recieved_date":null,"last_visit_date":null,"last_deferred_visit_date":null,"email_address":null,"full_residential_address":"3219
-        King St Berkeley CA 94703","full_mailing_address":null,"last_visit_reason":null,"last_deferred_visit_reason":null,"county":{"id":"01","value":"Alameda","lis_code":null},"phones":[],"addresses":[{"id":null,"type":"Residential","address":{"id":null,"longitude":null,"lattitude":null,"deliverable":null,"street_address":"3219
-        King St","city":"Berkeley","state":"CA","zip_code":"94703","zip_suffix_code":null}}],"visits":[],"annual_visit_year":null,"prelicensing_visit_date":null,"facility_source":"CWS/CMS"},"sort":[1.0,"allen,
-        alberta"]},{"_index":"facilities","_type":"facility","_id":"GeNaBajAWW","_score":1.0,"_source":{"href":null,"id":"GeNaBajAWW","capacity_last_changed":null,"type":{"id":"22","value":"Foster
-        Family Agency Certified Home"},"adoption_home_only_indicator":false,"name":"Alva","licensee_name":"","license_type":null,"assigned_worker":{"phones":[],"email":null,"full_name":"","id":null},"district_office":null,"license_number":null,"status":null,"capacity":4,"license_effective_date":null,"original_application_recieved_date":null,"last_visit_date":null,"last_deferred_visit_date":null,"email_address":null,"full_residential_address":"160
+        YOLO AVENUE","city":"BERKELEY","state":"CA","zip_code":"94707","zip_suffix_code":null}}],"visits":[],"annual_visit_year":null,"prelicensing_visit_date":null,"facility_source":"LIS"},"sort":[1.0,"all"]},{"_index":"facilities","_type":"facility","_id":"GeNaBajAWW","_score":1.0,"_source":{"href":null,"id":"GeNaBajAWW","capacity_last_changed":null,"type":{"id":"22","value":"Foster
+        Family Agency Certified Home"},"adoption_home_only_indicator":false,"name":"Alva","licensee_name":"","license_type":null,"assigned_worker":{"phones":[],"email":null,"full_name":"","id":null},"district_office":null,"license_number":null,"status":null,"capacity":4,"adjusted_capacity":4,"available_beds":null,"license_effective_date":null,"original_application_recieved_date":null,"last_visit_date":null,"last_deferred_visit_date":null,"email_address":null,"full_residential_address":"160
         Franklin St 100 Oakland CA 94607","full_mailing_address":null,"last_visit_reason":null,"last_deferred_visit_reason":null,"county":{"id":"01","value":"Alameda","lis_code":null},"phones":[],"addresses":[{"id":null,"type":"Residential","address":{"id":null,"longitude":null,"lattitude":null,"deliverable":null,"street_address":"160
-        Franklin St 100","city":"Oakland","state":"CA","zip_code":"94607","zip_suffix_code":null}}],"visits":[],"annual_visit_year":null,"prelicensing_visit_date":null,"facility_source":"CWS/CMS"},"sort":[1.0,"alva"]},{"_index":"facilities","_type":"facility","_id":"AhTHWpV01S","_score":1.0,"_source":{"href":null,"id":"AhTHWpV01S","capacity_last_changed":null,"type":{"id":"22","value":"Foster
-        Family Agency Certified Home"},"adoption_home_only_indicator":false,"name":"Alva,
-        Alicia","licensee_name":"","license_type":null,"assigned_worker":{"phones":[],"email":null,"full_name":"","id":null},"district_office":null,"license_number":null,"status":null,"capacity":0,"license_effective_date":null,"original_application_recieved_date":null,"last_visit_date":null,"last_deferred_visit_date":null,"email_address":null,"full_residential_address":"1830
-        8th Av Oakland CA 94606","full_mailing_address":null,"last_visit_reason":null,"last_deferred_visit_reason":null,"county":{"id":"01","value":"Alameda","lis_code":null},"phones":[{"relation":"primary","number":"5102681421"}],"addresses":[{"id":null,"type":"Residential","address":{"id":null,"longitude":null,"lattitude":null,"deliverable":null,"street_address":"1830
-        8th Av","city":"Oakland","state":"CA","zip_code":"94606","zip_suffix_code":null}}],"visits":[],"annual_visit_year":null,"prelicensing_visit_date":null,"facility_source":"CWS/CMS"},"sort":[1.0,"alva,
-        alicia"]},{"_index":"facilities","_type":"facility","_id":"JDXRv0b38A","_score":1.0,"_source":{"href":null,"id":"JDXRv0b38A","capacity_last_changed":null,"type":{"id":"22","value":"Foster
+        Franklin St 100","city":"Oakland","state":"CA","zip_code":"94607","zip_suffix_code":null}}],"visits":[],"annual_visit_year":null,"prelicensing_visit_date":null,"facility_source":"CWS/CMS"},"sort":[1.0,"alva"]},{"_index":"facilities","_type":"facility","_id":"JDXRv0b38A","_score":1.0,"_source":{"href":null,"id":"JDXRv0b38A","capacity_last_changed":null,"type":{"id":"22","value":"Foster
         Family Agency Certified Home"},"adoption_home_only_indicator":false,"name":"Am
-        Indian C R C","licensee_name":"","license_type":null,"assigned_worker":{"phones":[],"email":null,"full_name":"","id":null},"district_office":null,"license_number":null,"status":null,"capacity":0,"license_effective_date":null,"original_application_recieved_date":null,"last_visit_date":null,"last_deferred_visit_date":null,"email_address":null,"full_residential_address":"2930
+        Indian C R C","licensee_name":"","license_type":null,"assigned_worker":{"phones":[],"email":null,"full_name":"","id":null},"district_office":null,"license_number":null,"status":null,"capacity":0,"adjusted_capacity":0,"available_beds":null,"license_effective_date":null,"original_application_recieved_date":null,"last_visit_date":null,"last_deferred_visit_date":null,"email_address":null,"full_residential_address":"2930
         Lashore Avenue Suite #300 Oakland CA 94610","full_mailing_address":null,"last_visit_reason":null,"last_deferred_visit_reason":null,"county":{"id":"01","value":"Alameda","lis_code":null},"phones":[{"relation":"primary","number":"5102081870"}],"addresses":[{"id":null,"type":"Residential","address":{"id":null,"longitude":null,"lattitude":null,"deliverable":null,"street_address":"2930
-        Lashore Avenue Suite #300","city":"Oakland","state":"CA","zip_code":"94610","zip_suffix_code":null}}],"visits":[],"annual_visit_year":null,"prelicensing_visit_date":null,"facility_source":"CWS/CMS"},"sort":[1.0,"am
-        indian c r c"]},{"_index":"facilities","_type":"facility","_id":"1fYCGkT197","_score":1.0,"_source":{"href":null,"id":"1fYCGkT197","capacity_last_changed":null,"type":{"id":"22","value":"Foster
+        Lashore Avenue Suite #300","city":"Oakland","state":"CA","zip_code":"94610","zip_suffix_code":null}}],"visits":[],"annual_visit_year":null,"prelicensing_visit_date":null,"facility_source":"CWS/CMS"},"sort":[1.0,"am"]},{"_index":"facilities","_type":"facility","_id":"1fYCGkT197","_score":1.0,"_source":{"href":null,"id":"1fYCGkT197","capacity_last_changed":null,"type":{"id":"22","value":"Foster
         Family Agency Certified Home"},"adoption_home_only_indicator":false,"name":"Amer
-        Indian Child Ctr","licensee_name":"","license_type":null,"assigned_worker":{"phones":[],"email":null,"full_name":"","id":null},"district_office":null,"license_number":null,"status":null,"capacity":0,"license_effective_date":null,"original_application_recieved_date":null,"last_visit_date":null,"last_deferred_visit_date":null,"email_address":null,"full_residential_address":"600
+        Indian Child Ctr","licensee_name":"","license_type":null,"assigned_worker":{"phones":[],"email":null,"full_name":"","id":null},"district_office":null,"license_number":null,"status":null,"capacity":0,"adjusted_capacity":0,"available_beds":null,"license_effective_date":null,"original_application_recieved_date":null,"last_visit_date":null,"last_deferred_visit_date":null,"email_address":null,"full_residential_address":"600
         Grand Ave 308 Oakland CA 94612","full_mailing_address":null,"last_visit_reason":null,"last_deferred_visit_reason":null,"county":{"id":"01","value":"Alameda","lis_code":null},"phones":[{"relation":"primary","number":"5102081870"}],"addresses":[{"id":null,"type":"Residential","address":{"id":null,"longitude":null,"lattitude":null,"deliverable":null,"street_address":"600
-        Grand Ave 308","city":"Oakland","state":"CA","zip_code":"94612","zip_suffix_code":null}}],"visits":[],"annual_visit_year":null,"prelicensing_visit_date":null,"facility_source":"CWS/CMS"},"sort":[1.0,"amer
-        indian child ctr"]},{"_index":"facilities","_type":"facility","_id":"ODmRLhRAWW","_score":1.0,"_source":{"href":null,"id":"ODmRLhRAWW","capacity_last_changed":null,"type":{"id":"22","value":"Foster
-        Family Agency Certified Home"},"adoption_home_only_indicator":false,"name":"Amorello","licensee_name":"","license_type":null,"assigned_worker":{"phones":[],"email":null,"full_name":"","id":null},"district_office":null,"license_number":null,"status":null,"capacity":2,"license_effective_date":null,"original_application_recieved_date":null,"last_visit_date":null,"last_deferred_visit_date":null,"email_address":null,"full_residential_address":"160
+        Grand Ave 308","city":"Oakland","state":"CA","zip_code":"94612","zip_suffix_code":null}}],"visits":[],"annual_visit_year":null,"prelicensing_visit_date":null,"facility_source":"CWS/CMS"},"sort":[1.0,"amer"]},{"_index":"facilities","_type":"facility","_id":"ODmRLhRAWW","_score":1.0,"_source":{"href":null,"id":"ODmRLhRAWW","capacity_last_changed":null,"type":{"id":"22","value":"Foster
+        Family Agency Certified Home"},"adoption_home_only_indicator":false,"name":"Amorello","licensee_name":"","license_type":null,"assigned_worker":{"phones":[],"email":null,"full_name":"","id":null},"district_office":null,"license_number":null,"status":null,"capacity":2,"adjusted_capacity":2,"available_beds":null,"license_effective_date":null,"original_application_recieved_date":null,"last_visit_date":null,"last_deferred_visit_date":null,"email_address":null,"full_residential_address":"160
         Franklin St 100 Oakland CA 94607","full_mailing_address":null,"last_visit_reason":null,"last_deferred_visit_reason":null,"county":{"id":"01","value":"Alameda","lis_code":null},"phones":[],"addresses":[{"id":null,"type":"Residential","address":{"id":null,"longitude":null,"lattitude":null,"deliverable":null,"street_address":"160
-        Franklin St 100","city":"Oakland","state":"CA","zip_code":"94607","zip_suffix_code":null}}],"visits":[],"annual_visit_year":null,"prelicensing_visit_date":null,"facility_source":"CWS/CMS"},"sort":[1.0,"amorello"]},{"_index":"facilities","_type":"facility","_id":"100000010","_score":1.0,"_source":{"href":null,"id":"100000010","capacity_last_changed":null,"type":{"id":"5","value":"Small
-        Family Home"},"adoption_home_only_indicator":null,"name":"Arms of Love Home","licensee_name":"Ananya
+        Franklin St 100","city":"Oakland","state":"CA","zip_code":"94607","zip_suffix_code":null}}],"visits":[],"annual_visit_year":null,"prelicensing_visit_date":null,"facility_source":"CWS/CMS"},"sort":[1.0,"amorello"]},{"_index":"facilities","_type":"facility","_id":"RavKYF72gV","_score":1.0,"_source":{"href":null,"id":"RavKYF72gV","capacity_last_changed":null,"type":{"id":"22","value":"Foster
+        Family Agency Certified Home"},"adoption_home_only_indicator":false,"name":"Sheryl
+        and Willie Lincoln","licensee_name":"","license_type":null,"assigned_worker":{"phones":[],"email":null,"full_name":"","id":null},"district_office":null,"license_number":null,"status":null,"capacity":0,"adjusted_capacity":0,"available_beds":null,"license_effective_date":null,"original_application_recieved_date":null,"last_visit_date":null,"last_deferred_visit_date":null,"email_address":null,"full_residential_address":"5720
+        East Ave. #104 Livermore CA 94550","full_mailing_address":null,"last_visit_reason":null,"last_deferred_visit_reason":null,"county":{"id":"01","value":"Alameda","lis_code":null},"phones":[{"relation":"primary","number":"9256060830"}],"addresses":[{"id":null,"type":"Residential","address":{"id":null,"longitude":null,"lattitude":null,"deliverable":null,"street_address":"5720
+        East Ave. #104","city":"Livermore","state":"CA","zip_code":"94550","zip_suffix_code":null}}],"visits":[],"annual_visit_year":null,"prelicensing_visit_date":null,"facility_source":"CWS/CMS"},"sort":[1.0,"and"]},{"_index":"facilities","_type":"facility","_id":"MhxOAsM50A","_score":1.0,"_source":{"href":null,"id":"MhxOAsM50A","capacity_last_changed":null,"type":{"id":"22","value":"Foster
+        Family Agency Certified Home"},"adoption_home_only_indicator":false,"name":"Julia
+        Skelly and Kim Duir","licensee_name":"","license_type":null,"assigned_worker":{"phones":[],"email":null,"full_name":"","id":null},"district_office":null,"license_number":null,"status":null,"capacity":0,"adjusted_capacity":0,"available_beds":null,"license_effective_date":null,"original_application_recieved_date":null,"last_visit_date":null,"last_deferred_visit_date":null,"email_address":null,"full_residential_address":"1818
+        Acton Street Berkeley CA 94702","full_mailing_address":null,"last_visit_reason":null,"last_deferred_visit_reason":null,"county":{"id":"01","value":"Alameda","lis_code":null},"phones":[{"relation":"primary","number":"5108439147"}],"addresses":[{"id":null,"type":"Residential","address":{"id":null,"longitude":null,"lattitude":null,"deliverable":null,"street_address":"1818
+        Acton Street","city":"Berkeley","state":"CA","zip_code":"94702","zip_suffix_code":null}}],"visits":[],"annual_visit_year":null,"prelicensing_visit_date":null,"facility_source":"CWS/CMS"},"sort":[1.0,"and"]},{"_index":"facilities","_type":"facility","_id":"4KbSfv04Ce","_score":1.0,"_source":{"href":null,"id":"4KbSfv04Ce","capacity_last_changed":null,"type":{"id":"22","value":"Foster
+        Family Agency Certified Home"},"adoption_home_only_indicator":false,"name":"Ross,  Annette","licensee_name":"","license_type":null,"assigned_worker":{"phones":[],"email":null,"full_name":"","id":null},"district_office":null,"license_number":null,"status":null,"capacity":0,"adjusted_capacity":0,"available_beds":null,"license_effective_date":null,"original_application_recieved_date":null,"last_visit_date":null,"last_deferred_visit_date":null,"email_address":null,"full_residential_address":"2624
+        67th Ave Oakland CA 94605","full_mailing_address":null,"last_visit_reason":null,"last_deferred_visit_reason":null,"county":{"id":"01","value":"Alameda","lis_code":null},"phones":[],"addresses":[{"id":null,"type":"Residential","address":{"id":null,"longitude":null,"lattitude":null,"deliverable":null,"street_address":"2624
+        67th Ave","city":"Oakland","state":"CA","zip_code":"94605","zip_suffix_code":null}}],"visits":[],"annual_visit_year":null,"prelicensing_visit_date":null,"facility_source":"CWS/CMS"},"sort":[1.0,"annette"]},{"_index":"facilities","_type":"facility","_id":"NOmY1Zq50A","_score":1.0,"_source":{"href":null,"id":"NOmY1Zq50A","capacity_last_changed":null,"type":{"id":"22","value":"Foster
+        Family Agency Certified Home"},"adoption_home_only_indicator":false,"name":"Kenard,
+        Arie","licensee_name":"","license_type":null,"assigned_worker":{"phones":[],"email":null,"full_name":"","id":null},"district_office":null,"license_number":null,"status":null,"capacity":0,"adjusted_capacity":0,"available_beds":null,"license_effective_date":null,"original_application_recieved_date":null,"last_visit_date":null,"last_deferred_visit_date":null,"email_address":null,"full_residential_address":"5653
+        Martin Luther King Jr. Way Oakland CA 94609","full_mailing_address":null,"last_visit_reason":null,"last_deferred_visit_reason":null,"county":{"id":"01","value":"Alameda","lis_code":null},"phones":[{"relation":"primary","number":"5105478547"}],"addresses":[{"id":null,"type":"Residential","address":{"id":null,"longitude":null,"lattitude":null,"deliverable":null,"street_address":"5653
+        Martin Luther King Jr. Way","city":"Oakland","state":"CA","zip_code":"94609","zip_suffix_code":null}}],"visits":[],"annual_visit_year":null,"prelicensing_visit_date":null,"facility_source":"CWS/CMS"},"sort":[1.0,"arie"]},{"_index":"facilities","_type":"facility","_id":"100000010","_score":1.0,"_source":{"href":null,"id":"100000010","capacity_last_changed":null,"type":{"id":"7","value":"Crisis
+        Nursery"},"adoption_home_only_indicator":null,"name":"Arms of Love Home","licensee_name":"Ananya
         Nandi","license_type":"A","assigned_worker":{"phones":[],"email":null,"full_name":null,"id":null},"district_office":{"number":"14","name":"SF
         COASTAL AC/SC"},"license_number":"100000010","status":{"active":false,"id":"7","value":"Application
-        Withdrawn"},"capacity":1,"license_effective_date":null,"original_application_recieved_date":null,"last_visit_date":null,"last_deferred_visit_date":null,"email_address":null,"full_residential_address":"123
+        Withdrawn"},"capacity":1,"adjusted_capacity":null,"available_beds":null,"license_effective_date":null,"original_application_recieved_date":null,"last_visit_date":null,"last_deferred_visit_date":null,"email_address":null,"full_residential_address":"123
         Main St. ALAMEDA CA 94501","full_mailing_address":"1011 TAYLOR AVE #D ALAMEDA
-        CA 94501","last_visit_reason":null,"last_deferred_visit_reason":null,"county":{"id":"1","value":"ALAMEDA","lis_code":null},"phones":[{"relation":"primary","type":"Cell","number":"(916)
-        010-"}],"addresses":[{"id":null,"type":"Residential","address":{"id":null,"longitude":null,"lattitude":null,"deliverable":null,"street_address":"123
+        CA 94501","last_visit_reason":null,"last_deferred_visit_reason":null,"county":{"id":"1","value":"ALAMEDA","lis_code":null},"phones":[{"relation":"primary","type":"Cell","number":"9160061110"}],"addresses":[{"id":null,"type":"Residential","address":{"id":null,"longitude":null,"lattitude":null,"deliverable":null,"street_address":"123
         Main St.","city":"ALAMEDA","state":"CA","zip_code":"94501","zip_suffix_code":null}},{"id":null,"type":"Mailing","address":{"id":null,"longitude":null,"lattitude":null,"deliverable":null,"street_address":"1011
-        TAYLOR AVE #D","city":"ALAMEDA","state":"CA","zip_code":"94501","zip_suffix_code":null}}],"visits":[],"annual_visit_year":null,"prelicensing_visit_date":null,"facility_source":"LIS"},"sort":[1.0,"arms
-        of love home"]},{"_index":"facilities","_type":"facility","_id":"6JYzAaf43S","_score":1.0,"_source":{"href":null,"id":"6JYzAaf43S","capacity_last_changed":null,"type":{"id":"22","value":"Foster
+        TAYLOR AVE #D","city":"ALAMEDA","state":"CA","zip_code":"94501","zip_suffix_code":null}}],"visits":[],"annual_visit_year":null,"prelicensing_visit_date":null,"facility_source":"LIS"},"sort":[1.0,"arms"]},{"_index":"facilities","_type":"facility","_id":"6JYzAaf43S","_score":1.0,"_source":{"href":null,"id":"6JYzAaf43S","capacity_last_changed":null,"type":{"id":"22","value":"Foster
         Family Agency Certified Home"},"adoption_home_only_indicator":false,"name":"Aspira
-        Ffa/santilli,marlen","licensee_name":"","license_type":null,"assigned_worker":{"phones":[],"email":null,"full_name":"","id":null},"district_office":null,"license_number":null,"status":null,"capacity":0,"license_effective_date":null,"original_application_recieved_date":null,"last_visit_date":null,"last_deferred_visit_date":null,"email_address":null,"full_residential_address":"224
+        Ffa/santilli,marlen","licensee_name":"","license_type":null,"assigned_worker":{"phones":[],"email":null,"full_name":"","id":null},"district_office":null,"license_number":null,"status":null,"capacity":0,"adjusted_capacity":0,"available_beds":null,"license_effective_date":null,"original_application_recieved_date":null,"last_visit_date":null,"last_deferred_visit_date":null,"email_address":null,"full_residential_address":"224
         Owl Ct Fremont CA 94539","full_mailing_address":null,"last_visit_reason":null,"last_deferred_visit_reason":null,"county":{"id":"01","value":"Alameda","lis_code":null},"phones":[{"relation":"primary","number":"4087700312"}],"addresses":[{"id":null,"type":"Residential","address":{"id":null,"longitude":null,"lattitude":null,"deliverable":null,"street_address":"224
-        Owl Ct","city":"Fremont","state":"CA","zip_code":"94539","zip_suffix_code":null}}],"visits":[],"annual_visit_year":null,"prelicensing_visit_date":null,"facility_source":"CWS/CMS"},"sort":[1.0,"aspira
-        ffa/santilli,marlen"]},{"_index":"facilities","_type":"facility","_id":"6h0bTWrAWW","_score":1.0,"_source":{"href":null,"id":"6h0bTWrAWW","capacity_last_changed":null,"type":{"id":"22","value":"Foster
-        Family Agency Certified Home"},"adoption_home_only_indicator":false,"name":"Augustin","licensee_name":"","license_type":null,"assigned_worker":{"phones":[],"email":null,"full_name":"","id":null},"district_office":null,"license_number":null,"status":null,"capacity":2,"license_effective_date":null,"original_application_recieved_date":null,"last_visit_date":null,"last_deferred_visit_date":null,"email_address":null,"full_residential_address":"160
+        Owl Ct","city":"Fremont","state":"CA","zip_code":"94539","zip_suffix_code":null}}],"visits":[],"annual_visit_year":null,"prelicensing_visit_date":null,"facility_source":"CWS/CMS"},"sort":[1.0,"aspira"]},{"_index":"facilities","_type":"facility","_id":"6h0bTWrAWW","_score":1.0,"_source":{"href":null,"id":"6h0bTWrAWW","capacity_last_changed":null,"type":{"id":"22","value":"Foster
+        Family Agency Certified Home"},"adoption_home_only_indicator":false,"name":"Augustin","licensee_name":"","license_type":null,"assigned_worker":{"phones":[],"email":null,"full_name":"","id":null},"district_office":null,"license_number":null,"status":null,"capacity":2,"adjusted_capacity":2,"available_beds":null,"license_effective_date":null,"original_application_recieved_date":null,"last_visit_date":null,"last_deferred_visit_date":null,"email_address":null,"full_residential_address":"160
         Franklin St 100 Oakland CA 94607","full_mailing_address":null,"last_visit_reason":null,"last_deferred_visit_reason":null,"county":{"id":"01","value":"Alameda","lis_code":null},"phones":[],"addresses":[{"id":null,"type":"Residential","address":{"id":null,"longitude":null,"lattitude":null,"deliverable":null,"street_address":"160
-        Franklin St 100","city":"Oakland","state":"CA","zip_code":"94607","zip_suffix_code":null}}],"visits":[],"annual_visit_year":null,"prelicensing_visit_date":null,"facility_source":"CWS/CMS"},"sort":[1.0,"augustin"]},{"_index":"facilities","_type":"facility","_id":"100000011","_score":1.0,"_source":{"href":null,"id":"100000011","capacity_last_changed":null,"type":{"id":"5","value":"Small
-        Family Home"},"adoption_home_only_indicator":null,"name":"Aurora Home","licensee_name":"Palani
+        Franklin St 100","city":"Oakland","state":"CA","zip_code":"94607","zip_suffix_code":null}}],"visits":[],"annual_visit_year":null,"prelicensing_visit_date":null,"facility_source":"CWS/CMS"},"sort":[1.0,"augustin"]},{"_index":"facilities","_type":"facility","_id":"100000011","_score":1.0,"_source":{"href":null,"id":"100000011","capacity_last_changed":null,"type":{"id":"7","value":"Crisis
+        Nursery"},"adoption_home_only_indicator":null,"name":"Aurora Home","licensee_name":"Palani
         K","license_type":"A","assigned_worker":{"phones":[],"email":null,"full_name":null,"id":null},"district_office":{"number":"14","name":"SF
         COASTAL AC/SC"},"license_number":"100000011","status":{"active":false,"id":"7","value":"Application
-        Withdrawn"},"capacity":6,"license_effective_date":null,"original_application_recieved_date":null,"last_visit_date":null,"last_deferred_visit_date":null,"email_address":null,"full_residential_address":"876
+        Withdrawn"},"capacity":6,"adjusted_capacity":null,"available_beds":null,"license_effective_date":null,"original_application_recieved_date":null,"last_visit_date":null,"last_deferred_visit_date":null,"email_address":null,"full_residential_address":"876
         Pine St. OAKLAND CA 94608","full_mailing_address":"2815 WEST STREET OAKLAND
-        CA 94608","last_visit_reason":null,"last_deferred_visit_reason":null,"county":{"id":"1","value":"ALAMEDA","lis_code":null},"phones":[{"relation":"primary","type":"Cell","number":"(916)
-        011-"}],"addresses":[{"id":null,"type":"Residential","address":{"id":null,"longitude":null,"lattitude":null,"deliverable":null,"street_address":"876
+        CA 94608","last_visit_reason":null,"last_deferred_visit_reason":null,"county":{"id":"1","value":"ALAMEDA","lis_code":null},"phones":[{"relation":"primary","type":"Cell","number":"9160061110"}],"addresses":[{"id":null,"type":"Residential","address":{"id":null,"longitude":null,"lattitude":null,"deliverable":null,"street_address":"876
         Pine St.","city":"OAKLAND","state":"CA","zip_code":"94608","zip_suffix_code":null}},{"id":null,"type":"Mailing","address":{"id":null,"longitude":null,"lattitude":null,"deliverable":null,"street_address":"2815
-        WEST STREET","city":"OAKLAND","state":"CA","zip_code":"94608","zip_suffix_code":null}}],"visits":[],"annual_visit_year":null,"prelicensing_visit_date":null,"facility_source":"LIS"},"sort":[1.0,"aurora
-        home"]},{"_index":"facilities","_type":"facility","_id":"HagjQCPAWW","_score":1.0,"_source":{"href":null,"id":"HagjQCPAWW","capacity_last_changed":null,"type":{"id":"22","value":"Foster
-        Family Agency Certified Home"},"adoption_home_only_indicator":false,"name":"Avant","licensee_name":"","license_type":null,"assigned_worker":{"phones":[],"email":null,"full_name":"","id":null},"district_office":null,"license_number":null,"status":null,"capacity":2,"license_effective_date":null,"original_application_recieved_date":null,"last_visit_date":null,"last_deferred_visit_date":null,"email_address":null,"full_residential_address":"160
+        WEST STREET","city":"OAKLAND","state":"CA","zip_code":"94608","zip_suffix_code":null}}],"visits":[],"annual_visit_year":null,"prelicensing_visit_date":null,"facility_source":"LIS"},"sort":[1.0,"aurora"]},{"_index":"facilities","_type":"facility","_id":"HagjQCPAWW","_score":1.0,"_source":{"href":null,"id":"HagjQCPAWW","capacity_last_changed":null,"type":{"id":"22","value":"Foster
+        Family Agency Certified Home"},"adoption_home_only_indicator":false,"name":"Avant","licensee_name":"","license_type":null,"assigned_worker":{"phones":[],"email":null,"full_name":"","id":null},"district_office":null,"license_number":null,"status":null,"capacity":2,"adjusted_capacity":2,"available_beds":null,"license_effective_date":null,"original_application_recieved_date":null,"last_visit_date":null,"last_deferred_visit_date":null,"email_address":null,"full_residential_address":"160
         Franklin St 100 Oakland CA 94607","full_mailing_address":null,"last_visit_reason":null,"last_deferred_visit_reason":null,"county":{"id":"01","value":"Alameda","lis_code":null},"phones":[],"addresses":[{"id":null,"type":"Residential","address":{"id":null,"longitude":null,"lattitude":null,"deliverable":null,"street_address":"160
         Franklin St 100","city":"Oakland","state":"CA","zip_code":"94607","zip_suffix_code":null}}],"visits":[],"annual_visit_year":null,"prelicensing_visit_date":null,"facility_source":"CWS/CMS"},"sort":[1.0,"avant"]},{"_index":"facilities","_type":"facility","_id":"SUMrMrxAWW","_score":1.0,"_source":{"href":null,"id":"SUMrMrxAWW","capacity_last_changed":null,"type":{"id":"22","value":"Foster
-        Family Agency Certified Home"},"adoption_home_only_indicator":false,"name":"Bampbell-alexander","licensee_name":"","license_type":null,"assigned_worker":{"phones":[],"email":null,"full_name":"","id":null},"district_office":null,"license_number":null,"status":null,"capacity":2,"license_effective_date":null,"original_application_recieved_date":null,"last_visit_date":null,"last_deferred_visit_date":null,"email_address":null,"full_residential_address":"160
+        Family Agency Certified Home"},"adoption_home_only_indicator":false,"name":"Bampbell-alexander","licensee_name":"","license_type":null,"assigned_worker":{"phones":[],"email":null,"full_name":"","id":null},"district_office":null,"license_number":null,"status":null,"capacity":2,"adjusted_capacity":2,"available_beds":null,"license_effective_date":null,"original_application_recieved_date":null,"last_visit_date":null,"last_deferred_visit_date":null,"email_address":null,"full_residential_address":"160
         Franklin St 100 Oakland CA 94607","full_mailing_address":null,"last_visit_reason":null,"last_deferred_visit_reason":null,"county":{"id":"01","value":"Alameda","lis_code":null},"phones":[],"addresses":[{"id":null,"type":"Residential","address":{"id":null,"longitude":null,"lattitude":null,"deliverable":null,"street_address":"160
-        Franklin St 100","city":"Oakland","state":"CA","zip_code":"94607","zip_suffix_code":null}}],"visits":[],"annual_visit_year":null,"prelicensing_visit_date":null,"facility_source":"CWS/CMS"},"sort":[1.0,"bampbell-alexander"]},{"_index":"facilities","_type":"facility","_id":"QXngaRdAWW","_score":1.0,"_source":{"href":null,"id":"QXngaRdAWW","capacity_last_changed":null,"type":{"id":"22","value":"Foster
-        Family Agency Certified Home"},"adoption_home_only_indicator":false,"name":"Berg,
-        Andy & Janet","licensee_name":"","license_type":null,"assigned_worker":{"phones":[],"email":null,"full_name":"","id":null},"district_office":null,"license_number":null,"status":null,"capacity":3,"license_effective_date":null,"original_application_recieved_date":null,"last_visit_date":null,"last_deferred_visit_date":null,"email_address":null,"full_residential_address":"2825
-        Coleman Place Fremont CA 94555","full_mailing_address":null,"last_visit_reason":null,"last_deferred_visit_reason":null,"county":{"id":"01","value":"Alameda","lis_code":null},"phones":[{"relation":"primary","number":"5107947613"}],"addresses":[{"id":null,"type":"Residential","address":{"id":null,"longitude":null,"lattitude":null,"deliverable":null,"street_address":"2825
-        Coleman Place","city":"Fremont","state":"CA","zip_code":"94555","zip_suffix_code":null}}],"visits":[],"annual_visit_year":null,"prelicensing_visit_date":null,"facility_source":"CWS/CMS"},"sort":[1.0,"berg,
-        andy & janet"]},{"_index":"facilities","_type":"facility","_id":"Drm2csb43S","_score":1.0,"_source":{"href":null,"id":"Drm2csb43S","capacity_last_changed":null,"type":{"id":"22","value":"Foster
-        Family Agency Certified Home"},"adoption_home_only_indicator":false,"name":"Berg,
-        Andy & Janet","licensee_name":"","license_type":null,"assigned_worker":{"phones":[],"email":null,"full_name":"","id":null},"district_office":null,"license_number":null,"status":null,"capacity":0,"license_effective_date":null,"original_application_recieved_date":null,"last_visit_date":null,"last_deferred_visit_date":null,"email_address":null,"full_residential_address":"2825
-        Coleman Place Fremont CA 94555","full_mailing_address":null,"last_visit_reason":null,"last_deferred_visit_reason":null,"county":{"id":"01","value":"Alameda","lis_code":null},"phones":[{"relation":"primary","number":"5107947613"}],"addresses":[{"id":null,"type":"Residential","address":{"id":null,"longitude":null,"lattitude":null,"deliverable":null,"street_address":"2825
-        Coleman Place","city":"Fremont","state":"CA","zip_code":"94555","zip_suffix_code":null}}],"visits":[],"annual_visit_year":null,"prelicensing_visit_date":null,"facility_source":"CWS/CMS"},"sort":[1.0,"berg,
-        andy & janet"]},{"_index":"facilities","_type":"facility","_id":"69pxpzN4AA","_score":1.0,"_source":{"href":null,"id":"69pxpzN4AA","capacity_last_changed":null,"type":{"id":"22","value":"Foster
+        Franklin St 100","city":"Oakland","state":"CA","zip_code":"94607","zip_suffix_code":null}}],"visits":[],"annual_visit_year":null,"prelicensing_visit_date":null,"facility_source":"CWS/CMS"},"sort":[1.0,"bampbell-alexander"]},{"_index":"facilities","_type":"facility","_id":"69pxpzN4AA","_score":1.0,"_source":{"href":null,"id":"69pxpzN4AA","capacity_last_changed":null,"type":{"id":"22","value":"Foster
         Family Agency Certified Home"},"adoption_home_only_indicator":false,"name":"Berry,
-        Barbara","licensee_name":"","license_type":null,"assigned_worker":{"phones":[],"email":null,"full_name":"","id":null},"district_office":null,"license_number":null,"status":null,"capacity":0,"license_effective_date":null,"original_application_recieved_date":null,"last_visit_date":null,"last_deferred_visit_date":null,"email_address":null,"full_residential_address":"32383
+        Barbara","licensee_name":"","license_type":null,"assigned_worker":{"phones":[],"email":null,"full_name":"","id":null},"district_office":null,"license_number":null,"status":null,"capacity":0,"adjusted_capacity":0,"available_beds":null,"license_effective_date":null,"original_application_recieved_date":null,"last_visit_date":null,"last_deferred_visit_date":null,"email_address":null,"full_residential_address":"32383
         Sheffield Lane Union City CA 94587","full_mailing_address":null,"last_visit_reason":null,"last_deferred_visit_reason":null,"county":{"id":"01","value":"Alameda","lis_code":null},"phones":[],"addresses":[{"id":null,"type":"Residential","address":{"id":null,"longitude":null,"lattitude":null,"deliverable":null,"street_address":"32383
-        Sheffield Lane","city":"Union City","state":"CA","zip_code":"94587","zip_suffix_code":null}}],"visits":[],"annual_visit_year":null,"prelicensing_visit_date":null,"facility_source":"CWS/CMS"},"sort":[1.0,"berry,
-        barbara"]},{"_index":"facilities","_type":"facility","_id":"GiTum8XAWW","_score":1.0,"_source":{"href":null,"id":"GiTum8XAWW","capacity_last_changed":null,"type":{"id":"22","value":"Foster
-        Family Agency Certified Home"},"adoption_home_only_indicator":false,"name":"Black","licensee_name":"","license_type":null,"assigned_worker":{"phones":[],"email":null,"full_name":"","id":null},"district_office":null,"license_number":null,"status":null,"capacity":4,"license_effective_date":null,"original_application_recieved_date":null,"last_visit_date":null,"last_deferred_visit_date":null,"email_address":null,"full_residential_address":"160
+        Sheffield Lane","city":"Union City","state":"CA","zip_code":"94587","zip_suffix_code":null}}],"visits":[],"annual_visit_year":null,"prelicensing_visit_date":null,"facility_source":"CWS/CMS"},"sort":[1.0,"barbara"]},{"_index":"facilities","_type":"facility","_id":"GiTum8XAWW","_score":1.0,"_source":{"href":null,"id":"GiTum8XAWW","capacity_last_changed":null,"type":{"id":"22","value":"Foster
+        Family Agency Certified Home"},"adoption_home_only_indicator":false,"name":"Black","licensee_name":"","license_type":null,"assigned_worker":{"phones":[],"email":null,"full_name":"","id":null},"district_office":null,"license_number":null,"status":null,"capacity":4,"adjusted_capacity":4,"available_beds":null,"license_effective_date":null,"original_application_recieved_date":null,"last_visit_date":null,"last_deferred_visit_date":null,"email_address":null,"full_residential_address":"160
         Franklin St 100 Oakland CA 94607","full_mailing_address":null,"last_visit_reason":null,"last_deferred_visit_reason":null,"county":{"id":"01","value":"Alameda","lis_code":null},"phones":[],"addresses":[{"id":null,"type":"Residential","address":{"id":null,"longitude":null,"lattitude":null,"deliverable":null,"street_address":"160
         Franklin St 100","city":"Oakland","state":"CA","zip_code":"94607","zip_suffix_code":null}}],"visits":[],"annual_visit_year":null,"prelicensing_visit_date":null,"facility_source":"CWS/CMS"},"sort":[1.0,"black"]},{"_index":"facilities","_type":"facility","_id":"GtfJK894BR","_score":1.0,"_source":{"href":null,"id":"GtfJK894BR","capacity_last_changed":null,"type":{"id":"22","value":"Foster
         Family Agency Certified Home"},"adoption_home_only_indicator":false,"name":"Black,
-        Veronica","licensee_name":"","license_type":null,"assigned_worker":{"phones":[],"email":null,"full_name":"","id":null},"district_office":null,"license_number":null,"status":null,"capacity":0,"license_effective_date":null,"original_application_recieved_date":null,"last_visit_date":null,"last_deferred_visit_date":null,"email_address":null,"full_residential_address":"1910
+        Veronica","licensee_name":"","license_type":null,"assigned_worker":{"phones":[],"email":null,"full_name":"","id":null},"district_office":null,"license_number":null,"status":null,"capacity":0,"adjusted_capacity":0,"available_beds":null,"license_effective_date":null,"original_application_recieved_date":null,"last_visit_date":null,"last_deferred_visit_date":null,"email_address":null,"full_residential_address":"1910
         40th Ave Oakland CA 94601","full_mailing_address":null,"last_visit_reason":null,"last_deferred_visit_reason":null,"county":{"id":"01","value":"Alameda","lis_code":null},"phones":[],"addresses":[{"id":null,"type":"Residential","address":{"id":null,"longitude":null,"lattitude":null,"deliverable":null,"street_address":"1910
-        40th Ave","city":"Oakland","state":"CA","zip_code":"94601","zip_suffix_code":null}}],"visits":[],"annual_visit_year":null,"prelicensing_visit_date":null,"facility_source":"CWS/CMS"},"sort":[1.0,"black,
-        veronica"]},{"_index":"facilities","_type":"facility","_id":"OadQv1VAWW","_score":1.0,"_source":{"href":null,"id":"OadQv1VAWW","capacity_last_changed":null,"type":{"id":"22","value":"Foster
-        Family Agency Certified Home"},"adoption_home_only_indicator":false,"name":"Blackmond","licensee_name":"","license_type":null,"assigned_worker":{"phones":[],"email":null,"full_name":"","id":null},"district_office":null,"license_number":null,"status":null,"capacity":3,"license_effective_date":null,"original_application_recieved_date":null,"last_visit_date":null,"last_deferred_visit_date":null,"email_address":null,"full_residential_address":"160
+        40th Ave","city":"Oakland","state":"CA","zip_code":"94601","zip_suffix_code":null}}],"visits":[],"annual_visit_year":null,"prelicensing_visit_date":null,"facility_source":"CWS/CMS"},"sort":[1.0,"black,"]},{"_index":"facilities","_type":"facility","_id":"OadQv1VAWW","_score":1.0,"_source":{"href":null,"id":"OadQv1VAWW","capacity_last_changed":null,"type":{"id":"22","value":"Foster
+        Family Agency Certified Home"},"adoption_home_only_indicator":false,"name":"Blackmond","licensee_name":"","license_type":null,"assigned_worker":{"phones":[],"email":null,"full_name":"","id":null},"district_office":null,"license_number":null,"status":null,"capacity":3,"adjusted_capacity":3,"available_beds":null,"license_effective_date":null,"original_application_recieved_date":null,"last_visit_date":null,"last_deferred_visit_date":null,"email_address":null,"full_residential_address":"160
         Franklin St 100 Oakland CA 94607","full_mailing_address":null,"last_visit_reason":null,"last_deferred_visit_reason":null,"county":{"id":"01","value":"Alameda","lis_code":null},"phones":[],"addresses":[{"id":null,"type":"Residential","address":{"id":null,"longitude":null,"lattitude":null,"deliverable":null,"street_address":"160
-        Franklin St 100","city":"Oakland","state":"CA","zip_code":"94607","zip_suffix_code":null}}],"visits":[],"annual_visit_year":null,"prelicensing_visit_date":null,"facility_source":"CWS/CMS"},"sort":[1.0,"blackmond"]},{"_index":"facilities","_type":"facility","_id":"5TzNcP301S","_score":1.0,"_source":{"href":null,"id":"5TzNcP301S","capacity_last_changed":null,"type":{"id":"22","value":"Foster
-        Family Agency Certified Home"},"adoption_home_only_indicator":false,"name":"Blount,
-        Rejetta & Daniel","licensee_name":"","license_type":null,"assigned_worker":{"phones":[],"email":null,"full_name":"","id":null},"district_office":null,"license_number":null,"status":null,"capacity":0,"license_effective_date":null,"original_application_recieved_date":null,"last_visit_date":null,"last_deferred_visit_date":null,"email_address":null,"full_residential_address":"2103
-        B Santa Rosa Alameda CA 94501","full_mailing_address":null,"last_visit_reason":null,"last_deferred_visit_reason":null,"county":{"id":"01","value":"Alameda","lis_code":null},"phones":[],"addresses":[{"id":null,"type":"Residential","address":{"id":null,"longitude":null,"lattitude":null,"deliverable":null,"street_address":"2103
-        B Santa Rosa","city":"Alameda","state":"CA","zip_code":"94501","zip_suffix_code":null}}],"visits":[],"annual_visit_year":null,"prelicensing_visit_date":null,"facility_source":"CWS/CMS"},"sort":[1.0,"blount,
-        rejetta & daniel"]},{"_index":"facilities","_type":"facility","_id":"100004414","_score":1.0,"_source":{"href":null,"id":"100004414","capacity_last_changed":null,"type":{"id":"5","value":"Small
+        Franklin St 100","city":"Oakland","state":"CA","zip_code":"94607","zip_suffix_code":null}}],"visits":[],"annual_visit_year":null,"prelicensing_visit_date":null,"facility_source":"CWS/CMS"},"sort":[1.0,"blackmond"]},{"_index":"facilities","_type":"facility","_id":"100004414","_score":1.0,"_source":{"href":null,"id":"100004414","capacity_last_changed":null,"type":{"id":"6","value":"Foster
         Family Home"},"adoption_home_only_indicator":null,"name":"Bluebird Home","licensee_name":"Ravi
         Chintamaneni","license_type":"D","assigned_worker":{"phones":[],"email":null,"full_name":null,"id":null},"district_office":{"number":"14","name":"SF
-        COASTAL AC/SC"},"license_number":"100004414","status":{"active":true,"id":"3","value":"Licensed"},"capacity":50,"license_effective_date":null,"original_application_recieved_date":null,"last_visit_date":null,"last_deferred_visit_date":null,"email_address":null,"full_residential_address":"8645
+        COASTAL AC/SC"},"license_number":"100004414","status":{"active":true,"id":"3","value":"Licensed"},"capacity":50,"adjusted_capacity":null,"available_beds":null,"license_effective_date":null,"original_application_recieved_date":null,"last_visit_date":null,"last_deferred_visit_date":null,"email_address":null,"full_residential_address":"8645
         3rd St. OAKLAND CA 94609","full_mailing_address":"390 - 40TH STREET OAKLAND
-        CA 94609   0","last_visit_reason":null,"last_deferred_visit_reason":null,"county":{"id":"1","value":"ALAMEDA","lis_code":null},"phones":[{"relation":"primary","type":"Cell","number":"(916)
-        414-"}],"addresses":[{"id":null,"type":"Residential","address":{"id":null,"longitude":null,"lattitude":null,"deliverable":null,"street_address":"8645
+        CA 94609   0","last_visit_reason":null,"last_deferred_visit_reason":null,"county":{"id":"1","value":"ALAMEDA","lis_code":null},"phones":[{"relation":"primary","type":"Cell","number":"9160061109"}],"addresses":[{"id":null,"type":"Residential","address":{"id":null,"longitude":null,"lattitude":null,"deliverable":null,"street_address":"8645
         3rd St.","city":"OAKLAND","state":"CA","zip_code":"94609","zip_suffix_code":null}},{"id":null,"type":"Mailing","address":{"id":null,"longitude":null,"lattitude":null,"deliverable":null,"street_address":"390
-        - 40TH STREET","city":"OAKLAND","state":"CA","zip_code":"94609   0","zip_suffix_code":null}}],"visits":[],"annual_visit_year":null,"prelicensing_visit_date":null,"facility_source":"LIS"},"sort":[1.0,"bluebird
-        home"]},{"_index":"facilities","_type":"facility","_id":"100004415","_score":1.0,"_source":{"href":null,"id":"100004415","capacity_last_changed":null,"type":{"id":"5","value":"Small
+        - 40TH STREET","city":"OAKLAND","state":"CA","zip_code":"94609   0","zip_suffix_code":null}}],"visits":[],"annual_visit_year":null,"prelicensing_visit_date":null,"facility_source":"LIS"},"sort":[1.0,"bluebird"]},{"_index":"facilities","_type":"facility","_id":"100004415","_score":1.0,"_source":{"href":null,"id":"100004415","capacity_last_changed":null,"type":{"id":"6","value":"Foster
         Family Home"},"adoption_home_only_indicator":null,"name":"Boy''s Town Home","licensee_name":"Mullah
         Mahaboob","license_type":"C","assigned_worker":{"phones":[],"email":null,"full_name":null,"id":null},"district_office":{"number":"14","name":"SF
-        COASTAL AC/SC"},"license_number":"100004415","status":{"active":true,"id":"3","value":"Licensed"},"capacity":6,"license_effective_date":null,"original_application_recieved_date":null,"last_visit_date":null,"last_deferred_visit_date":null,"email_address":null,"full_residential_address":"343
+        COASTAL AC/SC"},"license_number":"100004415","status":{"active":true,"id":"3","value":"Licensed"},"capacity":6,"adjusted_capacity":null,"available_beds":null,"license_effective_date":null,"original_application_recieved_date":null,"last_visit_date":null,"last_deferred_visit_date":null,"email_address":null,"full_residential_address":"343
         Right Way HAYWARD CA 94545","full_mailing_address":"24543 MARIE DRIVE HAYWARD
-        CA 94542","last_visit_reason":null,"last_deferred_visit_reason":null,"county":{"id":"1","value":"ALAMEDA","lis_code":null},"phones":[{"relation":"primary","type":"Cell","number":"(916)
-        415-"}],"addresses":[{"id":null,"type":"Residential","address":{"id":null,"longitude":null,"lattitude":null,"deliverable":null,"street_address":"343
+        CA 94542","last_visit_reason":null,"last_deferred_visit_reason":null,"county":{"id":"1","value":"ALAMEDA","lis_code":null},"phones":[{"relation":"primary","type":"Cell","number":"9160061110"}],"addresses":[{"id":null,"type":"Residential","address":{"id":null,"longitude":null,"lattitude":null,"deliverable":null,"street_address":"343
         Right Way","city":"HAYWARD","state":"CA","zip_code":"94545","zip_suffix_code":null}},{"id":null,"type":"Mailing","address":{"id":null,"longitude":null,"lattitude":null,"deliverable":null,"street_address":"24543
-        MARIE DRIVE","city":"HAYWARD","state":"CA","zip_code":"94542","zip_suffix_code":null}}],"visits":[],"annual_visit_year":null,"prelicensing_visit_date":null,"facility_source":"LIS"},"sort":[1.0,"boy''s
-        town home"]},{"_index":"facilities","_type":"facility","_id":"3QpfHVpAWW","_score":1.0,"_source":{"href":null,"id":"3QpfHVpAWW","capacity_last_changed":null,"type":{"id":"22","value":"Foster
-        Family Agency Certified Home"},"adoption_home_only_indicator":false,"name":"Bradley","licensee_name":"","license_type":null,"assigned_worker":{"phones":[],"email":null,"full_name":"","id":null},"district_office":null,"license_number":null,"status":null,"capacity":2,"license_effective_date":null,"original_application_recieved_date":null,"last_visit_date":null,"last_deferred_visit_date":null,"email_address":null,"full_residential_address":"160
+        MARIE DRIVE","city":"HAYWARD","state":"CA","zip_code":"94542","zip_suffix_code":null}}],"visits":[],"annual_visit_year":null,"prelicensing_visit_date":null,"facility_source":"LIS"},"sort":[1.0,"boy''s"]},{"_index":"facilities","_type":"facility","_id":"3QpfHVpAWW","_score":1.0,"_source":{"href":null,"id":"3QpfHVpAWW","capacity_last_changed":null,"type":{"id":"22","value":"Foster
+        Family Agency Certified Home"},"adoption_home_only_indicator":false,"name":"Bradley","licensee_name":"","license_type":null,"assigned_worker":{"phones":[],"email":null,"full_name":"","id":null},"district_office":null,"license_number":null,"status":null,"capacity":2,"adjusted_capacity":2,"available_beds":null,"license_effective_date":null,"original_application_recieved_date":null,"last_visit_date":null,"last_deferred_visit_date":null,"email_address":null,"full_residential_address":"160
         Franklin St 100 Oakland CA 94607","full_mailing_address":null,"last_visit_reason":null,"last_deferred_visit_reason":null,"county":{"id":"01","value":"Alameda","lis_code":null},"phones":[],"addresses":[{"id":null,"type":"Residential","address":{"id":null,"longitude":null,"lattitude":null,"deliverable":null,"street_address":"160
         Franklin St 100","city":"Oakland","state":"CA","zip_code":"94607","zip_suffix_code":null}}],"visits":[],"annual_visit_year":null,"prelicensing_visit_date":null,"facility_source":"CWS/CMS"},"sort":[1.0,"bradley"]},{"_index":"facilities","_type":"facility","_id":"A2rKBkXAWW","_score":1.0,"_source":{"href":null,"id":"A2rKBkXAWW","capacity_last_changed":null,"type":{"id":"22","value":"Foster
         Family Agency Certified Home"},"adoption_home_only_indicator":false,"name":"Broder,
-        Karen","licensee_name":"","license_type":null,"assigned_worker":{"phones":[],"email":null,"full_name":"","id":null},"district_office":null,"license_number":null,"status":null,"capacity":1,"license_effective_date":null,"original_application_recieved_date":null,"last_visit_date":null,"last_deferred_visit_date":null,"email_address":null,"full_residential_address":"3811
+        Karen","licensee_name":"","license_type":null,"assigned_worker":{"phones":[],"email":null,"full_name":"","id":null},"district_office":null,"license_number":null,"status":null,"capacity":1,"adjusted_capacity":1,"available_beds":null,"license_effective_date":null,"original_application_recieved_date":null,"last_visit_date":null,"last_deferred_visit_date":null,"email_address":null,"full_residential_address":"3811
         Ruby St Oakland CA 94609","full_mailing_address":null,"last_visit_reason":null,"last_deferred_visit_reason":null,"county":{"id":"01","value":"Alameda","lis_code":null},"phones":[],"addresses":[{"id":null,"type":"Residential","address":{"id":null,"longitude":null,"lattitude":null,"deliverable":null,"street_address":"3811
-        Ruby St","city":"Oakland","state":"CA","zip_code":"94609","zip_suffix_code":null}}],"visits":[],"annual_visit_year":null,"prelicensing_visit_date":null,"facility_source":"CWS/CMS"},"sort":[1.0,"broder,
-        karen"]},{"_index":"facilities","_type":"facility","_id":"TPJnFtBAWW","_score":1.0,"_source":{"href":null,"id":"TPJnFtBAWW","capacity_last_changed":null,"type":{"id":"22","value":"Foster
-        Family Agency Certified Home"},"adoption_home_only_indicator":false,"name":"Brown,
-        Dorothy","licensee_name":"","license_type":null,"assigned_worker":{"phones":[],"email":null,"full_name":"","id":null},"district_office":null,"license_number":null,"status":null,"capacity":1,"license_effective_date":null,"original_application_recieved_date":null,"last_visit_date":null,"last_deferred_visit_date":null,"email_address":null,"full_residential_address":"3257
-        Martin Luther King Jr Way Oakland CA 94609","full_mailing_address":null,"last_visit_reason":null,"last_deferred_visit_reason":null,"county":{"id":"01","value":"Alameda","lis_code":null},"phones":[],"addresses":[{"id":null,"type":"Residential","address":{"id":null,"longitude":null,"lattitude":null,"deliverable":null,"street_address":"3257
-        Martin Luther King Jr Way","city":"Oakland","state":"CA","zip_code":"94609","zip_suffix_code":null}}],"visits":[],"annual_visit_year":null,"prelicensing_visit_date":null,"facility_source":"CWS/CMS"},"sort":[1.0,"brown,
-        dorothy"]},{"_index":"facilities","_type":"facility","_id":"B0EWRcXAWW","_score":1.0,"_source":{"href":null,"id":"B0EWRcXAWW","capacity_last_changed":null,"type":{"id":"22","value":"Foster
-        Family Agency Certified Home"},"adoption_home_only_indicator":false,"name":"Brown,
-        Ruby","licensee_name":"","license_type":null,"assigned_worker":{"phones":[],"email":null,"full_name":"","id":null},"district_office":null,"license_number":null,"status":null,"capacity":3,"license_effective_date":null,"original_application_recieved_date":null,"last_visit_date":null,"last_deferred_visit_date":null,"email_address":null,"full_residential_address":"160
-        Franklin St 100 Oakland CA 94607","full_mailing_address":null,"last_visit_reason":null,"last_deferred_visit_reason":null,"county":{"id":"01","value":"Alameda","lis_code":null},"phones":[],"addresses":[{"id":null,"type":"Residential","address":{"id":null,"longitude":null,"lattitude":null,"deliverable":null,"street_address":"160
-        Franklin St 100","city":"Oakland","state":"CA","zip_code":"94607","zip_suffix_code":null}}],"visits":[],"annual_visit_year":null,"prelicensing_visit_date":null,"facility_source":"CWS/CMS"},"sort":[1.0,"brown,
-        ruby"]},{"_index":"facilities","_type":"facility","_id":"SZ02urR4BR","_score":1.0,"_source":{"href":null,"id":"SZ02urR4BR","capacity_last_changed":null,"type":{"id":"22","value":"Foster
-        Family Agency Certified Home"},"adoption_home_only_indicator":false,"name":"Brown,
-        Rubye","licensee_name":"","license_type":null,"assigned_worker":{"phones":[],"email":null,"full_name":"","id":null},"district_office":null,"license_number":null,"status":null,"capacity":0,"license_effective_date":null,"original_application_recieved_date":null,"last_visit_date":null,"last_deferred_visit_date":null,"email_address":null,"full_residential_address":"2420
-        11th Ave #55 Oakalnd CA 94606","full_mailing_address":null,"last_visit_reason":null,"last_deferred_visit_reason":null,"county":{"id":"01","value":"Alameda","lis_code":null},"phones":[],"addresses":[{"id":null,"type":"Residential","address":{"id":null,"longitude":null,"lattitude":null,"deliverable":null,"street_address":"2420
-        11th Ave #55","city":"Oakalnd","state":"CA","zip_code":"94606","zip_suffix_code":null}}],"visits":[],"annual_visit_year":null,"prelicensing_visit_date":null,"facility_source":"CWS/CMS"},"sort":[1.0,"brown,
-        rubye"]},{"_index":"facilities","_type":"facility","_id":"H3s4hpxAWW","_score":1.0,"_source":{"href":null,"id":"H3s4hpxAWW","capacity_last_changed":null,"type":{"id":"22","value":"Foster
-        Family Agency Certified Home"},"adoption_home_only_indicator":false,"name":"Bruce","licensee_name":"","license_type":null,"assigned_worker":{"phones":[],"email":null,"full_name":"","id":null},"district_office":null,"license_number":null,"status":null,"capacity":5,"license_effective_date":null,"original_application_recieved_date":null,"last_visit_date":null,"last_deferred_visit_date":null,"email_address":null,"full_residential_address":"160
-        Franklin St 100 Oakland CA 94607","full_mailing_address":null,"last_visit_reason":null,"last_deferred_visit_reason":null,"county":{"id":"01","value":"Alameda","lis_code":null},"phones":[],"addresses":[{"id":null,"type":"Residential","address":{"id":null,"longitude":null,"lattitude":null,"deliverable":null,"street_address":"160
-        Franklin St 100","city":"Oakland","state":"CA","zip_code":"94607","zip_suffix_code":null}}],"visits":[],"annual_visit_year":null,"prelicensing_visit_date":null,"facility_source":"CWS/CMS"},"sort":[1.0,"bruce"]},{"_index":"facilities","_type":"facility","_id":"LmBzgqQ4AA","_score":1.0,"_source":{"href":null,"id":"LmBzgqQ4AA","capacity_last_changed":null,"type":{"id":"22","value":"Foster
-        Family Agency Certified Home"},"adoption_home_only_indicator":false,"name":"Bruce,
-        Juanita","licensee_name":"","license_type":null,"assigned_worker":{"phones":[],"email":null,"full_name":"","id":null},"district_office":null,"license_number":null,"status":null,"capacity":0,"license_effective_date":null,"original_application_recieved_date":null,"last_visit_date":null,"last_deferred_visit_date":null,"email_address":null,"full_residential_address":"598
-        Crestmont Dr Oakland CA","full_mailing_address":null,"last_visit_reason":null,"last_deferred_visit_reason":null,"county":{"id":"01","value":"Alameda","lis_code":null},"phones":[],"addresses":[{"id":null,"type":"Residential","address":{"id":null,"longitude":null,"lattitude":null,"deliverable":null,"street_address":"598
-        Crestmont Dr","city":"Oakland","state":"CA","zip_code":null,"zip_suffix_code":null}}],"visits":[],"annual_visit_year":null,"prelicensing_visit_date":null,"facility_source":"CWS/CMS"},"sort":[1.0,"bruce,
-        juanita"]},{"_index":"facilities","_type":"facility","_id":"IhatkSx0GV","_score":1.0,"_source":{"href":null,"id":"IhatkSx0GV","capacity_last_changed":null,"type":{"id":"6","value":"Foster
-        Family Home"},"adoption_home_only_indicator":false,"name":"Build11/9","licensee_name":"","license_type":null,"assigned_worker":{"phones":[],"email":null,"full_name":"","id":null},"district_office":null,"license_number":null,"status":{"active":true,"id":"2","value":"Pending"},"capacity":6,"license_effective_date":null,"original_application_recieved_date":null,"last_visit_date":null,"last_deferred_visit_date":null,"email_address":null,"full_residential_address":"123
-        Build11/9 Build11/9 CA 87465","full_mailing_address":null,"last_visit_reason":null,"last_deferred_visit_reason":null,"county":{"id":"01","value":"Alameda","lis_code":null},"phones":[],"addresses":[{"id":null,"type":"Residential","address":{"id":null,"longitude":null,"lattitude":null,"deliverable":null,"street_address":"123
-        Build11/9","city":"Build11/9","state":"CA","zip_code":"87465","zip_suffix_code":null}}],"visits":[],"annual_visit_year":null,"prelicensing_visit_date":null,"facility_source":"CWS/CMS"},"sort":[1.0,"build11/9"]},{"_index":"facilities","_type":"facility","_id":"N7Vcy3NAWW","_score":1.0,"_source":{"href":null,"id":"N7Vcy3NAWW","capacity_last_changed":null,"type":{"id":"22","value":"Foster
-        Family Agency Certified Home"},"adoption_home_only_indicator":false,"name":"Burgess","licensee_name":"","license_type":null,"assigned_worker":{"phones":[],"email":null,"full_name":"","id":null},"district_office":null,"license_number":null,"status":null,"capacity":1,"license_effective_date":null,"original_application_recieved_date":null,"last_visit_date":null,"last_deferred_visit_date":null,"email_address":null,"full_residential_address":"160
-        Franklin St 100 Oakland CA 94607","full_mailing_address":null,"last_visit_reason":null,"last_deferred_visit_reason":null,"county":{"id":"01","value":"Alameda","lis_code":null},"phones":[],"addresses":[{"id":null,"type":"Residential","address":{"id":null,"longitude":null,"lattitude":null,"deliverable":null,"street_address":"160
-        Franklin St 100","city":"Oakland","state":"CA","zip_code":"94607","zip_suffix_code":null}}],"visits":[],"annual_visit_year":null,"prelicensing_visit_date":null,"facility_source":"CWS/CMS"},"sort":[1.0,"burgess"]},{"_index":"facilities","_type":"facility","_id":"E4alZnl4AA","_score":1.0,"_source":{"href":null,"id":"E4alZnl4AA","capacity_last_changed":null,"type":{"id":"22","value":"Foster
-        Family Agency Certified Home"},"adoption_home_only_indicator":false,"name":"Burgess,
-        Darrion","licensee_name":"","license_type":null,"assigned_worker":{"phones":[],"email":null,"full_name":"","id":null},"district_office":null,"license_number":null,"status":null,"capacity":0,"license_effective_date":null,"original_application_recieved_date":null,"last_visit_date":null,"last_deferred_visit_date":null,"email_address":null,"full_residential_address":"25800
-        Industrial Blvd Hayward CA","full_mailing_address":null,"last_visit_reason":null,"last_deferred_visit_reason":null,"county":{"id":"01","value":"Alameda","lis_code":null},"phones":[],"addresses":[{"id":null,"type":"Residential","address":{"id":null,"longitude":null,"lattitude":null,"deliverable":null,"street_address":"25800
-        Industrial Blvd","city":"Hayward","state":"CA","zip_code":null,"zip_suffix_code":null}}],"visits":[],"annual_visit_year":null,"prelicensing_visit_date":null,"facility_source":"CWS/CMS"},"sort":[1.0,"burgess,
-        darrion"]},{"_index":"facilities","_type":"facility","_id":"0RwYQePAWW","_score":1.0,"_source":{"href":null,"id":"0RwYQePAWW","capacity_last_changed":null,"type":{"id":"22","value":"Foster
-        Family Agency Certified Home"},"adoption_home_only_indicator":false,"name":"Carlin","licensee_name":"","license_type":null,"assigned_worker":{"phones":[],"email":null,"full_name":"","id":null},"district_office":null,"license_number":null,"status":null,"capacity":3,"license_effective_date":null,"original_application_recieved_date":null,"last_visit_date":null,"last_deferred_visit_date":null,"email_address":null,"full_residential_address":"160
-        Franklin St 100 Oakland CA 94607","full_mailing_address":null,"last_visit_reason":null,"last_deferred_visit_reason":null,"county":{"id":"01","value":"Alameda","lis_code":null},"phones":[],"addresses":[{"id":null,"type":"Residential","address":{"id":null,"longitude":null,"lattitude":null,"deliverable":null,"street_address":"160
-        Franklin St 100","city":"Oakland","state":"CA","zip_code":"94607","zip_suffix_code":null}}],"visits":[],"annual_visit_year":null,"prelicensing_visit_date":null,"facility_source":"CWS/CMS"},"sort":[1.0,"carlin"]},{"_index":"facilities","_type":"facility","_id":"T8IGdiz4BR","_score":1.0,"_source":{"href":null,"id":"T8IGdiz4BR","capacity_last_changed":null,"type":{"id":"22","value":"Foster
-        Family Agency Certified Home"},"adoption_home_only_indicator":false,"name":"Carter,
-        Mrs","licensee_name":"","license_type":null,"assigned_worker":{"phones":[],"email":null,"full_name":"","id":null},"district_office":null,"license_number":null,"status":null,"capacity":0,"license_effective_date":null,"original_application_recieved_date":null,"last_visit_date":null,"last_deferred_visit_date":null,"email_address":null,"full_residential_address":"668
-        Main Av #3 Hayward CA 94544","full_mailing_address":null,"last_visit_reason":null,"last_deferred_visit_reason":null,"county":{"id":"01","value":"Alameda","lis_code":null},"phones":[],"addresses":[{"id":null,"type":"Residential","address":{"id":null,"longitude":null,"lattitude":null,"deliverable":null,"street_address":"668
-        Main Av #3","city":"Hayward","state":"CA","zip_code":"94544","zip_suffix_code":null}}],"visits":[],"annual_visit_year":null,"prelicensing_visit_date":null,"facility_source":"CWS/CMS"},"sort":[1.0,"carter,
-        mrs"]},{"_index":"facilities","_type":"facility","_id":"C41I9gHAWW","_score":1.0,"_source":{"href":null,"id":"C41I9gHAWW","capacity_last_changed":null,"type":{"id":"22","value":"Foster
-        Family Agency Certified Home"},"adoption_home_only_indicator":false,"name":"Celler,
-        Orrin & Tina","licensee_name":"","license_type":null,"assigned_worker":{"phones":[],"email":null,"full_name":"","id":null},"district_office":null,"license_number":null,"status":null,"capacity":1,"license_effective_date":null,"original_application_recieved_date":null,"last_visit_date":null,"last_deferred_visit_date":null,"email_address":null,"full_residential_address":"45113
-        Pawnee Drive Fremont CA 94539","full_mailing_address":null,"last_visit_reason":null,"last_deferred_visit_reason":null,"county":{"id":"01","value":"Alameda","lis_code":null},"phones":[{"relation":"primary","number":"5104904530"}],"addresses":[{"id":null,"type":"Residential","address":{"id":null,"longitude":null,"lattitude":null,"deliverable":null,"street_address":"45113
-        Pawnee Drive","city":"Fremont","state":"CA","zip_code":"94539","zip_suffix_code":null}}],"visits":[],"annual_visit_year":null,"prelicensing_visit_date":null,"facility_source":"CWS/CMS"},"sort":[1.0,"celler,
-        orrin & tina"]},{"_index":"facilities","_type":"facility","_id":"81LPal7AWW","_score":1.0,"_source":{"href":null,"id":"81LPal7AWW","capacity_last_changed":null,"type":{"id":"22","value":"Foster
-        Family Agency Certified Home"},"adoption_home_only_indicator":false,"name":"Chase-jackson","licensee_name":"","license_type":null,"assigned_worker":{"phones":[],"email":null,"full_name":"","id":null},"district_office":null,"license_number":null,"status":null,"capacity":1,"license_effective_date":null,"original_application_recieved_date":null,"last_visit_date":null,"last_deferred_visit_date":null,"email_address":null,"full_residential_address":"160  Franklin
-        St 100 Oakland CA 94607","full_mailing_address":null,"last_visit_reason":null,"last_deferred_visit_reason":null,"county":{"id":"01","value":"Alameda","lis_code":null},"phones":[],"addresses":[{"id":null,"type":"Residential","address":{"id":null,"longitude":null,"lattitude":null,"deliverable":null,"street_address":"160  Franklin
-        St 100","city":"Oakland","state":"CA","zip_code":"94607","zip_suffix_code":null}}],"visits":[],"annual_visit_year":null,"prelicensing_visit_date":null,"facility_source":"CWS/CMS"},"sort":[1.0,"chase-jackson"]},{"_index":"facilities","_type":"facility","_id":"T4Crse138A","_score":1.0,"_source":{"href":null,"id":"T4Crse138A","capacity_last_changed":null,"type":{"id":"22","value":"Foster
-        Family Agency Certified Home"},"adoption_home_only_indicator":false,"name":"Cheryl
-        Cervantez","licensee_name":"","license_type":null,"assigned_worker":{"phones":[],"email":null,"full_name":"","id":null},"district_office":null,"license_number":null,"status":null,"capacity":0,"license_effective_date":null,"original_application_recieved_date":null,"last_visit_date":null,"last_deferred_visit_date":null,"email_address":null,"full_residential_address":"1689
-        Via Toyon San Lorenzo CA","full_mailing_address":null,"last_visit_reason":null,"last_deferred_visit_reason":null,"county":{"id":"01","value":"Alameda","lis_code":null},"phones":[{"relation":"primary","number":"5102764062"}],"addresses":[{"id":null,"type":"Residential","address":{"id":null,"longitude":null,"lattitude":null,"deliverable":null,"street_address":"1689
-        Via Toyon","city":"San Lorenzo","state":"CA","zip_code":null,"zip_suffix_code":null}}],"visits":[],"annual_visit_year":null,"prelicensing_visit_date":null,"facility_source":"CWS/CMS"},"sort":[1.0,"cheryl
-        cervantez"]},{"_index":"facilities","_type":"facility","_id":"100000023","_score":1.0,"_source":{"href":null,"id":"100000023","capacity_last_changed":null,"type":{"id":"5","value":"Small
-        Family Home"},"adoption_home_only_indicator":null,"name":"Children''s Garden
-        Home","licensee_name":"Dane Corbett","license_type":"C","assigned_worker":{"phones":[],"email":null,"full_name":null,"id":null},"district_office":{"number":"26","name":"CENTRAL
-        COAST CR/RES"},"license_number":"100000023","status":{"active":false,"id":"15","value":"Closed,
-        Change of Location"},"capacity":24,"license_effective_date":null,"original_application_recieved_date":null,"last_visit_date":null,"last_deferred_visit_date":null,"email_address":null,"full_residential_address":"987
-        1st Ave. OAKLAND CA 94621","full_mailing_address":"401 ROLAND WAY #225 OAKLAND
-        CA 94621","last_visit_reason":null,"last_deferred_visit_reason":null,"county":{"id":"1","value":"ALAMEDA","lis_code":null},"phones":[{"relation":"primary","type":"Cell","number":"(916)
-        023-"}],"addresses":[{"id":null,"type":"Residential","address":{"id":null,"longitude":null,"lattitude":null,"deliverable":null,"street_address":"987
-        1st Ave.","city":"OAKLAND","state":"CA","zip_code":"94621","zip_suffix_code":null}},{"id":null,"type":"Mailing","address":{"id":null,"longitude":null,"lattitude":null,"deliverable":null,"street_address":"401
-        ROLAND WAY #225","city":"OAKLAND","state":"CA","zip_code":"94621","zip_suffix_code":null}}],"visits":[],"annual_visit_year":null,"prelicensing_visit_date":null,"facility_source":"LIS"},"sort":[1.0,"children''s
-        garden home"]},{"_index":"facilities","_type":"facility","_id":"HPGEdXNAWW","_score":1.0,"_source":{"href":null,"id":"HPGEdXNAWW","capacity_last_changed":null,"type":{"id":"22","value":"Foster
-        Family Agency Certified Home"},"adoption_home_only_indicator":false,"name":"Christophe","licensee_name":"","license_type":null,"assigned_worker":{"phones":[],"email":null,"full_name":"","id":null},"district_office":null,"license_number":null,"status":null,"capacity":3,"license_effective_date":null,"original_application_recieved_date":null,"last_visit_date":null,"last_deferred_visit_date":null,"email_address":null,"full_residential_address":"160  Franklin
-        St 100 Oakland CA 94607","full_mailing_address":null,"last_visit_reason":null,"last_deferred_visit_reason":null,"county":{"id":"01","value":"Alameda","lis_code":null},"phones":[],"addresses":[{"id":null,"type":"Residential","address":{"id":null,"longitude":null,"lattitude":null,"deliverable":null,"street_address":"160  Franklin
-        St 100","city":"Oakland","state":"CA","zip_code":"94607","zip_suffix_code":null}}],"visits":[],"annual_visit_year":null,"prelicensing_visit_date":null,"facility_source":"CWS/CMS"},"sort":[1.0,"christophe"]},{"_index":"facilities","_type":"facility","_id":"2oYSd17AWW","_score":1.0,"_source":{"href":null,"id":"2oYSd17AWW","capacity_last_changed":null,"type":{"id":"22","value":"Foster
-        Family Agency Certified Home"},"adoption_home_only_indicator":false,"name":"Cole,
-        Sharah","licensee_name":"","license_type":null,"assigned_worker":{"phones":[],"email":null,"full_name":"","id":null},"district_office":null,"license_number":null,"status":null,"capacity":6,"license_effective_date":null,"original_application_recieved_date":null,"last_visit_date":null,"last_deferred_visit_date":null,"email_address":null,"full_residential_address":"38715
-        Quince Pl Newark CA 94560","full_mailing_address":null,"last_visit_reason":null,"last_deferred_visit_reason":null,"county":{"id":"01","value":"Alameda","lis_code":null},"phones":[],"addresses":[{"id":null,"type":"Residential","address":{"id":null,"longitude":null,"lattitude":null,"deliverable":null,"street_address":"38715
-        Quince Pl","city":"Newark","state":"CA","zip_code":"94560","zip_suffix_code":null}}],"visits":[],"annual_visit_year":null,"prelicensing_visit_date":null,"facility_source":"CWS/CMS"},"sort":[1.0,"cole,
-        sharah"]},{"_index":"facilities","_type":"facility","_id":"Etta2tS0Mb","_score":1.0,"_source":{"href":null,"id":"Etta2tS0Mb","capacity_last_changed":null,"type":{"id":"6","value":"Foster
-        Family Home"},"adoption_home_only_indicator":false,"name":"Confidential FFH","licensee_name":"","license_type":null,"assigned_worker":{"phones":[{"relation":"primary","number":"1234564568"}],"email":null,"full_name":"John
-        Williams","id":null},"district_office":{"number":"01","name":"Alameda"},"license_number":"19660607","status":{"active":true,"id":"3","value":"Licensed"},"capacity":0,"license_effective_date":{"year":2000,"month":"JANUARY","era":"CE","dayOfMonth":1,"dayOfWeek":"SATURDAY","dayOfYear":1,"leapYear":true,"monthValue":1,"chronology":{"calendarType":"iso8601","id":"ISO"}},"original_application_recieved_date":{"year":1999,"month":"DECEMBER","era":"CE","dayOfMonth":1,"dayOfWeek":"WEDNESDAY","dayOfYear":335,"leapYear":false,"monthValue":12,"chronology":{"calendarType":"iso8601","id":"ISO"}},"last_visit_date":null,"last_deferred_visit_date":null,"email_address":null,"full_residential_address":"6536
-        Odessa Drive Alameda CA 90039","full_mailing_address":null,"last_visit_reason":null,"last_deferred_visit_reason":null,"county":{"id":"01","value":"Alameda","lis_code":null},"phones":[],"addresses":[{"id":null,"type":"Residential","address":{"id":null,"longitude":null,"lattitude":null,"deliverable":null,"street_address":"6536
-        Odessa Drive","city":"Alameda","state":"CA","zip_code":"90039","zip_suffix_code":null}}],"visits":[],"annual_visit_year":null,"prelicensing_visit_date":null,"facility_source":"CWS/CMS"},"sort":[1.0,"confidential
-        ffh"]},{"_index":"facilities","_type":"facility","_id":"Oyf5ne5AWW","_score":1.0,"_source":{"href":null,"id":"Oyf5ne5AWW","capacity_last_changed":null,"type":{"id":"22","value":"Foster
-        Family Agency Certified Home"},"adoption_home_only_indicator":false,"name":"Corbin","licensee_name":"","license_type":null,"assigned_worker":{"phones":[],"email":null,"full_name":"","id":null},"district_office":null,"license_number":null,"status":null,"capacity":4,"license_effective_date":null,"original_application_recieved_date":null,"last_visit_date":null,"last_deferred_visit_date":null,"email_address":null,"full_residential_address":"160
-        Franklin St 100 Oakland CA 94607","full_mailing_address":null,"last_visit_reason":null,"last_deferred_visit_reason":null,"county":{"id":"01","value":"Alameda","lis_code":null},"phones":[],"addresses":[{"id":null,"type":"Residential","address":{"id":null,"longitude":null,"lattitude":null,"deliverable":null,"street_address":"160
-        Franklin St 100","city":"Oakland","state":"CA","zip_code":"94607","zip_suffix_code":null}}],"visits":[],"annual_visit_year":null,"prelicensing_visit_date":null,"facility_source":"CWS/CMS"},"sort":[1.0,"corbin"]},{"_index":"facilities","_type":"facility","_id":"5BYaYjJ01S","_score":1.0,"_source":{"href":null,"id":"5BYaYjJ01S","capacity_last_changed":null,"type":{"id":"22","value":"Foster
-        Family Agency Certified Home"},"adoption_home_only_indicator":false,"name":"Corbin,
-        Carolyn","licensee_name":"","license_type":null,"assigned_worker":{"phones":[],"email":null,"full_name":"","id":null},"district_office":null,"license_number":null,"status":null,"capacity":0,"license_effective_date":null,"original_application_recieved_date":null,"last_visit_date":null,"last_deferred_visit_date":null,"email_address":null,"full_residential_address":"850
-        37th St Oakland CA 94608","full_mailing_address":null,"last_visit_reason":null,"last_deferred_visit_reason":null,"county":{"id":"01","value":"Alameda","lis_code":null},"phones":[{"relation":"primary","number":"6506530795"}],"addresses":[{"id":null,"type":"Residential","address":{"id":null,"longitude":null,"lattitude":null,"deliverable":null,"street_address":"850
-        37th St","city":"Oakland","state":"CA","zip_code":"94608","zip_suffix_code":null}}],"visits":[],"annual_visit_year":null,"prelicensing_visit_date":null,"facility_source":"CWS/CMS"},"sort":[1.0,"corbin,
-        carolyn"]},{"_index":"facilities","_type":"facility","_id":"FsljU9p4BR","_score":1.0,"_source":{"href":null,"id":"FsljU9p4BR","capacity_last_changed":null,"type":{"id":"22","value":"Foster
-        Family Agency Certified Home"},"adoption_home_only_indicator":false,"name":"Corbin,
-        Lewis & Carol","licensee_name":"","license_type":null,"assigned_worker":{"phones":[],"email":null,"full_name":"","id":null},"district_office":null,"license_number":null,"status":null,"capacity":0,"license_effective_date":null,"original_application_recieved_date":null,"last_visit_date":null,"last_deferred_visit_date":null,"email_address":null,"full_residential_address":"850
-        37th St Oakland CA 94608","full_mailing_address":null,"last_visit_reason":null,"last_deferred_visit_reason":null,"county":{"id":"01","value":"Alameda","lis_code":null},"phones":[],"addresses":[{"id":null,"type":"Residential","address":{"id":null,"longitude":null,"lattitude":null,"deliverable":null,"street_address":"850
-        37th St","city":"Oakland","state":"CA","zip_code":"94608","zip_suffix_code":null}}],"visits":[],"annual_visit_year":null,"prelicensing_visit_date":null,"facility_source":"CWS/CMS"},"sort":[1.0,"corbin,
-        lewis & carol"]},{"_index":"facilities","_type":"facility","_id":"47bz8ufAWW","_score":1.0,"_source":{"href":null,"id":"47bz8ufAWW","capacity_last_changed":null,"type":{"id":"22","value":"Foster
-        Family Agency Certified Home"},"adoption_home_only_indicator":false,"name":"Cotton","licensee_name":"","license_type":null,"assigned_worker":{"phones":[],"email":null,"full_name":"","id":null},"district_office":null,"license_number":null,"status":null,"capacity":2,"license_effective_date":null,"original_application_recieved_date":null,"last_visit_date":null,"last_deferred_visit_date":null,"email_address":null,"full_residential_address":"160
-        Franklin St 100 Oakland CA 94607","full_mailing_address":null,"last_visit_reason":null,"last_deferred_visit_reason":null,"county":{"id":"01","value":"Alameda","lis_code":null},"phones":[],"addresses":[{"id":null,"type":"Residential","address":{"id":null,"longitude":null,"lattitude":null,"deliverable":null,"street_address":"160
-        Franklin St 100","city":"Oakland","state":"CA","zip_code":"94607","zip_suffix_code":null}}],"visits":[],"annual_visit_year":null,"prelicensing_visit_date":null,"facility_source":"CWS/CMS"},"sort":[1.0,"cotton"]}]}}'
+        Ruby St","city":"Oakland","state":"CA","zip_code":"94609","zip_suffix_code":null}}],"visits":[],"annual_visit_year":null,"prelicensing_visit_date":null,"facility_source":"CWS/CMS"},"sort":[1.0,"broder,"]},{"_index":"facilities","_type":"facility","_id":"AyWXM4P2gV","_score":1.0,"_source":{"href":null,"id":"AyWXM4P2gV","capacity_last_changed":null,"type":{"id":"22","value":"Foster
+        Family Agency Certified Home"},"adoption_home_only_indicator":false,"name":"Geneva
+        Brown","licensee_name":"","license_type":null,"assigned_worker":{"phones":[],"email":null,"full_name":"","id":null},"district_office":null,"license_number":null,"status":null,"capacity":0,"adjusted_capacity":0,"available_beds":null,"license_effective_date":null,"original_application_recieved_date":null,"last_visit_date":null,"last_deferred_visit_date":null,"email_address":null,"full_residential_address":"847
+        Carpino Dr. Pittsburg CA 94505","full_mailing_address":null,"last_visit_reason":null,"last_deferred_visit_reason":null,"county":{"id":"01","value":"Alameda","lis_code":null},"phones":[{"relation":"primary","number":"9254395680"}],"addresses":[{"id":null,"type":"Residential","address":{"id":null,"longitude":null,"lattitude":null,"deliverable":null,"street_address":"847
+        Carpino Dr.","city":"Pittsburg","state":"CA","zip_code":"94505","zip_suffix_code":null}}],"visits":[],"annual_visit_year":null,"prelicensing_visit_date":null,"facility_source":"CWS/CMS"},"sort":[1.0,"brown"]}]}}'
     http_version: 
-  recorded_at: Mon, 30 Jul 2018 00:38:18 GMT
+  recorded_at: Thu, 14 Feb 2019 19:47:15 GMT
 - request:
     method: get
-    uri: https://calsapi.preint.cwds.io/facilities/8MzMYMb4BP/children
+    uri: https://calsapi.preint.cwds.io/facilities/8MzMYMb4BP/complaints
     body:
       encoding: US-ASCII
       string: ''
@@ -786,7 +755,7 @@ http_interactions:
       Content-type:
       - application/json
       Authorization:
-      - dc32d731-ba17-48ed-9080-69af0b519470
+      - 2f8387ba-54db-4b83-933f-b5f7c1ac8a94
   response:
     status:
       code: 200
@@ -797,9 +766,105 @@ http_interactions:
       content-type:
       - application/json
       date:
-      - Mon, 30 Jul 2018 00:38:19 GMT
+      - Thu, 14 Feb 2019 19:47:16 GMT
       set-cookie:
-      - rememberMe=deleteMe; Path=/; Max-Age=0; Expires=Sun, 29-Jul-2018 00:38:19
+      - rememberMe=deleteMe; Path=/; Max-Age=0; Expires=Wed, 13-Feb-2019 19:47:16
+        GMT
+      vary:
+      - Accept-Encoding
+      x-content-type-options:
+      - nosniff
+      x-frame-options:
+      - deny
+      x-xss-protection:
+      - 1; mode=block
+      content-length:
+      - '24'
+      connection:
+      - keep-alive
+    body:
+      encoding: UTF-8
+      string: |-
+        {
+          "complaints" : [ ]
+        }
+    http_version: 
+  recorded_at: Thu, 14 Feb 2019 19:47:16 GMT
+- request:
+    method: get
+    uri: https://calsapi.preint.cwds.io/facilities/8MzMYMb4BP/children
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Content-Type:
+      - application/json
+      Authorization:
+      - 2f8387ba-54db-4b83-933f-b5f7c1ac8a94
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Security-Policy:
+      - default-src 'self' 'unsafe-inline';
+      Content-Type:
+      - application/json
+      Date:
+      - Thu, 14 Feb 2019 19:47:16 GMT
+      Set-Cookie:
+      - rememberMe=deleteMe; Path=/; Max-Age=0; Expires=Wed, 13-Feb-2019 19:47:16
+        GMT
+      Vary:
+      - Accept-Encoding
+      X-Content-Type-Options:
+      - nosniff
+      X-Frame-Options:
+      - deny
+      X-Xss-Protection:
+      - 1; mode=block
+      Content-Length:
+      - '22'
+      Connection:
+      - keep-alive
+    body:
+      encoding: UTF-8
+      string: |-
+        {
+          "children" : [ ]
+        }
+    http_version: 
+  recorded_at: Thu, 14 Feb 2019 19:47:16 GMT
+- request:
+    method: get
+    uri: https://calsapi.preint.cwds.io/facilities/8MzMYMb4BP/children
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Content-type:
+      - application/json
+      Authorization:
+      - 2f8387ba-54db-4b83-933f-b5f7c1ac8a94
+  response:
+    status:
+      code: 200
+      message: 
+    headers:
+      content-security-policy:
+      - default-src 'self' 'unsafe-inline';
+      content-type:
+      - application/json
+      date:
+      - Thu, 14 Feb 2019 19:47:16 GMT
+      set-cookie:
+      - rememberMe=deleteMe; Path=/; Max-Age=0; Expires=Wed, 13-Feb-2019 19:47:16
         GMT
       vary:
       - Accept-Encoding
@@ -820,7 +885,7 @@ http_interactions:
           "children" : [ ]
         }
     http_version: 
-  recorded_at: Mon, 30 Jul 2018 00:38:20 GMT
+  recorded_at: Thu, 14 Feb 2019 19:47:16 GMT
 - request:
     method: get
     uri: https://calsapi.preint.cwds.io/facilities/8MzMYMb4BP
@@ -831,7 +896,7 @@ http_interactions:
       Content-Type:
       - application/json
       Authorization:
-      - dc32d731-ba17-48ed-9080-69af0b519470
+      - 2f8387ba-54db-4b83-933f-b5f7c1ac8a94
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
       Accept:
@@ -848,9 +913,9 @@ http_interactions:
       Content-Type:
       - application/json
       Date:
-      - Mon, 30 Jul 2018 00:38:19 GMT
+      - Thu, 14 Feb 2019 19:47:16 GMT
       Set-Cookie:
-      - rememberMe=deleteMe; Path=/; Max-Age=0; Expires=Sun, 29-Jul-2018 00:38:19
+      - rememberMe=deleteMe; Path=/; Max-Age=0; Expires=Wed, 13-Feb-2019 19:47:16
         GMT
       Vary:
       - Accept-Encoding
@@ -861,7 +926,7 @@ http_interactions:
       X-Xss-Protection:
       - 1; mode=block
       Content-Length:
-      - '367'
+      - '386'
       Connection:
       - keep-alive
     body:
@@ -882,6 +947,8 @@ http_interactions:
             "full_name" : ""
           },
           "capacity" : 0,
+          "adjusted_capacity" : 0,
+          "available_beds" : 0,
           "full_residential_address" : "3219 King St Berkeley CA 94703",
           "county" : {
             "id" : "01",
@@ -901,7 +968,7 @@ http_interactions:
           "facility_source" : "CWS/CMS"
         }
     http_version: 
-  recorded_at: Mon, 30 Jul 2018 00:38:20 GMT
+  recorded_at: Thu, 14 Feb 2019 19:47:16 GMT
 - request:
     method: get
     uri: https://calsapi.preint.cwds.io/facilities/8MzMYMb4BP
@@ -912,7 +979,7 @@ http_interactions:
       Content-type:
       - application/json
       Authorization:
-      - dc32d731-ba17-48ed-9080-69af0b519470
+      - 2f8387ba-54db-4b83-933f-b5f7c1ac8a94
   response:
     status:
       code: 200
@@ -923,9 +990,9 @@ http_interactions:
       content-type:
       - application/json
       date:
-      - Mon, 30 Jul 2018 00:38:19 GMT
+      - Thu, 14 Feb 2019 19:47:16 GMT
       set-cookie:
-      - rememberMe=deleteMe; Path=/; Max-Age=0; Expires=Sun, 29-Jul-2018 00:38:19
+      - rememberMe=deleteMe; Path=/; Max-Age=0; Expires=Wed, 13-Feb-2019 19:47:16
         GMT
       vary:
       - Accept-Encoding
@@ -936,7 +1003,7 @@ http_interactions:
       x-xss-protection:
       - 1; mode=block
       content-length:
-      - '367'
+      - '386'
       connection:
       - keep-alive
     body:
@@ -957,6 +1024,8 @@ http_interactions:
             "full_name" : ""
           },
           "capacity" : 0,
+          "adjusted_capacity" : 0,
+          "available_beds" : 0,
           "full_residential_address" : "3219 King St Berkeley CA 94703",
           "county" : {
             "id" : "01",
@@ -976,5 +1045,5 @@ http_interactions:
           "facility_source" : "CWS/CMS"
         }
     http_version: 
-  recorded_at: Mon, 30 Jul 2018 00:38:20 GMT
-recorded_with: VCR 3.0.3
+  recorded_at: Thu, 14 Feb 2019 19:47:16 GMT
+recorded_with: VCR 4.0.0

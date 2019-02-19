@@ -15,7 +15,6 @@ class FacilitiesController < CalsBaseController
 
   def search
     page_params = pagination_params
-
     query_hash = QueryPreprocessor.params_to_query_with_types(JSON.parse(request.body.read).deep_symbolize_keys)
     logger.info "query_hash: #{query_hash}"
     es_query_json = Elastic::QueryBuilder.facility_search_v1(query_hash, page_params).to_json
@@ -38,8 +37,8 @@ class FacilitiesController < CalsBaseController
 
   def pagination_params
     page_params = {}
-    page_params['size_params'] = params[:size]
-    page_params['from_params'] = params[:from]
+    page_params['size_params'] = params[:size] || 50
+    page_params['from_params'] = params[:from] || 0
     page_params['sort_params'] = params[:sort]
     page_params['order_params'] = params[:order]
     page_params

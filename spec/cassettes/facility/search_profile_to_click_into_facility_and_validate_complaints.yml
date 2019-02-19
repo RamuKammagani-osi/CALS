@@ -10,7 +10,7 @@ http_interactions:
       Content-type:
       - application/json
       Authorization:
-      - 141f684e-c7d1-4e5b-9f65-409f4c26f08b
+      - 2f8387ba-54db-4b83-933f-b5f7c1ac8a94
   response:
     status:
       code: 200
@@ -21,9 +21,9 @@ http_interactions:
       content-type:
       - application/json
       date:
-      - Mon, 23 Jul 2018 23:51:34 GMT
+      - Thu, 14 Feb 2019 19:49:51 GMT
       set-cookie:
-      - rememberMe=deleteMe; Path=/; Max-Age=0; Expires=Sun, 22-Jul-2018 23:51:35
+      - rememberMe=deleteMe; Path=/; Max-Age=0; Expires=Wed, 13-Feb-2019 19:49:51
         GMT
       vary:
       - Accept-Encoding
@@ -221,7 +221,7 @@ http_interactions:
           } ]
         }
     http_version: 
-  recorded_at: Mon, 23 Jul 2018 23:51:35 GMT
+  recorded_at: Thu, 14 Feb 2019 19:49:50 GMT
 - request:
     method: get
     uri: https://calsapi.preint.cwds.io/dictionaries/facility-types
@@ -232,7 +232,7 @@ http_interactions:
       Content-type:
       - application/json
       Authorization:
-      - 141f684e-c7d1-4e5b-9f65-409f4c26f08b
+      - 2f8387ba-54db-4b83-933f-b5f7c1ac8a94
   response:
     status:
       code: 200
@@ -243,9 +243,9 @@ http_interactions:
       content-type:
       - application/json
       date:
-      - Mon, 23 Jul 2018 23:51:35 GMT
+      - Thu, 14 Feb 2019 19:49:51 GMT
       set-cookie:
-      - rememberMe=deleteMe; Path=/; Max-Age=0; Expires=Sun, 22-Jul-2018 23:51:35
+      - rememberMe=deleteMe; Path=/; Max-Age=0; Expires=Wed, 13-Feb-2019 19:49:51
         GMT
       vary:
       - Accept-Encoding
@@ -338,7 +338,7 @@ http_interactions:
           } ]
         }
     http_version: 
-  recorded_at: Mon, 23 Jul 2018 23:51:35 GMT
+  recorded_at: Thu, 14 Feb 2019 19:49:50 GMT
 - request:
     method: get
     uri: https://calsapi.preint.cwds.io/dictionaries/license-status-types
@@ -349,7 +349,7 @@ http_interactions:
       Content-type:
       - application/json
       Authorization:
-      - 141f684e-c7d1-4e5b-9f65-409f4c26f08b
+      - 2f8387ba-54db-4b83-933f-b5f7c1ac8a94
   response:
     status:
       code: 200
@@ -360,9 +360,9 @@ http_interactions:
       content-type:
       - application/json
       date:
-      - Mon, 23 Jul 2018 23:51:35 GMT
+      - Thu, 14 Feb 2019 19:49:51 GMT
       set-cookie:
-      - rememberMe=deleteMe; Path=/; Max-Age=0; Expires=Sun, 22-Jul-2018 23:51:35
+      - rememberMe=deleteMe; Path=/; Max-Age=0; Expires=Wed, 13-Feb-2019 19:49:51
         GMT
       vary:
       - Accept-Encoding
@@ -503,18 +503,18 @@ http_interactions:
           } ]
         }
     http_version: 
-  recorded_at: Mon, 23 Jul 2018 23:51:35 GMT
+  recorded_at: Thu, 14 Feb 2019 19:49:50 GMT
 - request:
     method: post
-    uri: https://dora.preint.cwds.io/dora/facilities/facility/_search
+    uri: https://doraapi.preint.cwds.io/dora/facilities/facility/_search
     body:
       encoding: UTF-8
-      string: '{"query":{"bool":{"should":[{"bool":{"must":[{"term":{"county.id":"33"}},{"match_phrase":{"license_number":"100000299"}}]}}]}},"from":"0","size":"10","sort":["_score",{"name.for_sort":{"order":"asc"}}]}'
+      string: '{"query":{"bool":{"should":[{"bool":{"must":[{"term":{"county.id":"33"}},{"match_phrase":{"license_number":"100000299"}}]}}]}},"from":"0","size":"50","sort":["_score",{"name.for_sort":{"order":"asc"}}]}'
     headers:
       Content-type:
       - application/json
       Authorization:
-      - 141f684e-c7d1-4e5b-9f65-409f4c26f08b
+      - 2f8387ba-54db-4b83-933f-b5f7c1ac8a94
   response:
     status:
       code: 200
@@ -523,27 +523,25 @@ http_interactions:
       content-type:
       - application/json
       date:
-      - Mon, 23 Jul 2018 23:51:40 GMT
+      - Thu, 14 Feb 2019 19:49:52 GMT
       set-cookie:
-      - rememberMe=deleteMe; Path=/; Max-Age=0; Expires=Sun, 22-Jul-2018 23:51:40
+      - rememberMe=deleteMe; Path=/; Max-Age=0; Expires=Wed, 13-Feb-2019 19:49:52
         GMT
       content-length:
-      - '1622'
+      - '1678'
       connection:
       - keep-alive
     body:
       encoding: UTF-8
-      string: '{"took":5,"timed_out":false,"_shards":{"total":1,"successful":1,"failed":0},"hits":{"total":1,"max_score":null,"hits":[{"_index":"facilities","_type":"facility","_id":"100000299","_score":8.524694,"_source":{"href":null,"id":"100000299","capacity_last_changed":null,"type":{"id":"6","value":"Foster
-        Family Home"},"adoption_home_only_indicator":null,"name":"Little Dreams Home","licensee_name":"Ananya
-        Nandi","license_type":"A","assigned_worker":{"phones":[],"email":null,"full_name":null,"id":null},"district_office":{"number":"19","name":"PACIFIC
+      string: '{"took":2,"timed_out":false,"_shards":{"total":1,"successful":1,"failed":0},"hits":{"total":1,"max_score":null,"hits":[{"_index":"facilities","_type":"facility","_id":"100000299","_score":8.653986,"_source":{"href":null,"id":"100000299","capacity_last_changed":null,"type":{"id":"10","value":"Transitional
+        Housing Placement Program"},"adoption_home_only_indicator":null,"name":"Little
+        Dreams Home","licensee_name":"Ananya Nandi","license_type":"A","assigned_worker":{"phones":[],"email":null,"full_name":null,"id":null},"district_office":{"number":"19","name":"PACIFIC
         INLAND CR"},"license_number":"100000299","status":{"active":false,"id":"7","value":"Application
-        Withdrawn"},"capacity":null,"license_effective_date":null,"original_application_recieved_date":null,"last_visit_date":null,"last_deferred_visit_date":null,"email_address":null,"full_residential_address":"123
-        Main St. CA","full_mailing_address":"CA","last_visit_reason":null,"last_deferred_visit_reason":null,"county":{"id":"33","value":"RIVERSIDE","lis_code":null},"phones":[{"relation":"primary","type":"Cell","number":"(916)
-        299-"}],"addresses":[{"id":null,"type":"Residential","address":{"id":null,"longitude":null,"lattitude":null,"deliverable":null,"street_address":"123
-        Main St.","city":null,"state":"CA","zip_code":null,"zip_suffix_code":null}},{"id":null,"type":"Mailing","address":{"id":null,"longitude":null,"lattitude":null,"deliverable":null,"street_address":null,"city":null,"state":"CA","zip_code":null,"zip_suffix_code":null}}],"visits":[],"annual_visit_year":null,"prelicensing_visit_date":null,"facility_source":"LIS"},"sort":[8.524694,"little
-        dreams home"]}]}}'
+        Withdrawn"},"capacity":null,"adjusted_capacity":null,"available_beds":null,"license_effective_date":null,"original_application_recieved_date":null,"last_visit_date":null,"last_deferred_visit_date":null,"email_address":null,"full_residential_address":"123
+        Main St. CA","full_mailing_address":"CA","last_visit_reason":null,"last_deferred_visit_reason":null,"county":{"id":"33","value":"RIVERSIDE","lis_code":null},"phones":[{"relation":"primary","type":"Cell","number":"9160061109"}],"addresses":[{"id":null,"type":"Residential","address":{"id":null,"longitude":null,"lattitude":null,"deliverable":null,"street_address":"123
+        Main St.","city":null,"state":"CA","zip_code":null,"zip_suffix_code":null}},{"id":null,"type":"Mailing","address":{"id":null,"longitude":null,"lattitude":null,"deliverable":null,"street_address":null,"city":null,"state":"CA","zip_code":null,"zip_suffix_code":null}}],"visits":[],"annual_visit_year":null,"prelicensing_visit_date":null,"facility_source":"LIS"},"sort":[8.653986,"dreams"]}]}}'
     http_version: 
-  recorded_at: Mon, 23 Jul 2018 23:51:40 GMT
+  recorded_at: Thu, 14 Feb 2019 19:49:51 GMT
 - request:
     method: get
     uri: https://calsapi.preint.cwds.io/facilities/100000299/children
@@ -554,7 +552,7 @@ http_interactions:
       Content-type:
       - application/json
       Authorization:
-      - 141f684e-c7d1-4e5b-9f65-409f4c26f08b
+      - 2f8387ba-54db-4b83-933f-b5f7c1ac8a94
   response:
     status:
       code: 200
@@ -565,9 +563,9 @@ http_interactions:
       content-type:
       - application/json
       date:
-      - Mon, 23 Jul 2018 23:51:40 GMT
+      - Thu, 14 Feb 2019 19:49:52 GMT
       set-cookie:
-      - rememberMe=deleteMe; Path=/; Max-Age=0; Expires=Sun, 22-Jul-2018 23:51:41
+      - rememberMe=deleteMe; Path=/; Max-Age=0; Expires=Wed, 13-Feb-2019 19:49:52
         GMT
       vary:
       - Accept-Encoding
@@ -588,7 +586,7 @@ http_interactions:
           "children" : [ ]
         }
     http_version: 
-  recorded_at: Mon, 23 Jul 2018 23:51:41 GMT
+  recorded_at: Thu, 14 Feb 2019 19:49:52 GMT
 - request:
     method: get
     uri: https://calsapi.preint.cwds.io/facilities/100000299/complaints
@@ -599,7 +597,7 @@ http_interactions:
       Content-Type:
       - application/json
       Authorization:
-      - 141f684e-c7d1-4e5b-9f65-409f4c26f08b
+      - 2f8387ba-54db-4b83-933f-b5f7c1ac8a94
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
       Accept:
@@ -616,9 +614,9 @@ http_interactions:
       Content-Type:
       - application/json
       Date:
-      - Mon, 23 Jul 2018 23:51:40 GMT
+      - Thu, 14 Feb 2019 19:49:52 GMT
       Set-Cookie:
-      - rememberMe=deleteMe; Path=/; Max-Age=0; Expires=Sun, 22-Jul-2018 23:51:40
+      - rememberMe=deleteMe; Path=/; Max-Age=0; Expires=Wed, 13-Feb-2019 19:49:52
         GMT
       Vary:
       - Accept-Encoding
@@ -629,35 +627,17 @@ http_interactions:
       X-Xss-Protection:
       - 1; mode=block
       Content-Length:
-      - '644'
+      - '24'
       Connection:
       - keep-alive
     body:
-      encoding: ASCII-8BIT
+      encoding: UTF-8
       string: |-
         {
-          "complaints" : [ {
-            "id" : "19-CR-195002-20041019105945",
-            "complaint_date" : "2004-10-19 00:00:00",
-            "assigned_worker" : "Saritha Reddy",
-            "control_number" : "198952",
-            "priority_level" : "",
-            "status" : "Approved",
-            "pre_investigation_comments" : "PO Zamora not in today - contact made with Janice Featherston as described above.",
-            "post_investigation_comments" : "Left message on her voicemail informing her of the outcome of the investigation.",
-            "contact_summary" : "Assigned to LPA Jeffers.\r\nComplaint originally written on 10/15/04, under the wrong Olive Crest home.  LPA Jeffers re-wrote the complaint under the same control #.\r\n\"10-day\" visit completed 10/21/04.\r\nInterviews conducted with the 3 clients in placement at the time, with the staff alleged to be the perpetrator.",
-            "followup_comments" : "None at this time.",
-            "allegations" : [ {
-              "complaint_type_code" : "3",
-              "complaint_type_description" : "Personal Rights",
-              "allegation" : "Staff Meena Desai marks clients Alexzena Webb and Dizirea Goodwin with a ballpoint pen while they are sleeping.",
-              "resolution_type_code" : "U",
-              "resolution_type_description" : "Unfounded"
-            } ]
-          } ]
+          "complaints" : [ ]
         }
     http_version: 
-  recorded_at: Mon, 23 Jul 2018 23:51:41 GMT
+  recorded_at: Thu, 14 Feb 2019 19:49:52 GMT
 - request:
     method: get
     uri: https://calsapi.preint.cwds.io/facilities/100000299/complaints
@@ -668,7 +648,7 @@ http_interactions:
       Content-type:
       - application/json
       Authorization:
-      - 141f684e-c7d1-4e5b-9f65-409f4c26f08b
+      - 2f8387ba-54db-4b83-933f-b5f7c1ac8a94
   response:
     status:
       code: 200
@@ -679,9 +659,9 @@ http_interactions:
       content-type:
       - application/json
       date:
-      - Mon, 23 Jul 2018 23:51:40 GMT
+      - Thu, 14 Feb 2019 19:49:52 GMT
       set-cookie:
-      - rememberMe=deleteMe; Path=/; Max-Age=0; Expires=Sun, 22-Jul-2018 23:51:40
+      - rememberMe=deleteMe; Path=/; Max-Age=0; Expires=Wed, 13-Feb-2019 19:49:52
         GMT
       vary:
       - Accept-Encoding
@@ -692,35 +672,17 @@ http_interactions:
       x-xss-protection:
       - 1; mode=block
       content-length:
-      - '644'
+      - '24'
       connection:
       - keep-alive
     body:
-      encoding: ASCII-8BIT
+      encoding: UTF-8
       string: |-
         {
-          "complaints" : [ {
-            "id" : "19-CR-195002-20041019105945",
-            "complaint_date" : "2004-10-19 00:00:00",
-            "assigned_worker" : "Saritha Reddy",
-            "control_number" : "198952",
-            "priority_level" : "",
-            "status" : "Approved",
-            "pre_investigation_comments" : "PO Zamora not in today - contact made with Janice Featherston as described above.",
-            "post_investigation_comments" : "Left message on her voicemail informing her of the outcome of the investigation.",
-            "contact_summary" : "Assigned to LPA Jeffers.\r\nComplaint originally written on 10/15/04, under the wrong Olive Crest home.  LPA Jeffers re-wrote the complaint under the same control #.\r\n\"10-day\" visit completed 10/21/04.\r\nInterviews conducted with the 3 clients in placement at the time, with the staff alleged to be the perpetrator.",
-            "followup_comments" : "None at this time.",
-            "allegations" : [ {
-              "complaint_type_code" : "3",
-              "complaint_type_description" : "Personal Rights",
-              "allegation" : "Staff Meena Desai marks clients Alexzena Webb and Dizirea Goodwin with a ballpoint pen while they are sleeping.",
-              "resolution_type_code" : "U",
-              "resolution_type_description" : "Unfounded"
-            } ]
-          } ]
+          "complaints" : [ ]
         }
     http_version: 
-  recorded_at: Mon, 23 Jul 2018 23:51:41 GMT
+  recorded_at: Thu, 14 Feb 2019 19:49:52 GMT
 - request:
     method: get
     uri: https://calsapi.preint.cwds.io/facilities/100000299
@@ -731,7 +693,7 @@ http_interactions:
       Content-Type:
       - application/json
       Authorization:
-      - 141f684e-c7d1-4e5b-9f65-409f4c26f08b
+      - 2f8387ba-54db-4b83-933f-b5f7c1ac8a94
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
       Accept:
@@ -748,9 +710,9 @@ http_interactions:
       Content-Type:
       - application/json
       Date:
-      - Mon, 23 Jul 2018 23:51:40 GMT
+      - Thu, 14 Feb 2019 19:49:52 GMT
       Set-Cookie:
-      - rememberMe=deleteMe; Path=/; Max-Age=0; Expires=Sun, 22-Jul-2018 23:51:40
+      - rememberMe=deleteMe; Path=/; Max-Age=0; Expires=Wed, 13-Feb-2019 19:49:52
         GMT
       Vary:
       - Accept-Encoding
@@ -761,7 +723,7 @@ http_interactions:
       X-Xss-Protection:
       - 1; mode=block
       Content-Length:
-      - '441'
+      - '455'
       Connection:
       - keep-alive
     body:
@@ -771,8 +733,8 @@ http_interactions:
           "href" : "facilities/100000299",
           "id" : "100000299",
           "type" : {
-            "id" : "6",
-            "value" : "Foster Family Home"
+            "id" : "10",
+            "value" : "Transitional Housing Placement Program"
           },
           "name" : "Little Dreams Home",
           "licensee_name" : "Ananya Nandi",
@@ -799,7 +761,7 @@ http_interactions:
           "phones" : [ {
             "relation" : "primary",
             "type" : "Cell",
-            "number" : "(916) 299-"
+            "number" : "9160061109"
           } ],
           "addresses" : [ {
             "type" : "Residential",
@@ -817,7 +779,7 @@ http_interactions:
           "facility_source" : "LIS"
         }
     http_version: 
-  recorded_at: Mon, 23 Jul 2018 23:51:41 GMT
+  recorded_at: Thu, 14 Feb 2019 19:49:53 GMT
 - request:
     method: get
     uri: https://calsapi.preint.cwds.io/facilities/100000299
@@ -828,7 +790,7 @@ http_interactions:
       Content-type:
       - application/json
       Authorization:
-      - 141f684e-c7d1-4e5b-9f65-409f4c26f08b
+      - 2f8387ba-54db-4b83-933f-b5f7c1ac8a94
   response:
     status:
       code: 200
@@ -839,9 +801,9 @@ http_interactions:
       content-type:
       - application/json
       date:
-      - Mon, 23 Jul 2018 23:51:40 GMT
+      - Thu, 14 Feb 2019 19:49:52 GMT
       set-cookie:
-      - rememberMe=deleteMe; Path=/; Max-Age=0; Expires=Sun, 22-Jul-2018 23:51:40
+      - rememberMe=deleteMe; Path=/; Max-Age=0; Expires=Wed, 13-Feb-2019 19:49:52
         GMT
       vary:
       - Accept-Encoding
@@ -852,7 +814,7 @@ http_interactions:
       x-xss-protection:
       - 1; mode=block
       content-length:
-      - '441'
+      - '455'
       connection:
       - keep-alive
     body:
@@ -862,8 +824,8 @@ http_interactions:
           "href" : "facilities/100000299",
           "id" : "100000299",
           "type" : {
-            "id" : "6",
-            "value" : "Foster Family Home"
+            "id" : "10",
+            "value" : "Transitional Housing Placement Program"
           },
           "name" : "Little Dreams Home",
           "licensee_name" : "Ananya Nandi",
@@ -890,7 +852,7 @@ http_interactions:
           "phones" : [ {
             "relation" : "primary",
             "type" : "Cell",
-            "number" : "(916) 299-"
+            "number" : "9160061109"
           } ],
           "addresses" : [ {
             "type" : "Residential",
@@ -908,5 +870,5 @@ http_interactions:
           "facility_source" : "LIS"
         }
     http_version: 
-  recorded_at: Mon, 23 Jul 2018 23:51:41 GMT
-recorded_with: VCR 3.0.3
+  recorded_at: Thu, 14 Feb 2019 19:49:53 GMT
+recorded_with: VCR 4.0.0
