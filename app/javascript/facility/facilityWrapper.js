@@ -14,53 +14,34 @@ class FacilityWrapper extends React.Component {
     this.props.facilityApiCall(params)
   }
 
-  render () {
-    const {
-      facilityData,
-      facilityAddress,
-      facilityName,
-      facilityPhones,
-      otherFacilityData,
-      facilityAssignedWorker,
-      isFetching,
-      errors
-    } = this.props
+  renderFacilityWrapper () {
     return (
       <div>
-        {isFetching ? (
+        <FacilityDetails
+          facilityData={this.props.facilityData}
+          facilityName={this.props.facilityName}
+          errors={this.props.errors}
+        />
+        <FacilityCapacityView
+          facilityData={this.props.facilityData}
+        />
+        <FacilityAddress
+          facilityAddress={this.props.facilityAddress}
+          facilityPhones={this.props.facilityPhones}
+          otherFacilityData={this.props.otherFacilityData}
+        />
+        <FacilitySectionView
+          facilityAssignedWorker={this.props.facilityAssignedWorker}
+        />
+      </div>
+    )
+  }
+  render () {
+    return (
+      <div>
+        {this.props.isFetching ? (
           <Spinner/>
-        ) : (
-          <div>
-            <FacilityDetails
-              facilityData={facilityData}
-              facilityName={facilityName}
-              errors={errors}
-            />
-            <FacilityCapacityView
-              label1='CAPACITY'
-              label2='ADJUSTED CAPACITY'
-              label3='AVAILABLE BEDS'
-              label4='CAPACITY LAST CHANGED'
-              value1={facilityData.capacity}
-              value2={facilityData.adjusted_capacity}
-              value3={facilityData.available_beds}
-              value4={facilityData.capacity_last_changed}
-            />
-            <FacilityAddress
-              facilityAddress={facilityAddress}
-              facilityPhones={facilityPhones}
-              otherFacilityData={otherFacilityData}
-            />
-            <FacilitySectionView
-              label1='LICENSING / APPROVAL WORKER'
-              label2='LICENSING / APPROVAL WORKER PHONE NUMBER'
-              label3='LICENSING / APPROVAL WORKER EMAIL'
-              value1={facilityAssignedWorker.assignedWorkerFullName}
-              value2={facilityAssignedWorker.assignedWorkerPhoneNumber}
-              value3={facilityAssignedWorker.assignedWorkerEmail}
-            />
-          </div>
-        )}
+        ) : this.renderFacilityWrapper()}
       </div>
     )
   }
@@ -82,17 +63,6 @@ FacilityWrapper.defaultProps = {
     params: {
       id: ''
     }
-  },
-  facilityData: {
-    capacity: 'N/A',
-    adjusted_capacity: 'N/A',
-    available_beds: 'N/A',
-    capacity_last_changed: ''
-  },
-  facilityAssignedWorker: {
-    assignedWorkerFullName: '',
-    assignedWorkerPhoneNumber: '',
-    assignedWorkerEmail: ''
   }
 }
 

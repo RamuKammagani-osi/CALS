@@ -72,19 +72,53 @@ class Search extends Component {
     this.searchApiCallParams(getFromValue(this.props.sizeValue, value), this.props.sizeValue)
   }
 
+  paginationRender () {
+    return (
+      <Pagination
+        totalNoOfFacilities={this.props.totalNoOfResults}
+        sizeValue={this.props.sizeValue}
+        handleDropDownAndPageNumberChange={this.props.handleDropDownAndPageNumberChange}
+        handlePageNumberChange={this.props.handlePageNumberChange}
+        pageNumber={this.props.pageNumber}
+        searchApiCall={this.searchApiCallParams.bind(this)}
+        onPageNumberInputChange={this.onPageNumberInputChange.bind(this)} />
+    )
+  }
+
+  renderSearchInput () {
+    return (
+      <SearchInput
+        resetForm={this.props.handleResetForm}
+        searchApiCall={this.searchApiCallParams.bind(this)}
+        handlePageNumberChange={this.props.handlePageNumberChange}
+        countyList={this.props.countyTypes}
+        facilityTypes={this.props.facilityTypes}
+        licenseStatuses={this.props.licenseStatuses}
+        countyValue={this.props.inputData.countyValue}
+        facilityTypeValue={this.props.inputData.facilityTypeValue}
+        licenseStatusValue={this.props.inputData.licenseStatusValue}
+        isAllActive={this.props.inputData.isAllActive}
+        facilityIdValue={this.props.inputData.facilityIdValue}
+        facilityNameValue={this.props.inputData.facilityNameValue}
+        facilityAddressValue={this.props.inputData.facilityAddressValue}
+        handleInputChange={this.props.handleInputChange}
+        sizeValue={this.props.sizeValue} />
+    )
+  }
+
+  renderAdvanceSearch () {
+    const searchResponseHasValues = this.props.searchResults && this.props.searchResults.length > 0
+    return (
+      searchResponseHasValues && <AdvancedSearch
+        paginationRender= {this.paginationRender()}
+        handleToggle= {this.props.handleToggle}
+        isToggled={this.props.isToggled} />
+    )
+  }
+
   render () {
     const initialLoad = this.props.searchResults === undefined
     const searchResponseHasValues = this.props.searchResults && this.props.searchResults.length > 0
-
-    const paginationRender = <Pagination
-      totalNoOfFacilities={this.props.totalNoOfResults}
-      sizeValue={this.props.sizeValue}
-      handleDropDownAndPageNumberChange={this.props.handleDropDownAndPageNumberChange}
-      handlePageNumberChange={this.props.handlePageNumberChange}
-      pageNumber={this.props.pageNumber}
-      searchApiCall={this.searchApiCallParams.bind(this)}
-      onPageNumberInputChange={this.onPageNumberInputChange.bind(this)} />
-
     return (
       <div className='search_page'>
         <PageHeader
@@ -93,41 +127,16 @@ class Search extends Component {
         />
         <BreadCrumb />
         <div className='container-fluid'>
-          <SearchInput
-            resetForm={this.props.handleResetForm}
-            searchApiCall={this.searchApiCallParams.bind(this)}
-            handlePageNumberChange={this.props.handlePageNumberChange}
-            countyList={this.props.countyTypes}
-            facilityTypes={this.props.facilityTypes}
-            licenseStatuses={this.props.licenseStatuses}
-            countyValue={this.props.inputData.countyValue}
-            facilityTypeValue={this.props.inputData.facilityTypeValue}
-            licenseStatusValue={this.props.inputData.licenseStatusValue}
-            isAllActive={this.props.inputData.isAllActive}
-            facilityIdValue={this.props.inputData.facilityIdValue}
-            facilityNameValue={this.props.inputData.facilityNameValue}
-            facilityAddressValue={this.props.inputData.facilityAddressValue}
-            handleInputChange={this.props.handleInputChange}
-            sizeValue={this.props.sizeValue} />
-          {searchResponseHasValues &&
-          (
-            <AdvancedSearch
-              paginationRender= {paginationRender}
-              handleToggle= {this.props.handleToggle}
-              isToggled={this.props.isToggled} />
-          )
-          }
+          {this.renderSearchInput()}
+          {this.renderAdvanceSearch()}
           <div className='result-section'>
             {this.props.isToggled && <SearchGrid searchResults={this.props.searchResults} />}
             {!this.props.isToggled && <SearchList searchResults={this.props.searchResults} />}
             {(!searchResponseHasValues && !initialLoad) && <SearchNotFound errors={this.props.errors.issue_details} errorMessage={this.props.errorMessage} />}
           </div>
-          {searchResponseHasValues &&
-            (
-              <center className='bottom-pagination'>
-                {paginationRender}
-              </center>
-            )
+          {searchResponseHasValues && <center className='bottom-pagination'>
+            {this.paginationRender()}
+          </center>
           }
         </div>
       </div>
@@ -162,9 +171,9 @@ Search.defaultProps = {
 
 function mapStateToProps (state) {
   return {
-    countyTypes: state.searchReducer.countyTypes,
-    facilityTypes: state.searchReducer.facilityTypes,
-    licenseStatuses: state.searchReducer.licenseStatuses,
+    countyTypes: state.dictonariesReducer.countyTypes,
+    facilityTypes: state.dictonariesReducer.facilityTypes,
+    licenseStatuses: state.dictonariesReducer.licenseStatuses,
     inputData: state.searchReducer.inputData,
     searchResults: state.searchReducer.searchResults,
     totalNoOfResults: state.searchReducer.totalNoOfResults,

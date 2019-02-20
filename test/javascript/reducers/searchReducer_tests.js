@@ -3,9 +3,7 @@ import {countyTypes, facilityTypes, licenseStatuses, user} from '../helpers/cons
 import {
   searchApiCall,
   searchUserDataCall,
-  fetchDictionarySuccess,
   fetchUserDataSuccess,
-  searchDictionariesCall,
   handleInputChange,
   handleDropDownChange,
   handleDropDownAndPageNumberChange,
@@ -30,9 +28,6 @@ describe('Verify searchReducer', () => {
       isToggled: true,
       sizeValue: 50,
       pageNumber: 1,
-      countyTypes: [],
-      facilityTypes: [],
-      licenseStatuses: [],
       errors: {},
       userCounty: '',
       errorMessage: undefined
@@ -67,13 +62,6 @@ describe('Verify searchReducer', () => {
     expect(searchReducer(undefined, fetchSuccessAction)).toEqual(outputState)
   })
 
-  it('Search dictionary fetch call returns initial state', () => {
-    const searchDictionariesCallAction = searchDictionariesCall()
-
-    const outputState = initialState
-    expect(searchReducer(undefined, searchDictionariesCallAction)).toEqual(outputState)
-  })
-
   it('Search user data fetch call returns initial state', () => {
     const searchUserDataCallAction = searchUserDataCall()
 
@@ -88,21 +76,6 @@ describe('Verify searchReducer', () => {
     outputState.inputData = {'countyValue': user.county_code}
     outputState.userCounty = user.county_code
     expect(searchReducer(undefined, fetchUserDataSuccessAction)).toEqual(outputState)
-  })
-
-  it('Search dictionary fetch call success returns countyTypes, facilityTypes, licenseStatuses', () => {
-    const fetchDictionarySuccessAction = fetchDictionarySuccess({countyTypes, facilityTypes, licenseStatuses})
-
-    const outputState = initialState
-    outputState.countyTypes = countyTypes
-    outputState.facilityTypes = facilityTypes
-    outputState.licenseStatuses = licenseStatuses
-    outputState.isToggled = true
-    outputState.pageNumber = 1
-    outputState.sizeValue = 50
-    outputState.totalNoOfResults = 0
-
-    expect(searchReducer(undefined, fetchDictionarySuccessAction)).toEqual(outputState)
   })
 
   it('fetch call completion returns updated state no search results and a error message', () => {
@@ -173,9 +146,6 @@ describe('Verify searchReducer', () => {
       sizeValue: 10,
       pageNumber: 2,
       isToggled: false,
-      countyTypes: [],
-      facilityTypes: [],
-      licenseStatuses: [],
       userCounty: '',
       errors: {},
       errorMessage: undefined
@@ -188,9 +158,6 @@ describe('Verify searchReducer', () => {
       isToggled: true,
       sizeValue: 50,
       pageNumber: 1,
-      countyTypes: [],
-      facilityTypes: [],
-      licenseStatuses: [],
       userCounty: '',
       errors: {},
       errorMessage: undefined

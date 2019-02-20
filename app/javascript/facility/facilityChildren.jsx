@@ -12,6 +12,25 @@ export default class FacilityChildren extends React.Component {
     }
     this.props.facilityChildrenApiCall(params)
   }
+
+  renderReactTable () {
+    const { children } = this.props
+    return <ReactTable
+      id='facility-children-table'
+      className='table'
+      data={children}
+      columns={childrenColumns}
+      defaultPageSize={children.length}
+      showPagination={false}
+      sortable={true}
+      defaultSorted={children.length > 0 ? [{
+        id: 'dateOfPlacement',
+        desc: true
+      }] : []}
+      resizable
+      noDataText=''
+    />
+  }
   render () {
     const {children, errors, isFetching} = this.props
     return (
@@ -20,21 +39,7 @@ export default class FacilityChildren extends React.Component {
           <div className='children-title'> <h3>Children currently placed in facility</h3> </div>
           <ApiErrorMessages errors={errors.issue_details}/>
           {isFetching ? <Spinner/>
-            : <ReactTable
-              id='facility-children-table'
-              className='table'
-              data={children}
-              columns={childrenColumns}
-              defaultPageSize={children.length}
-              showPagination={false}
-              sortable={true}
-              defaultSorted={children.length > 0 ? [{
-                id: 'dateOfPlacement',
-                desc: true
-              }] : []}
-              resizable
-              noDataText=''
-            />
+            : this.renderReactTable()
           }
         </div>
       </div>

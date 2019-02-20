@@ -7,22 +7,12 @@ const initialState = {
   sizeValue: 50,
   pageNumber: 1,
   errors: {},
-  countyTypes: [],
-  facilityTypes: [],
-  licenseStatuses: [],
   userCounty: '',
   errorMessage: undefined
 }
 
 export const searchReducer = (state = initialState, action) => {
   switch (action.type) {
-    case Constants.SEARCH_DICTIONARIES_FETCH:
-      return state
-    case Constants.SEARCH_DICTIONARIES_FETCH_COMPLETE:
-      return {...state,
-        countyTypes: action.payload.countyTypes,
-        facilityTypes: action.payload.facilityTypes,
-        licenseStatuses: action.payload.licenseStatuses}
     case Constants.SEARCH_USER_DATA_FETCH:
       return state
     case Constants.SEARCH_USER_DATA_FETCH_COMPLETE:

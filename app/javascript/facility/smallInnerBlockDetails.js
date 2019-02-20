@@ -15,7 +15,7 @@ const SmallInnerBlockDetails = ({
 }
 
 SmallInnerBlockDetails.defaultProps = {
-  value: '',
+  value: 'N/A',
   classNameTitle: ''
 }
 

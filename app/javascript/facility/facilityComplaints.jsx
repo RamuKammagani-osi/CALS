@@ -13,8 +13,46 @@ export default class FacilityComplaints extends React.Component {
     this.props.facilityComplaintsApiCall(params)
   }
 
+  renderFacilityComplaints () {
+    const { complaints } = this.props
+    return (
+      <ReactTable
+        id='facility-complaints-table'
+        className='table'
+        data={complaints}
+        columns={complaintsColumns}
+        defaultPageSize={complaints.length}
+        showPagination={false}
+        sortable={false}
+        resizable={false}
+        noDataText=''
+        SubComponent={row => {
+          return (
+            this.renderReactTable(row)
+          )
+        }
+        }
+      />
+    )
+  }
+
+  renderReactTable (row) {
+    return (
+      <div className='sub-component'>
+        <ReactTable
+          data={row.original.allegations}
+          columns={allegationColumns}
+          defaultPageSize={row.original.allegations.length}
+          sortable={true}
+          resizable={false}
+          showPagination={false}
+        />
+      </div>
+    )
+  }
+
   render () {
-    const {complaints, errors, isFetching} = this.props
+    const {errors, isFetching} = this.props
     return (
       <div className='facility-children'>
         <div className='facility-children-block col-xs-12 col-sm-12 col-md-12 col-lg-12'>
@@ -22,32 +60,7 @@ export default class FacilityComplaints extends React.Component {
           <ApiErrorMessages errors={errors.issue_details}/>
           {isFetching
             ? <Spinner/>
-            : <ReactTable
-              id='facility-complaints-table'
-              className='table'
-              data={complaints}
-              columns={complaintsColumns}
-              defaultPageSize={complaints.length}
-              showPagination={false}
-              sortable={false}
-              resizable={false}
-              noDataText=''
-              SubComponent={row => {
-                return (
-                  <div className='sub-component' >
-                    <ReactTable
-                      data={row.original.allegations}
-                      columns={allegationColumns}
-                      defaultPageSize={row.original.allegations.length}
-                      sortable={true}
-                      resizable={false}
-                      showPagination={false}
-                    />
-                  </div>
-                )
-              }
-              }
-            />
+            : this.renderFacilityComplaints()
           }
         </div>
       </div>
