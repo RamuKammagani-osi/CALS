@@ -42,6 +42,7 @@ def buildPullRequest() {
       checkOutGithub()
       verifySemVer()
       buildDockerImage()
+      lint()
       runTestInsideContainer()
     } catch(Exception exception) {
       currentBuild.result = 'FAILURE'
@@ -67,6 +68,7 @@ def buildMaster() {
       deleteDir()
       checkOutGithub()
       buildDockerImage()
+      lint()
       runTestInsideContainer()
       incrementTag()
       tagRepo()
@@ -104,17 +106,19 @@ def checkOutGithub() {
 
 def buildDockerImage() {
   stage('Build Docker Image') {
-    appDockerImage = docker.build("${DOCKER_GROUP}/${DOCKER_APP_IMAGE}:test-${env.BUILD_ID}",
-      "-f ./docker/test/Dockerfile .")
+    appDockerImage = buildDockerImageForTest('./docker/test/Dockerfile')
+  }
+}
+
+def lint() {
+  stage('Lint') {
+    lint()
   }
 }
 
 def runTestInsideContainer() {
   appDockerImage.withRun { container ->
-    stage('Lint') {
-      sh "docker exec -t ${container.id} yarn lint"
-    }
-
+  
     stage('Test - Jasmine') {
       sh "docker exec -t ${container.id} yarn karma-ci"
     }
