@@ -42,7 +42,7 @@ def buildPullRequest() {
       checkOutGithub()
       verifySemVer()
       buildDockerImage()
-      lint()
+      lintStage()
       runTestInsideContainer()
     } catch(Exception exception) {
       currentBuild.result = 'FAILURE'
@@ -68,7 +68,7 @@ def buildMaster() {
       deleteDir()
       checkOutGithub()
       buildDockerImage()
-      lint()
+      lintStage()
       runTestInsideContainer()
       incrementTag()
       tagRepo()
@@ -110,7 +110,7 @@ def buildDockerImage() {
   }
 }
 
-def lint() {
+def lintStage() {
   stage('Lint') {
     lint()
   }
