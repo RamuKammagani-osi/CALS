@@ -112,7 +112,10 @@ class Search extends Component {
       searchResponseHasValues && <AdvancedSearch
         paginationRender= {this.paginationRender()}
         handleToggle= {this.props.handleToggle}
-        isToggled={this.props.isToggled} />
+        isToggled={this.props.isToggled}
+        totalNoOfFacilities={this.props.totalNoOfResults}
+        sizeValue={this.props.sizeValue}
+        pageNumber={this.props.pageNumber} />
     )
   }
 

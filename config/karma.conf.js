@@ -1,5 +1,6 @@
-var webpack = require('webpack')
-var webpackConfig = require('./webpack/test.js')
+/* eslint-disable func-names */
+const webpack = require('webpack')
+const webpackConfig = require('./webpack/test.js')
 // process.env.PHANTOMJS_BIN = './../node_modules/.bin/phantomjs'
 
 module.exports = function (config) {

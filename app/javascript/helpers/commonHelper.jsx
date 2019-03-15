@@ -42,6 +42,17 @@ export const removeLegalNameType = (nameTypes) => {
 export const getFromValue = (pageSize, pageNumber) => {
   return pageSize * (pageNumber - 1)
 }
+export const searchResultStatus = (pageSize, pageNumber, totalCount) => {
+  const fromValue = getFromValue(pageSize, pageNumber)
+  const formatedFromValue = formatedValue(fromValue + 1)
+  const formatedTotalCount = formatedValue(totalCount)
+  const formatedCurrentSize = formatedValue(pageSize + fromValue)
+  return `Search Results: ${formatedFromValue} - ${(pageSize + fromValue) <= totalCount ? (formatedCurrentSize) : formatedTotalCount} of ${formatedTotalCount}`
+}
+
+const formatedValue = (value) => {
+  return value.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',')
+}
 
 export const unMaskedPhoneFields = (mappedList, key) => {
   if (mappedList) {
