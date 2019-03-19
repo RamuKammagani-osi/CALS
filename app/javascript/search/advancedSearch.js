@@ -6,12 +6,10 @@ const AdvancedSearch = ({
   paginationRender,
   handleToggle,
   isToggled,
-  totalNoOfFacilities,
-  sizeValue,
-  pageNumber
+  searchStatus
 }) => (
   <div className='advance-search'>
-    <p className='search-results-label'>{searchResultStatus(sizeValue, pageNumber, totalNoOfFacilities)}</p>
+    <p className='search-results-label'>Search Results: {searchStatus}</p>
     {paginationRender}
     <span className='toggle_result'>
       <span id='toggle_button' onClick={handleToggle} className={`${isToggled ? 'line_off-icon' : 'line_on-icon'} ` + `navbar-brand`} alt={'list'} role='presentation'/>

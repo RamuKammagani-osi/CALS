@@ -30,6 +30,7 @@ describe('Verify searchReducer', () => {
       pageNumber: 1,
       errors: {},
       userCounty: '',
+      searchStatus: '',
       errorMessage: undefined
     }
   })
@@ -58,6 +59,7 @@ describe('Verify searchReducer', () => {
     const outputState = initialState
     outputState.searchResults = {id: 5, name: 'John'}
     outputState.totalNoOfResults = 1
+    outputState.searchStatus = '1-1 of 1'
 
     expect(searchReducer(undefined, fetchSuccessAction)).toEqual(outputState)
   })
@@ -81,14 +83,15 @@ describe('Verify searchReducer', () => {
   it('fetch call completion returns updated state no search results and a error message', () => {
     const fetchSuccessAction = fetchSuccess({
       searchResults: [],
-      total: undefined,
+      total: 0,
       errorMessage: NoSearchResultsErrorMessage
     })
 
     const outputState = initialState
     outputState.searchResults = []
-    outputState.totalNoOfResults = undefined
+    outputState.totalNoOfResults = 0
     outputState.errorMessage = NoSearchResultsErrorMessage
+    outputState.searchStatus = '1-0 of 0'
 
     expect(searchReducer(undefined, fetchSuccessAction)).toEqual(outputState)
   })

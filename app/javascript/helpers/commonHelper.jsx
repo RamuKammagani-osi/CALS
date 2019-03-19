@@ -47,7 +47,7 @@ export const searchResultStatus = (pageSize, pageNumber, totalCount) => {
   const formatedFromValue = formatedValue(fromValue + 1)
   const formatedTotalCount = formatedValue(totalCount)
   const formatedCurrentSize = formatedValue(pageSize + fromValue)
-  return `Search Results: ${formatedFromValue} - ${(pageSize + fromValue) <= totalCount ? (formatedCurrentSize) : formatedTotalCount} of ${formatedTotalCount}`
+  return `${formatedFromValue}-${(pageSize + fromValue) <= totalCount ? (formatedCurrentSize) : formatedTotalCount} of ${formatedTotalCount}`
 }
 
 const formatedValue = (value) => {

@@ -1,4 +1,5 @@
 import * as Constants from 'constants/actionTypes'
+import {searchResultStatus} from '../helpers/commonHelper'
 const initialState = {
   inputData: {},
   searchResults: undefined,
@@ -8,6 +9,7 @@ const initialState = {
   pageNumber: 1,
   errors: {},
   userCounty: '',
+  searchStatus: '',
   errorMessage: undefined
 }
 
@@ -26,7 +28,8 @@ export const searchReducer = (state = initialState, action) => {
         searchResults: action.payload.searchResults,
         totalNoOfResults: action.payload.total,
         errors: {},
-        errorMessage: action.payload.errorMessage}
+        errorMessage: action.payload.errorMessage,
+        searchStatus: searchResultStatus(state.sizeValue, state.pageNumber, action.payload.total)}
     case Constants.SEARCH_RESULTS_FETCH_ERROR:
       return {...state,
         searchResults: [],

@@ -113,9 +113,7 @@ class Search extends Component {
         paginationRender= {this.paginationRender()}
         handleToggle= {this.props.handleToggle}
         isToggled={this.props.isToggled}
-        totalNoOfFacilities={this.props.totalNoOfResults}
-        sizeValue={this.props.sizeValue}
-        pageNumber={this.props.pageNumber} />
+        searchStatus={this.props.searchStatus} />
     )
   }
 
@@ -183,6 +181,7 @@ function mapStateToProps (state) {
     isToggled: state.searchReducer.isToggled,
     sizeValue: state.searchReducer.sizeValue,
     pageNumber: state.searchReducer.pageNumber,
+    searchStatus: state.searchReducer.searchStatus,
     errors: state.searchReducer.errors,
     errorMessage: state.searchReducer.errorMessage
   }
