@@ -1,3 +1,4 @@
+/* eslint-disable no-invalid-this */
 import React, {Component} from 'react'
 import PropTypes from 'prop-types'
 import SearchGrid from './searchGrid'
@@ -60,13 +61,9 @@ class Search extends Component {
     this.props.searchApiCall(params, urlParams)
   }
 
-  onPageNumberInputChange (value) {
-    const resultedPageNumbers = floatToNextInt(this.props.totalNoOfResults, this.props.sizeValue)
-    if (value === '' || value === '0') {
+  onTabOrEnter (value) {
+    if (value === '') {
       value = 1
-      this.props.handlePageNumberChange(value)
-    } else if (value > resultedPageNumbers) {
-      value = resultedPageNumbers
       this.props.handlePageNumberChange(value)
     }
     this.searchApiCallParams(getFromValue(this.props.sizeValue, value), this.props.sizeValue)
@@ -78,11 +75,23 @@ class Search extends Component {
         totalNoOfFacilities={this.props.totalNoOfResults}
         sizeValue={this.props.sizeValue}
         handleDropDownAndPageNumberChange={this.props.handleDropDownAndPageNumberChange}
-        handlePageNumberChange={this.props.handlePageNumberChange}
+        onPageNumberChange={this.onPageChange.bind(this)}
         pageNumber={this.props.pageNumber}
         searchApiCall={this.searchApiCallParams.bind(this)}
-        onPageNumberInputChange={this.onPageNumberInputChange.bind(this)} />
+        onTabOrEnter={this.onTabOrEnter.bind(this)} />
     )
+  }
+
+  onPageChange (value) {
+    const parse = parseInt(value)
+    const numOfPages = floatToNextInt(this.props.totalNoOfResults, this.props.sizeValue)
+    if ((value !== '' && !parse) || parse <= 0) {
+      this.props.handlePageNumberChange(1)
+    } else if (parse > numOfPages) {
+      this.props.handlePageNumberChange(numOfPages)
+    } else {
+      this.props.handlePageNumberChange(value)
+    }
   }
 
   renderSearchInput () {

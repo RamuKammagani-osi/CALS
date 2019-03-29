@@ -1,7 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import {resultsPerPage} from './common/commonUtils'
-import Cleave from 'cleave.js/react'
 import {dictionaryNilSelectValue, floatToNextInt, getFromValue} from 'helpers/commonHelper.jsx'
 
 const Pagination = ({
@@ -10,8 +9,8 @@ const Pagination = ({
   pageNumber,
   totalNoOfFacilities,
   handleDropDownAndPageNumberChange,
-  handlePageNumberChange,
-  onPageNumberInputChange
+  onPageNumberChange,
+  onTabOrEnter
 }) => (
   <span className='fs-pagination'>
     <select
@@ -30,25 +29,26 @@ const Pagination = ({
     <button
       id='previousButton'
       disabled={getFromValue(sizeValue, pageNumber) - sizeValue < 0}
-      onClick={() => { handlePageNumberChange(pageNumber - 1); searchApiCall(getFromValue(sizeValue, pageNumber - 1), sizeValue); window.scrollTo(0, 0) }}
+      onClick={() => { onPageNumberChange(pageNumber - 1); searchApiCall(getFromValue(sizeValue, pageNumber - 1), sizeValue); window.scrollTo(0, 0) }}
       className='fs-previous btn btn-default'>
       <p>&#8249;</p>
     </button>
-    <Cleave
+    <input
       aria-label='Page Number Input'
       className='page_number'
-      type='text'
+      type={pageNumber === '' ? 'text' : 'number'}
       value={pageNumber}
-      options={{blocks: [5], numericOnly: true}}
       placeholder='Page #'
-      onChange={(event) => { handlePageNumberChange(event.target.value) }}
-      onKeyDown={(event) => { if (event.which === 9 || event.which === 13) { onPageNumberInputChange(event.target.value); window.scrollTo(0, 0) } } }/>
+      onChange={(event) => {
+        onPageNumberChange(event.target.value)
+      }}
+      onKeyDown={(event) => { if (event.which === 9 || event.which === 13) { onTabOrEnter(event.target.value); window.scrollTo(0, 0) } } }/>
     <span>of</span>
     <span className='noOfPages'>{floatToNextInt(totalNoOfFacilities, sizeValue)}</span>
     <button
       id='nextButton'
       disabled={getFromValue(sizeValue, pageNumber) + sizeValue >= totalNoOfFacilities}
-      onClick={() => { handlePageNumberChange(pageNumber + 1); searchApiCall(getFromValue(sizeValue, pageNumber + 1), sizeValue); window.scrollTo(0, 0) }}
+      onClick={() => { onPageNumberChange(pageNumber + 1); searchApiCall(getFromValue(sizeValue, pageNumber + 1), sizeValue); window.scrollTo(0, 0) }}
       className='fs-next btn btn-default'>
       <p>&#8250;</p>
     </button>
@@ -63,9 +63,9 @@ Pagination.propTypes = {
     PropTypes.number
   ]),
   searchApiCall: PropTypes.func,
-  onPageNumberInputChange: PropTypes.func,
+  onTabOrEnter: PropTypes.func,
   handleDropDownAndPageNumberChange: PropTypes.func,
-  handlePageNumberChange: PropTypes.func
+  onPageNumberChange: PropTypes.func
 }
 Pagination.defaultProps = {
   totalNoOfFacilities: 0,

@@ -98,10 +98,30 @@ describe('Verify Search component', () => {
     expect(handlePageNumberChangeSpy).toHaveBeenCalledWith(1)
   })
 
-  it('verify handlePageNumberChange with page number higher than available ', () => {
-    const pageNumber = searchComp.find('.page_number').at(0)
-    pageNumber.simulate('keydown', {which: 13, target: {value: '122'}})
-    expect(handlePageNumberChangeSpy).toHaveBeenCalledWith(3)
+  describe('#onPageChange', () => {
+    it('when entered value is more than available pages', () => {
+      const pageNumberInput = searchComp.find('.page_number').at(0)
+      pageNumberInput.simulate('change', {target: {value: '4'}})
+      expect(handlePageNumberChangeSpy).toHaveBeenCalledWith(3)
+    })
+
+    it('when entered value is equal to zero', () => {
+      const pageNumberInput = searchComp.find('.page_number').at(0)
+      pageNumberInput.simulate('change', {target: {value: '0'}})
+      expect(handlePageNumberChangeSpy).toHaveBeenCalledWith(1)
+    })
+
+    it('when entered value is empty string', () => {
+      const pageNumberInput = searchComp.find('.page_number').at(0)
+      pageNumberInput.simulate('change', {target: {value: ' '}})
+      expect(handlePageNumberChangeSpy).toHaveBeenCalledWith(1)
+    })
+
+    it('when entered value is one of the page numbers', () => {
+      const pageNumberInput = searchComp.find('.page_number').at(0)
+      pageNumberInput.simulate('change', {target: {value: '2'}})
+      expect(handlePageNumberChangeSpy).toHaveBeenCalledWith('2')
+    })
   })
 
   it('verify onclick for toggle button', () => {

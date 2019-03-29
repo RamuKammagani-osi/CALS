@@ -5,8 +5,8 @@ import {shallow, mount} from 'enzyme'
 describe('Facility Search pagination', () => {
   let paginationCompRendered,
     searchApiCallSpy,
-    handlePageNumberChangeSpy,
-    onPageNumberInputChangeSpy,
+    onPageNumberChangeSpy,
+    onTabOrEnterSpy,
     handleDropDownAndPageNumberChangeSpy
 
   beforeEach(() => {
@@ -18,13 +18,13 @@ describe('Facility Search pagination', () => {
     }
     searchApiCallSpy = jasmine.createSpy('searchApiCall')
     handleDropDownAndPageNumberChangeSpy = jasmine.createSpy('handleDropDownAndPageNumberChange')
-    handlePageNumberChangeSpy = jasmine.createSpy('handlePageNumberChange')
-    onPageNumberInputChangeSpy = jasmine.createSpy('onPageNumberInputChange')
+    onPageNumberChangeSpy = jasmine.createSpy('onPageNumberChange')
+    onTabOrEnterSpy = jasmine.createSpy('onTabOrEnter')
     paginationCompRendered = shallow(<Pagination {...props}
       searchApiCall={searchApiCallSpy}
-      handlePageNumberChange={handlePageNumberChangeSpy}
+      onPageNumberChange={onPageNumberChangeSpy}
       handleDropDownAndPageNumberChange={handleDropDownAndPageNumberChangeSpy}
-      onPageNumberInputChange={onPageNumberInputChangeSpy} />)
+      onTabOrEnter={onTabOrEnterSpy} />)
   })
 
   it('verify pagination component render', () => {
@@ -39,30 +39,22 @@ describe('Facility Search pagination', () => {
     expect(handleDropDownAndPageNumberChangeSpy).toHaveBeenCalledWith(1, 5)
   })
 
-  it('verify handlePageNumberChange on page number change ', () => {
+  it('verify onPageNumberChange on page number change ', () => {
     const pageNumberInput = paginationCompRendered.find('.page_number').at(0)
     pageNumberInput.simulate('change', {target: {value: '2'}})
-    expect(handlePageNumberChangeSpy).toHaveBeenCalledWith('2')
+    expect(onPageNumberChangeSpy).toHaveBeenCalledWith('2')
   })
 
-  it('verify pagination input element is restricted to max length of 5 digits ', () => {
-    const pageNumberInput = paginationCompRendered.find('.page_number').at(0)
-    pageNumberInput.simulate('change', {target: {value: '12345'}})
-    expect(handlePageNumberChangeSpy).toHaveBeenCalledWith('12345')
-    pageNumberInput.simulate('change', {target: {value: '123456'}})
-    expect(handlePageNumberChangeSpy).toHaveBeenCalledWith('12345')
-  })
-
-  it('verify onPageNumberInputChange on tab key down ', () => {
+  it('verify onTabOrEnter on tab key down ', () => {
     const pageNumber = paginationCompRendered.find('.page_number').at(0)
     pageNumber.simulate('keydown', {which: 9, target: {value: '2'}})
-    expect(onPageNumberInputChangeSpy).toHaveBeenCalledWith('2')
+    expect(onTabOrEnterSpy).toHaveBeenCalledWith('2')
   })
 
-  it('verify onPageNumberInputChange on enter key down ', () => {
+  it('verify onTabOrEnter on enter key down ', () => {
     const pageNumber = paginationCompRendered.find('.page_number').at(0)
     pageNumber.simulate('keydown', {which: 13, target: {value: '2'}})
-    expect(onPageNumberInputChangeSpy).toHaveBeenCalledWith('2')
+    expect(onTabOrEnterSpy).toHaveBeenCalledWith('2')
   })
 
   it('Verify number of pages', () => {
@@ -79,14 +71,14 @@ describe('Facility Search pagination', () => {
   it('verify clicking next button ', () => {
     const searchFacility = paginationCompRendered.find('#nextButton')
     searchFacility.simulate('click')
-    expect(handlePageNumberChangeSpy).toHaveBeenCalledWith(3)
+    expect(onPageNumberChangeSpy).toHaveBeenCalledWith(3)
     expect(searchApiCallSpy).toHaveBeenCalledWith(10, 5)
   })
 
   it('verify clicking previous button ', () => {
     const searchFacility = paginationCompRendered.find('#previousButton')
     searchFacility.simulate('click')
-    expect(handlePageNumberChangeSpy).toHaveBeenCalledWith(1)
+    expect(onPageNumberChangeSpy).toHaveBeenCalledWith(1)
     expect(searchApiCallSpy).toHaveBeenCalledWith(0, 5)
   })
 })
