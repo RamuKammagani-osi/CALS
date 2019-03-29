@@ -12,6 +12,10 @@ input[type=number]::-webkit-outer-spin-button {
   border: 1px solid #000000;
 }
 
+.margin-search-reset-btn {
+  margin-right: 25px;
+}
+
 .styled-select {
   position: relative;
 }
@@ -76,7 +80,7 @@ input[type=number]::-webkit-outer-spin-button {
   height: 29px;
   padding: 5px;
   border: 0px;
-  background-color: #ffff; 
+  background-color: #ffff;
 }
 
 .my-react-select {
@@ -100,7 +104,7 @@ input[type=number]::-webkit-outer-spin-button {
 .Select-menu-outer {
   max-height: 45rem;
   }
-  
+
 .Select-menu {
   max-height: 40rem;
 }

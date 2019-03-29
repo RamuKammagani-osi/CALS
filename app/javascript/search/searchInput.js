@@ -28,7 +28,7 @@ const SearchInput = ({
 }) => (
   <form className='search-section' onSubmit={(event) => { handlePageNumberChange(pageNumber); searchApiCall(getFromValue(sizeValue, pageNumber), sizeValue); event.preventDefault() }}>
     <div className='row'>
-      <div className='col-xs-12 col-sm-2 col-md-2 col-lg-2'>
+      <InputDataBlock columnWidth={2}>
         <DropDownField
           label='County Type'
           id='county_select'
@@ -36,8 +36,8 @@ const SearchInput = ({
           value={countyValue}
           optionList={countyList}
           onChange={(event) => handleInputChange('countyValue', dictionaryNilSelectValue(event.target.options))} />
-      </div>
-      <div className='col-xs-12 col-sm-3 col-md-3 col-lg-3'>
+      </InputDataBlock>
+      <InputDataBlock columnWidth={4}>
         <DropDownField
           label='Facility Type'
           id='facility_select'
@@ -45,9 +45,9 @@ const SearchInput = ({
           value={facilityTypeValue}
           optionList={facilityTypes}
           onChange={(event) => handleInputChange('facilityTypeValue', dictionaryNilSelectValue(event.target.options))} />
-      </div>
+      </InputDataBlock>
       <MultiSelect
-        gridClassName='col-xs-12 col-sm-3 col-md-3 col-lg-3'
+        gridClassName='col-xs-12 col-sm-4 col-md-4 col-lg-4'
         label='License Status'
         className='my-react-select'
         disabled={isAllActive}
@@ -58,7 +58,7 @@ const SearchInput = ({
         searchable={true}
         optionList={licenseStatuses}
         onChange={(event) => handleInputChange('licenseStatusValue', event.map((e) => ({id: e.id, value: e.value})))} />
-      <div className='col-xs-12 col-sm-2 col-md-2 col-lg-2' >
+      <InputDataBlock columnWidth={2} >
         <BinarySelectorField
           type='checkbox'
           id='all_active'
@@ -68,10 +68,7 @@ const SearchInput = ({
           checked={isAllActive}
           onChange={(event) => (handleInputChange('isAllActive', event.target.checked))}
         />
-      </div>
-      <div className='col-xs-2 col-sm-2 col-md-2 col-lg-2'>
-        <button id='search' type='submit' className= ' search-btn btn btn-primary'>Search</button>
-      </div>
+      </InputDataBlock>
     </div>
     <div className='row'>
       <InputDataBlock
@@ -82,10 +79,10 @@ const SearchInput = ({
           value={facilityIdValue}
           placeholder='Enter Facility ID #'
           type='text'
-          onChange={(event) => handleInputChange('facilityIdValue', event.target.value)}/>
+          onChange={(event) => handleInputChange('facilityIdValue', event.target.value)} />
       </InputDataBlock>
       <InputDataBlock
-        columnWidth={3}>
+        columnWidth={4}>
         <InputComponent id='facilityNameValue'
           label='Facility Name'
           fieldClassName='form-control'
@@ -95,7 +92,7 @@ const SearchInput = ({
           onChange={(event) => handleInputChange('facilityNameValue', event.target.value)} />
       </InputDataBlock>
       <InputDataBlock
-        columnWidth={5}>
+        columnWidth={6}>
         <InputComponent id='facilityAddressValue'
           label='Facility Address'
           fieldClassName='form-control'
@@ -104,9 +101,14 @@ const SearchInput = ({
           type='text'
           onChange={(event) => handleInputChange('facilityAddressValue', event.target.value)} />
       </InputDataBlock>
-      <div className='col-xs-12 col-sm-2 col-md-2 col-lg-2'>
-        <button id='reset' type='button' onClick= {resetForm} className= 'reset-btn btn btn-primary'>Reset</button>
-      </div>
+    </div>
+    <div className='row'>
+      <InputDataBlock columnWidth={12}>
+        <div className='pull-right'>
+          <button id='search' type='submit' className=' search-btn btn btn-primary margin-search-reset-btn'>Search</button>
+          <button id='reset' type='button' onClick={resetForm} className='reset-btn btn btn-primary'>Reset</button>
+        </div>
+      </InputDataBlock>
     </div>
   </form>
 )
