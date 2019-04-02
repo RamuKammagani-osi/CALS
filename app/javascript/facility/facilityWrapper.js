@@ -17,6 +17,7 @@ class FacilityWrapper extends React.Component {
   renderFacilityWrapper () {
     return (
       <div>
+
         <FacilityDetails
           facilityData={this.props.facilityData}
           facilityName={this.props.facilityName}

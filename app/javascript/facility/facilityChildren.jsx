@@ -1,9 +1,9 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import ApiErrorMessages from 'components/common/errors/apiErrorMessages'
 import Spinner from 'facility/common/spinner'
 import {childrenColumns} from 'facility/common/reactTableHeaders'
 import ReactTable from 'react-table'
+import ControlledExpansionPanels from './common/expansionPanelContainer'
 
 export default class FacilityChildren extends React.Component {
   componentDidMount () {
@@ -34,14 +34,10 @@ export default class FacilityChildren extends React.Component {
   render () {
     const {children, errors, isFetching} = this.props
     return (
-      <div className='facility-children'>
-        <div className='facility-children-block col-xs-12 col-sm-12 col-md-12 col-lg-12'>
-          <div className='children-title'> <h3>Children currently placed in facility</h3> </div>
-          <ApiErrorMessages errors={errors.issue_details}/>
-          {isFetching ? <Spinner/>
-            : this.renderReactTable()
-          }
-        </div>
+      <div className='col-xs-12 col-sm-12 col-md-12 col-lg-12'>
+        {isFetching ? <Spinner/>
+          : <ControlledExpansionPanels children={this.renderReactTable()} errors={errors} summaryHeader='Children In the Facility'/>
+        }
       </div>
     )
   }

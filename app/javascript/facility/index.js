@@ -14,7 +14,9 @@ export default class Facility extends React.Component {
       <div className='main_page'>
         <PageHeaderWrapperContainer />
         <div className='body_cwds col-xs-12 col-sm-12 col-md-12 col-lg-12'>
-          <FacilityWrapperContainer match={this.props.match}/>
+          <div className='col-xs-12 col-sm-12 col-md-12 col-lg-12'>
+            <FacilityWrapperContainer match={this.props.match}/>
+          </div>
           <FacilityChildrenContainer match={this.props.match}/>
           <FacilityComplaintsContainer match={this.props.match}/>
         </div>
