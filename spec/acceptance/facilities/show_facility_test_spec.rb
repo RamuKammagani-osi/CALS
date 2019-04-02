@@ -30,7 +30,7 @@ RSpec.feature 'Facility Search & Profile', js: true, set_auth_header: true do
   scenario 'To select facility type dropdown and show search results' do
     visit search_index_path
     select 'Ventura', from: 'county_select'
-    select 'Relative/NREFM Home', from: 'facility_select'
+    select 'Foster Family Home', from: 'facility_select'
     find_button('Search').click
     expect(page).to have_content('Phone Number', minimum: 1)
   end

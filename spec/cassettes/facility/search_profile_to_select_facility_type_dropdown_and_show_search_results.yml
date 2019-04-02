@@ -10,7 +10,7 @@ http_interactions:
       Content-type:
       - application/json
       Authorization:
-      - 8c6117f8-1747-4a53-9645-adca2a45c8ba
+      - 31cea2f2-c203-40dc-b860-2a301c480c52
   response:
     status:
       code: 200
@@ -21,9 +21,9 @@ http_interactions:
       content-type:
       - application/json
       date:
-      - Thu, 14 Feb 2019 04:26:15 GMT
+      - Tue, 02 Apr 2019 18:00:36 GMT
       set-cookie:
-      - rememberMe=deleteMe; Path=/; Max-Age=0; Expires=Wed, 13-Feb-2019 04:26:15
+      - rememberMe=deleteMe; Path=/; Max-Age=0; Expires=Mon, 01-Apr-2019 18:00:36
         GMT
       vary:
       - Accept-Encoding
@@ -221,7 +221,7 @@ http_interactions:
           } ]
         }
     http_version: 
-  recorded_at: Thu, 14 Feb 2019 04:26:15 GMT
+  recorded_at: Tue, 02 Apr 2019 18:00:34 GMT
 - request:
     method: get
     uri: https://calsapi.preint.cwds.io/dictionaries/facility-types
@@ -232,7 +232,7 @@ http_interactions:
       Content-type:
       - application/json
       Authorization:
-      - 8c6117f8-1747-4a53-9645-adca2a45c8ba
+      - 31cea2f2-c203-40dc-b860-2a301c480c52
   response:
     status:
       code: 200
@@ -243,9 +243,9 @@ http_interactions:
       content-type:
       - application/json
       date:
-      - Thu, 14 Feb 2019 04:26:15 GMT
+      - Tue, 02 Apr 2019 18:00:36 GMT
       set-cookie:
-      - rememberMe=deleteMe; Path=/; Max-Age=0; Expires=Wed, 13-Feb-2019 04:26:15
+      - rememberMe=deleteMe; Path=/; Max-Age=0; Expires=Mon, 01-Apr-2019 18:00:36
         GMT
       vary:
       - Accept-Encoding
@@ -338,7 +338,7 @@ http_interactions:
           } ]
         }
     http_version: 
-  recorded_at: Thu, 14 Feb 2019 04:26:32 GMT
+  recorded_at: Tue, 02 Apr 2019 18:00:34 GMT
 - request:
     method: get
     uri: https://calsapi.preint.cwds.io/dictionaries/license-status-types
@@ -349,7 +349,7 @@ http_interactions:
       Content-type:
       - application/json
       Authorization:
-      - 8c6117f8-1747-4a53-9645-adca2a45c8ba
+      - 31cea2f2-c203-40dc-b860-2a301c480c52
   response:
     status:
       code: 200
@@ -360,9 +360,9 @@ http_interactions:
       content-type:
       - application/json
       date:
-      - Thu, 14 Feb 2019 04:26:32 GMT
+      - Tue, 02 Apr 2019 18:00:36 GMT
       set-cookie:
-      - rememberMe=deleteMe; Path=/; Max-Age=0; Expires=Wed, 13-Feb-2019 04:26:32
+      - rememberMe=deleteMe; Path=/; Max-Age=0; Expires=Mon, 01-Apr-2019 18:00:36
         GMT
       vary:
       - Accept-Encoding
@@ -503,18 +503,18 @@ http_interactions:
           } ]
         }
     http_version: 
-  recorded_at: Thu, 14 Feb 2019 04:26:32 GMT
+  recorded_at: Tue, 02 Apr 2019 18:00:34 GMT
 - request:
     method: post
     uri: https://doraapi.preint.cwds.io/dora/facilities/facility/_search
     body:
       encoding: UTF-8
-      string: '{"query":{"bool":{"should":[{"bool":{"must":[{"term":{"county.id":"56"}},{"term":{"type.id":"20"}}]}}]}},"from":"0","size":"50","sort":["_score",{"name.for_sort":{"order":"asc"}}]}'
+      string: '{"query":{"bool":{"should":[{"bool":{"must":[{"term":{"county.id":"56"}},{"term":{"type.id":"6"}}]}}]}},"from":"0","size":"50","sort":["_score",{"name.for_sort":{"order":"asc"}}]}'
     headers:
       Content-type:
       - application/json
       Authorization:
-      - 8c6117f8-1747-4a53-9645-adca2a45c8ba
+      - 31cea2f2-c203-40dc-b860-2a301c480c52
   response:
     status:
       code: 200
@@ -523,74 +523,31 @@ http_interactions:
       content-type:
       - application/json
       date:
-      - Thu, 14 Feb 2019 04:26:33 GMT
+      - Tue, 02 Apr 2019 18:00:37 GMT
       set-cookie:
-      - rememberMe=deleteMe; Path=/; Max-Age=0; Expires=Wed, 13-Feb-2019 04:26:33
+      - rememberMe=deleteMe; Path=/; Max-Age=0; Expires=Mon, 01-Apr-2019 18:00:37
         GMT
-      transfer-encoding:
-      - chunked
+      content-length:
+      - '3401'
       connection:
       - keep-alive
     body:
       encoding: UTF-8
-      string: '{"took":3,"timed_out":false,"_shards":{"total":1,"successful":1,"failed":0},"hits":{"total":19,"max_score":null,"hits":[{"_index":"facilities","_type":"facility","_id":"Bw4fjTq0Mq","_score":4.3072987,"_source":{"href":null,"id":"Bw4fjTq0Mq","capacity_last_changed":null,"type":{"id":"20","value":"Relative/NREFM
-        Home"},"adoption_home_only_indicator":false,"name":"2132","licensee_name":"","license_type":null,"assigned_worker":{"phones":[],"email":null,"full_name":"","id":null},"district_office":null,"license_number":null,"status":null,"capacity":0,"adjusted_capacity":0,"available_beds":null,"license_effective_date":null,"original_application_recieved_date":null,"last_visit_date":null,"last_deferred_visit_date":null,"email_address":null,"full_residential_address":"31232
-        321321 CA","full_mailing_address":null,"last_visit_reason":null,"last_deferred_visit_reason":null,"county":{"id":"56","value":"Ventura","lis_code":null},"phones":[],"addresses":[{"id":null,"type":"Residential","address":{"id":null,"longitude":null,"lattitude":null,"deliverable":null,"street_address":"31232","city":"321321","state":"CA","zip_code":null,"zip_suffix_code":null}}],"visits":[],"annual_visit_year":null,"prelicensing_visit_date":null,"facility_source":"CWS/CMS"},"sort":[4.3072987,"2132"]},{"_index":"facilities","_type":"facility","_id":"AezeoVE0QM","_score":4.3072987,"_source":{"href":null,"id":"AezeoVE0QM","capacity_last_changed":null,"type":{"id":"20","value":"Relative/NREFM
-        Home"},"adoption_home_only_indicator":false,"name":"Nav AFCARS SCP Ethnicities","licensee_name":"","license_type":null,"assigned_worker":{"phones":[],"email":null,"full_name":"","id":null},"district_office":null,"license_number":null,"status":null,"capacity":0,"adjusted_capacity":0,"available_beds":null,"license_effective_date":null,"original_application_recieved_date":null,"last_visit_date":null,"last_deferred_visit_date":null,"email_address":null,"full_residential_address":"34
-        M St Ventura CA","full_mailing_address":null,"last_visit_reason":null,"last_deferred_visit_reason":null,"county":{"id":"56","value":"Ventura","lis_code":null},"phones":[],"addresses":[{"id":null,"type":"Residential","address":{"id":null,"longitude":null,"lattitude":null,"deliverable":null,"street_address":"34
-        M St","city":"Ventura","state":"CA","zip_code":null,"zip_suffix_code":null}}],"visits":[],"annual_visit_year":null,"prelicensing_visit_date":null,"facility_source":"CWS/CMS"},"sort":[4.3072987,"afcars"]},{"_index":"facilities","_type":"facility","_id":"7nIjMVs0QM","_score":4.3072987,"_source":{"href":null,"id":"7nIjMVs0QM","capacity_last_changed":null,"type":{"id":"20","value":"Relative/NREFM
-        Home"},"adoption_home_only_indicator":false,"name":"asfddsf afdssfdas","licensee_name":"","license_type":null,"assigned_worker":{"phones":[],"email":null,"full_name":"","id":null},"district_office":null,"license_number":null,"status":null,"capacity":0,"adjusted_capacity":0,"available_beds":null,"license_effective_date":null,"original_application_recieved_date":null,"last_visit_date":null,"last_deferred_visit_date":null,"email_address":null,"full_residential_address":"adsf
-        asfddsfasf afasdfadsf CA","full_mailing_address":null,"last_visit_reason":null,"last_deferred_visit_reason":null,"county":{"id":"56","value":"Ventura","lis_code":null},"phones":[],"addresses":[{"id":null,"type":"Residential","address":{"id":null,"longitude":null,"lattitude":null,"deliverable":null,"street_address":"adsf
-        asfddsfasf","city":"afasdfadsf","state":"CA","zip_code":null,"zip_suffix_code":null}}],"visits":[],"annual_visit_year":null,"prelicensing_visit_date":null,"facility_source":"CWS/CMS"},"sort":[4.3072987,"afdssfdas"]},{"_index":"facilities","_type":"facility","_id":"GHCLnF80Mq","_score":4.3072987,"_source":{"href":null,"id":"GHCLnF80Mq","capacity_last_changed":null,"type":{"id":"20","value":"Relative/NREFM
-        Home"},"adoption_home_only_indicator":false,"name":"Al Raddi Relative Home","licensee_name":"","license_type":null,"assigned_worker":{"phones":[],"email":null,"full_name":"","id":null},"district_office":null,"license_number":null,"status":null,"capacity":0,"adjusted_capacity":0,"available_beds":null,"license_effective_date":null,"original_application_recieved_date":null,"last_visit_date":null,"last_deferred_visit_date":null,"email_address":null,"full_residential_address":"34
-        S St Oxnard CA","full_mailing_address":null,"last_visit_reason":null,"last_deferred_visit_reason":null,"county":{"id":"56","value":"Ventura","lis_code":null},"phones":[],"addresses":[{"id":null,"type":"Residential","address":{"id":null,"longitude":null,"lattitude":null,"deliverable":null,"street_address":"34
-        S St","city":"Oxnard","state":"CA","zip_code":null,"zip_suffix_code":null}}],"visits":[],"annual_visit_year":null,"prelicensing_visit_date":null,"facility_source":"CWS/CMS"},"sort":[4.3072987,"al"]},{"_index":"facilities","_type":"facility","_id":"QKEBMV40Mp","_score":4.3072987,"_source":{"href":null,"id":"QKEBMV40Mp","capacity_last_changed":null,"type":{"id":"20","value":"Relative/NREFM
-        Home"},"adoption_home_only_indicator":false,"name":"Beams Relative Home","licensee_name":"","license_type":null,"assigned_worker":{"phones":[],"email":null,"full_name":"","id":null},"district_office":null,"license_number":null,"status":null,"capacity":0,"adjusted_capacity":2,"available_beds":null,"license_effective_date":null,"original_application_recieved_date":null,"last_visit_date":null,"last_deferred_visit_date":null,"email_address":null,"full_residential_address":"45
-        Sally St Oxanard CA 93062","full_mailing_address":null,"last_visit_reason":null,"last_deferred_visit_reason":null,"county":{"id":"56","value":"Ventura","lis_code":null},"phones":[],"addresses":[{"id":null,"type":"Residential","address":{"id":null,"longitude":null,"lattitude":null,"deliverable":null,"street_address":"45
-        Sally St","city":"Oxanard","state":"CA","zip_code":"93062","zip_suffix_code":null}}],"visits":[],"annual_visit_year":null,"prelicensing_visit_date":null,"facility_source":"CWS/CMS"},"sort":[4.3072987,"beams"]},{"_index":"facilities","_type":"facility","_id":"JFMd1Hy0Mq","_score":4.3072987,"_source":{"href":null,"id":"JFMd1Hy0Mq","capacity_last_changed":null,"type":{"id":"20","value":"Relative/NREFM
-        Home"},"adoption_home_only_indicator":false,"name":"Carey Home","licensee_name":"","license_type":null,"assigned_worker":{"phones":[],"email":null,"full_name":"","id":null},"district_office":null,"license_number":null,"status":null,"capacity":0,"adjusted_capacity":6,"available_beds":null,"license_effective_date":null,"original_application_recieved_date":null,"last_visit_date":null,"last_deferred_visit_date":null,"email_address":null,"full_residential_address":"56
-        Apple St Oxnard CA","full_mailing_address":null,"last_visit_reason":null,"last_deferred_visit_reason":null,"county":{"id":"56","value":"Ventura","lis_code":null},"phones":[],"addresses":[{"id":null,"type":"Residential","address":{"id":null,"longitude":null,"lattitude":null,"deliverable":null,"street_address":"56
-        Apple St","city":"Oxnard","state":"CA","zip_code":null,"zip_suffix_code":null}}],"visits":[],"annual_visit_year":null,"prelicensing_visit_date":null,"facility_source":"CWS/CMS"},"sort":[4.3072987,"carey"]},{"_index":"facilities","_type":"facility","_id":"8Xfcv9K0Mq","_score":4.3072987,"_source":{"href":null,"id":"8Xfcv9K0Mq","capacity_last_changed":null,"type":{"id":"20","value":"Relative/NREFM
-        Home"},"adoption_home_only_indicator":false,"name":"Caso Home","licensee_name":"","license_type":null,"assigned_worker":{"phones":[],"email":null,"full_name":"","id":null},"district_office":null,"license_number":null,"status":null,"capacity":0,"adjusted_capacity":6,"available_beds":null,"license_effective_date":null,"original_application_recieved_date":null,"last_visit_date":null,"last_deferred_visit_date":null,"email_address":null,"full_residential_address":"23
-        Elm St Oxnard CA","full_mailing_address":null,"last_visit_reason":null,"last_deferred_visit_reason":null,"county":{"id":"56","value":"Ventura","lis_code":null},"phones":[],"addresses":[{"id":null,"type":"Residential","address":{"id":null,"longitude":null,"lattitude":null,"deliverable":null,"street_address":"23
-        Elm St","city":"Oxnard","state":"CA","zip_code":null,"zip_suffix_code":null}}],"visits":[],"annual_visit_year":null,"prelicensing_visit_date":null,"facility_source":"CWS/CMS"},"sort":[4.3072987,"caso"]},{"_index":"facilities","_type":"facility","_id":"TImrjQE0Mq","_score":4.3072987,"_source":{"href":null,"id":"TImrjQE0Mq","capacity_last_changed":null,"type":{"id":"20","value":"Relative/NREFM
-        Home"},"adoption_home_only_indicator":false,"name":"Samantha Eggars Relative
-        Home","licensee_name":"","license_type":null,"assigned_worker":{"phones":[],"email":null,"full_name":"","id":null},"district_office":null,"license_number":null,"status":null,"capacity":0,"adjusted_capacity":0,"available_beds":null,"license_effective_date":null,"original_application_recieved_date":null,"last_visit_date":null,"last_deferred_visit_date":null,"email_address":null,"full_residential_address":"34
-        Elm St Orangevale CA","full_mailing_address":null,"last_visit_reason":null,"last_deferred_visit_reason":null,"county":{"id":"56","value":"Ventura","lis_code":null},"phones":[],"addresses":[{"id":null,"type":"Residential","address":{"id":null,"longitude":null,"lattitude":null,"deliverable":null,"street_address":"34
-        Elm St","city":"Orangevale","state":"CA","zip_code":null,"zip_suffix_code":null}}],"visits":[],"annual_visit_year":null,"prelicensing_visit_date":null,"facility_source":"CWS/CMS"},"sort":[4.3072987,"eggars"]},{"_index":"facilities","_type":"facility","_id":"2muQFnS0Mq","_score":4.3072987,"_source":{"href":null,"id":"2muQFnS0Mq","capacity_last_changed":null,"type":{"id":"20","value":"Relative/NREFM
-        Home"},"adoption_home_only_indicator":false,"name":"fdaf","licensee_name":"","license_type":null,"assigned_worker":{"phones":[],"email":null,"full_name":"","id":null},"district_office":null,"license_number":null,"status":null,"capacity":0,"adjusted_capacity":0,"available_beds":null,"license_effective_date":null,"original_application_recieved_date":null,"last_visit_date":null,"last_deferred_visit_date":null,"email_address":null,"full_residential_address":"fdasf
-        fdasfda CA","full_mailing_address":null,"last_visit_reason":null,"last_deferred_visit_reason":null,"county":{"id":"56","value":"Ventura","lis_code":null},"phones":[],"addresses":[{"id":null,"type":"Residential","address":{"id":null,"longitude":null,"lattitude":null,"deliverable":null,"street_address":"fdasf","city":"fdasfda","state":"CA","zip_code":null,"zip_suffix_code":null}}],"visits":[],"annual_visit_year":null,"prelicensing_visit_date":null,"facility_source":"CWS/CMS"},"sort":[4.3072987,"fdaf"]},{"_index":"facilities","_type":"facility","_id":"R1FY23a0Mq","_score":4.3072987,"_source":{"href":null,"id":"R1FY23a0Mq","capacity_last_changed":null,"type":{"id":"20","value":"Relative/NREFM
-        Home"},"adoption_home_only_indicator":false,"name":"Sally Fields Relative
-        Home","licensee_name":"","license_type":null,"assigned_worker":{"phones":[],"email":null,"full_name":"","id":null},"district_office":null,"license_number":null,"status":null,"capacity":0,"adjusted_capacity":0,"available_beds":null,"license_effective_date":null,"original_application_recieved_date":null,"last_visit_date":null,"last_deferred_visit_date":null,"email_address":null,"full_residential_address":"S
-        St Oxnard CA","full_mailing_address":null,"last_visit_reason":null,"last_deferred_visit_reason":null,"county":{"id":"56","value":"Ventura","lis_code":null},"phones":[],"addresses":[{"id":null,"type":"Residential","address":{"id":null,"longitude":null,"lattitude":null,"deliverable":null,"street_address":"S
-        St","city":"Oxnard","state":"CA","zip_code":null,"zip_suffix_code":null}}],"visits":[],"annual_visit_year":null,"prelicensing_visit_date":null,"facility_source":"CWS/CMS"},"sort":[4.3072987,"fields"]},{"_index":"facilities","_type":"facility","_id":"1v0JPhG0Mq","_score":4.3072987,"_source":{"href":null,"id":"1v0JPhG0Mq","capacity_last_changed":null,"type":{"id":"20","value":"Relative/NREFM
-        Home"},"adoption_home_only_indicator":false,"name":"Ginger Hawkins","licensee_name":"","license_type":null,"assigned_worker":{"phones":[],"email":null,"full_name":"","id":null},"district_office":null,"license_number":null,"status":null,"capacity":0,"adjusted_capacity":0,"available_beds":null,"license_effective_date":null,"original_application_recieved_date":null,"last_visit_date":null,"last_deferred_visit_date":null,"email_address":null,"full_residential_address":"F
-        St Oxnard CA 95662","full_mailing_address":null,"last_visit_reason":null,"last_deferred_visit_reason":null,"county":{"id":"56","value":"Ventura","lis_code":null},"phones":[],"addresses":[{"id":null,"type":"Residential","address":{"id":null,"longitude":null,"lattitude":null,"deliverable":null,"street_address":"F
-        St","city":"Oxnard","state":"CA","zip_code":"95662","zip_suffix_code":null}}],"visits":[],"annual_visit_year":null,"prelicensing_visit_date":null,"facility_source":"CWS/CMS"},"sort":[4.3072987,"ginger"]},{"_index":"facilities","_type":"facility","_id":"PWKkxMM0Mq","_score":4.3072987,"_source":{"href":null,"id":"PWKkxMM0Mq","capacity_last_changed":null,"type":{"id":"20","value":"Relative/NREFM
-        Home"},"adoption_home_only_indicator":false,"name":"Helen McKenna Relative
-        Home","licensee_name":"","license_type":null,"assigned_worker":{"phones":[],"email":null,"full_name":"","id":null},"district_office":null,"license_number":null,"status":null,"capacity":0,"adjusted_capacity":3,"available_beds":null,"license_effective_date":null,"original_application_recieved_date":null,"last_visit_date":null,"last_deferred_visit_date":null,"email_address":null,"full_residential_address":"34
-        Pine ST Orangevale CA 95662","full_mailing_address":null,"last_visit_reason":null,"last_deferred_visit_reason":null,"county":{"id":"56","value":"Ventura","lis_code":null},"phones":[],"addresses":[{"id":null,"type":"Residential","address":{"id":null,"longitude":null,"lattitude":null,"deliverable":null,"street_address":"34
-        Pine ST","city":"Orangevale","state":"CA","zip_code":"95662","zip_suffix_code":null}}],"visits":[],"annual_visit_year":null,"prelicensing_visit_date":null,"facility_source":"CWS/CMS"},"sort":[4.3072987,"helen"]},{"_index":"facilities","_type":"facility","_id":"J4WiuNK0Mq","_score":4.3072987,"_source":{"href":null,"id":"J4WiuNK0Mq","capacity_last_changed":null,"type":{"id":"20","value":"Relative/NREFM
-        Home"},"adoption_home_only_indicator":false,"name":"Joni Scotch Relative Home","licensee_name":"","license_type":null,"assigned_worker":{"phones":[],"email":null,"full_name":"","id":null},"district_office":null,"license_number":null,"status":null,"capacity":0,"adjusted_capacity":3,"available_beds":null,"license_effective_date":null,"original_application_recieved_date":null,"last_visit_date":null,"last_deferred_visit_date":null,"email_address":null,"full_residential_address":"35
-        Elm St Oxnard CA 95662","full_mailing_address":null,"last_visit_reason":null,"last_deferred_visit_reason":null,"county":{"id":"56","value":"Ventura","lis_code":null},"phones":[],"addresses":[{"id":null,"type":"Residential","address":{"id":null,"longitude":null,"lattitude":null,"deliverable":null,"street_address":"35
-        Elm St","city":"Oxnard","state":"CA","zip_code":"95662","zip_suffix_code":null}}],"visits":[],"annual_visit_year":null,"prelicensing_visit_date":null,"facility_source":"CWS/CMS"},"sort":[4.3072987,"home"]},{"_index":"facilities","_type":"facility","_id":"IFPXDfS0Mr","_score":4.3072987,"_source":{"href":null,"id":"IFPXDfS0Mr","capacity_last_changed":null,"type":{"id":"20","value":"Relative/NREFM
-        Home"},"adoption_home_only_indicator":false,"name":"Pat Smith Relative HOme","licensee_name":"","license_type":null,"assigned_worker":{"phones":[],"email":null,"full_name":"","id":null},"district_office":null,"license_number":null,"status":null,"capacity":0,"adjusted_capacity":0,"available_beds":null,"license_effective_date":null,"original_application_recieved_date":null,"last_visit_date":null,"last_deferred_visit_date":null,"email_address":null,"full_residential_address":"23
-        J ST Oxnard CA 95662","full_mailing_address":null,"last_visit_reason":null,"last_deferred_visit_reason":null,"county":{"id":"56","value":"Ventura","lis_code":null},"phones":[],"addresses":[{"id":null,"type":"Residential","address":{"id":null,"longitude":null,"lattitude":null,"deliverable":null,"street_address":"23
-        J ST","city":"Oxnard","state":"CA","zip_code":"95662","zip_suffix_code":null}}],"visits":[],"annual_visit_year":null,"prelicensing_visit_date":null,"facility_source":"CWS/CMS"},"sort":[4.3072987,"home"]},{"_index":"facilities","_type":"facility","_id":"6g79vXS0Mp","_score":4.3072987,"_source":{"href":null,"id":"6g79vXS0Mp","capacity_last_changed":null,"type":{"id":"20","value":"Relative/NREFM
-        Home"},"adoption_home_only_indicator":false,"name":"Missy Jenkins Relative
-        Home","licensee_name":"","license_type":null,"assigned_worker":{"phones":[],"email":null,"full_name":"","id":null},"district_office":null,"license_number":null,"status":null,"capacity":0,"adjusted_capacity":0,"available_beds":null,"license_effective_date":null,"original_application_recieved_date":null,"last_visit_date":null,"last_deferred_visit_date":null,"email_address":null,"full_residential_address":"12
-        S st Oxnard CA 93062","full_mailing_address":null,"last_visit_reason":null,"last_deferred_visit_reason":null,"county":{"id":"56","value":"Ventura","lis_code":null},"phones":[],"addresses":[{"id":null,"type":"Residential","address":{"id":null,"longitude":null,"lattitude":null,"deliverable":null,"street_address":"12
-        S st","city":"Oxnard","state":"CA","zip_code":"93062","zip_suffix_code":null}}],"visits":[],"annual_visit_year":null,"prelicensing_visit_date":null,"facility_source":"CWS/CMS"},"sort":[4.3072987,"home"]},{"_index":"facilities","_type":"facility","_id":"77zsAY20Mq","_score":4.3072987,"_source":{"href":null,"id":"77zsAY20Mq","capacity_last_changed":null,"type":{"id":"20","value":"Relative/NREFM
-        Home"},"adoption_home_only_indicator":false,"name":"Joe Jones Relative home","licensee_name":"","license_type":null,"assigned_worker":{"phones":[],"email":null,"full_name":"","id":null},"district_office":null,"license_number":null,"status":null,"capacity":0,"adjusted_capacity":0,"available_beds":null,"license_effective_date":null,"original_application_recieved_date":null,"last_visit_date":null,"last_deferred_visit_date":null,"email_address":null,"full_residential_address":"23
-        s Oxnard CA","full_mailing_address":null,"last_visit_reason":null,"last_deferred_visit_reason":null,"county":{"id":"56","value":"Ventura","lis_code":null},"phones":[],"addresses":[{"id":null,"type":"Residential","address":{"id":null,"longitude":null,"lattitude":null,"deliverable":null,"street_address":"23
-        s","city":"Oxnard","state":"CA","zip_code":null,"zip_suffix_code":null}}],"visits":[],"annual_visit_year":null,"prelicensing_visit_date":null,"facility_source":"CWS/CMS"},"sort":[4.3072987,"home"]},{"_index":"facilities","_type":"facility","_id":"T0DZ8Lw0TT","_score":4.3072987,"_source":{"href":null,"id":"T0DZ8Lw0TT","capacity_last_changed":null,"type":{"id":"20","value":"Relative/NREFM
-        Home"},"adoption_home_only_indicator":false,"name":"New Home","licensee_name":"","license_type":null,"assigned_worker":{"phones":[],"email":null,"full_name":"","id":null},"district_office":null,"license_number":null,"status":null,"capacity":0,"adjusted_capacity":0,"available_beds":null,"license_effective_date":null,"original_application_recieved_date":null,"last_visit_date":null,"last_deferred_visit_date":null,"email_address":null,"full_residential_address":"45
-        Ventura CA","full_mailing_address":null,"last_visit_reason":null,"last_deferred_visit_reason":null,"county":{"id":"56","value":"Ventura","lis_code":null},"phones":[],"addresses":[{"id":null,"type":"Residential","address":{"id":null,"longitude":null,"lattitude":null,"deliverable":null,"street_address":"45","city":"Ventura","state":"CA","zip_code":null,"zip_suffix_code":null}}],"visits":[],"annual_visit_year":null,"prelicensing_visit_date":null,"facility_source":"CWS/CMS"},"sort":[4.3072987,"home"]},{"_index":"facilities","_type":"facility","_id":"68wxZEm0QM","_score":4.3072987,"_source":{"href":null,"id":"68wxZEm0QM","capacity_last_changed":null,"type":{"id":"20","value":"Relative/NREFM
-        Home"},"adoption_home_only_indicator":false,"name":"Sally Jones","licensee_name":"","license_type":null,"assigned_worker":{"phones":[],"email":null,"full_name":"","id":null},"district_office":null,"license_number":null,"status":null,"capacity":0,"adjusted_capacity":0,"available_beds":null,"license_effective_date":null,"original_application_recieved_date":null,"last_visit_date":null,"last_deferred_visit_date":null,"email_address":null,"full_residential_address":"23
-        M St Ventura CA","full_mailing_address":null,"last_visit_reason":null,"last_deferred_visit_reason":null,"county":{"id":"56","value":"Ventura","lis_code":null},"phones":[],"addresses":[{"id":null,"type":"Residential","address":{"id":null,"longitude":null,"lattitude":null,"deliverable":null,"street_address":"23
-        M St","city":"Ventura","state":"CA","zip_code":null,"zip_suffix_code":null}}],"visits":[],"annual_visit_year":null,"prelicensing_visit_date":null,"facility_source":"CWS/CMS"},"sort":[4.3072987,"jones"]},{"_index":"facilities","_type":"facility","_id":"MkPGCE20Mq","_score":4.3072987,"_source":{"href":null,"id":"MkPGCE20Mq","capacity_last_changed":null,"type":{"id":"20","value":"Relative/NREFM
-        Home"},"adoption_home_only_indicator":false,"name":"reqre","licensee_name":"","license_type":null,"assigned_worker":{"phones":[],"email":null,"full_name":"","id":null},"district_office":null,"license_number":null,"status":null,"capacity":0,"adjusted_capacity":0,"available_beds":null,"license_effective_date":null,"original_application_recieved_date":null,"last_visit_date":null,"last_deferred_visit_date":null,"email_address":null,"full_residential_address":"rq
-        reqqrqe CA","full_mailing_address":null,"last_visit_reason":null,"last_deferred_visit_reason":null,"county":{"id":"56","value":"Ventura","lis_code":null},"phones":[],"addresses":[{"id":null,"type":"Residential","address":{"id":null,"longitude":null,"lattitude":null,"deliverable":null,"street_address":"rq","city":"reqqrqe","state":"CA","zip_code":null,"zip_suffix_code":null}}],"visits":[],"annual_visit_year":null,"prelicensing_visit_date":null,"facility_source":"CWS/CMS"},"sort":[4.3072987,"reqre"]}]}}'
+      string: '{"took":1,"timed_out":false,"_shards":{"total":1,"successful":1,"failed":0},"hits":{"total":2,"max_score":null,"hits":[{"_index":"facilities","_type":"facility","_id":"100004509","_score":3.1216419,"_source":{"href":null,"id":"100004509","capacity_last_changed":null,"type":{"id":"6","value":"Foster
+        Family Home"},"adoption_home_only_indicator":null,"name":"Little Town Home","licensee_name":"Ananya
+        Nandi","license_type":"C","assigned_worker":{"phones":[],"email":null,"full_name":null,"id":null},"district_office":{"number":"31","name":"N
+        LA & CEN COA AC/SC"},"license_number":"100004509","status":{"active":true,"id":"3","value":"Licensed"},"capacity":28,"adjusted_capacity":null,"available_beds":null,"license_effective_date":null,"original_application_recieved_date":null,"last_visit_date":null,"last_deferred_visit_date":null,"email_address":"MFLAVIN@CASAPACIFICA.ORG","full_residential_address":"123
+        Main St. CAMARILLO CA 93012","full_mailing_address":"1722 SOUTH LEWIS ROAD
+        CAMARILLO CA 93012   0","last_visit_reason":null,"last_deferred_visit_reason":null,"county":{"id":"56","value":"VENTURA","lis_code":null},"phones":[{"relation":"primary","type":"Cell","number":"9160061107"}],"addresses":[{"id":null,"type":"Residential","address":{"id":null,"longitude":null,"lattitude":null,"deliverable":null,"street_address":"123
+        Main St.","city":"CAMARILLO","state":"CA","zip_code":"93012","zip_suffix_code":null}},{"id":null,"type":"Mailing","address":{"id":null,"longitude":null,"lattitude":null,"deliverable":null,"street_address":"1722
+        SOUTH LEWIS ROAD","city":"CAMARILLO","state":"CA","zip_code":"93012   0","zip_suffix_code":null}}],"visits":[],"annual_visit_year":null,"prelicensing_visit_date":null,"facility_source":"LIS"},"sort":[3.1216419,"home"]},{"_index":"facilities","_type":"facility","_id":"100004510","_score":3.1216419,"_source":{"href":null,"id":"100004510","capacity_last_changed":null,"type":{"id":"6","value":"Foster
+        Family Home"},"adoption_home_only_indicator":null,"name":"Little Treasures
+        Home","licensee_name":"Ananya Nandi","license_type":"C","assigned_worker":{"phones":[],"email":null,"full_name":null,"id":null},"district_office":{"number":"31","name":"N
+        LA & CEN COA AC/SC"},"license_number":"100004510","status":{"active":true,"id":"3","value":"Licensed"},"capacity":6,"adjusted_capacity":null,"available_beds":null,"license_effective_date":null,"original_application_recieved_date":null,"last_visit_date":null,"last_deferred_visit_date":null,"email_address":"DR.BARRY.BOATMAN@GMAIL.COM","full_residential_address":"123
+        Main St. CAMARILLO CA 93011","full_mailing_address":"1938 CARSON MESA ROAD
+        PALMDALE CA 93550","last_visit_reason":null,"last_deferred_visit_reason":null,"county":{"id":"56","value":"VENTURA","lis_code":null},"phones":[{"relation":"primary","type":"Cell","number":"9160061108"}],"addresses":[{"id":null,"type":"Residential","address":{"id":null,"longitude":null,"lattitude":null,"deliverable":null,"street_address":"123
+        Main St.","city":"CAMARILLO","state":"CA","zip_code":"93011","zip_suffix_code":null}},{"id":null,"type":"Mailing","address":{"id":null,"longitude":null,"lattitude":null,"deliverable":null,"street_address":"1938
+        CARSON MESA ROAD","city":"PALMDALE","state":"CA","zip_code":"93550","zip_suffix_code":null}}],"visits":[],"annual_visit_year":null,"prelicensing_visit_date":null,"facility_source":"LIS"},"sort":[3.1216419,"home"]}]}}'
     http_version: 
-  recorded_at: Thu, 14 Feb 2019 04:26:34 GMT
+  recorded_at: Tue, 02 Apr 2019 18:00:35 GMT
 recorded_with: VCR 4.0.0
