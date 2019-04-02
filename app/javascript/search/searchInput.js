@@ -106,7 +106,7 @@ const SearchInput = ({
       <InputDataBlock columnWidth={12}>
         <div className='pull-right'>
           <button id='search' type='submit' className=' search-btn btn btn-primary margin-search-reset-btn'>Search</button>
-          <button id='reset' type='button' onClick={resetForm} className='reset-btn btn btn-primary'>Reset</button>
+          <button id='reset' type='button' onClick={resetForm} className='reset-btn btn btn-primary reset-btn-color'>Reset</button>
         </div>
       </InputDataBlock>
     </div>
