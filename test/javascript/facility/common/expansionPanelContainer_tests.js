@@ -1,7 +1,7 @@
 import React from 'react'
 import ControlledExpansionPanel from 'facility/common/expansionPanelContainer'
 import {shallow, mount} from 'enzyme'
-import { ExpansionPanel } from '@material-ui/core';
+import { ExpansionPanel } from '@material-ui/core'
 
 describe('Verify expansion panel', () => {
   const props = {
@@ -13,7 +13,7 @@ describe('Verify expansion panel', () => {
   it('Verify expansion panel exists', () => {
     expect(VerifyExpansionPanelMount.find('ExpansionPanel').length).toBe(1)
   })
-  it ('verify expansion panel summary exists', () => {
+  it('verify expansion panel summary exists', () => {
     expect(VerifyExpansionPanelMount.find('ExpansionPanelSummary').length).toBe(1)
   })
   it('verify expansion details exists', () => {
@@ -24,7 +24,7 @@ describe('Verify expansion panel', () => {
   })
   it('verify expansion panel expanded onChange', () => {
     VerifyExpansionPanelMount.setState({
-        expanded: true
+      expanded: true
     })
     VerifyExpansionPanelMount.find(ExpansionPanel).props().onChange()
     VerifyExpansionPanelMount.update()
