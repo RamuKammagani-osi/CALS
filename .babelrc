@@ -1,7 +1,7 @@
 {
   "presets": [
     [
-      "@babel/env",
+      "@babel/preset-env",
       {
         "modules": false,
         "targets": {
@@ -11,11 +11,11 @@
         "useBuiltIns": "entry"
       }
     ],
-    "@babel/react"
+    "@babel/preset-react"
   ],
   "plugins": [
+    "@babel/plugin-proposal-object-rest-spread",
     "syntax-dynamic-import",
-    "transform-object-rest-spread",
     [
       "transform-class-properties",
       {
