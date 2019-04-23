@@ -2,6 +2,10 @@ import React from 'react'
 import Moment from 'moment'
 import escapeElastic from 'elasticsearch-sanitize'
 
+export const isFacilitySourceLis = (value) => {
+  return value === 'LIS'
+}
+
 export const respectiveStreetAddressOrNA = (addresses, addressType) => {
   const addressObject = addresses && addresses.find(o => o.type === addressType)
   if (addressObject && addressObject.address.street_address) {
@@ -71,9 +75,8 @@ export const respectiveFullAddressOrNA = (addresses, addressType) => {
 export const checkforDateOrNa = (date) => {
   if (date) {
     return date.split(' ')[0].replace(/(\d{4})-(\d{2})-(\d{2})/, '$2/$3/$1')
-  } else {
-    return 'N/A'
   }
+  return 'N/A'
 }
 
 export const sortbyDate = (a, b) => {
@@ -118,7 +121,7 @@ export const physicalAddressType = 'Residential'
 
 export const mailingAddressType = 'Mailing'
 
-export const listOfStatus = ['LICENSED', 'CERTIFIED/APPROVED', 'LICENSED(PENDING CAPACITY CHANGE)']
+export const cwsStatusesWithLicenseDate = ['Licensed', 'RFA Approved']
 
 export const resultsPerPage = ['5', '10', '25', '50', '100']
 
@@ -127,11 +130,13 @@ export const NoSearchResultsErrorMessage = 'No results were found with the selec
 export const NoSearchCriteriaMessage = 'Please select search criteria and try again.'
 
 export const handleLicenseEffectiveDate = (result) => {
-  if (result.status) {
-    return listOfStatus.indexOf(result.status.value) >= 0 ? checkforDateOrNa(result.license_effective_date) : 'N/A'
-  } else {
-    return 'N/A'
+  if (isFacilitySourceLis(result.facility_source.value)) {
+    return checkforDateOrNa(result.license_effective_date)
   }
+  if (result.status) {
+    return cwsStatusesWithLicenseDate.indexOf(result.status.value) >= 0 ? checkforDateOrNa(result.license_effective_date) : 'N/A'
+  }
+  return 'N/A'
 }
 
 export const handleStatus = (status) => {
