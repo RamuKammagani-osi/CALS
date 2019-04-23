@@ -56,7 +56,8 @@ const getFacilityDetails = (facilityState) => ({
   license_effective_date: handleLicenseEffectiveDate(facilityState),
   original_application_recieved_date: checkforDateOrNa(facilityState.original_application_recieved_date),
   type: checkForNA(facilityState.type),
-  status: checkForNA(facilityState.status)
+  status: checkForNA(facilityState.status),
+  facility_source: facilityState.facility_source
 })
 
 const getFacilityChildrenData = (facilityChildren) => {
