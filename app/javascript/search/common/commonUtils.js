@@ -2,9 +2,7 @@ import React from 'react'
 import Moment from 'moment'
 import escapeElastic from 'elasticsearch-sanitize'
 
-export const isFacilitySourceLis = (value) => {
-  return value === 'LIS'
-}
+export const isLisFacility = (value) => value === 'LIS'
 
 export const respectiveStreetAddressOrNA = (addresses, addressType) => {
   const addressObject = addresses && addresses.find(o => o.type === addressType)
@@ -121,7 +119,7 @@ export const physicalAddressType = 'Residential'
 
 export const mailingAddressType = 'Mailing'
 
-export const cwsStatusesWithLicenseDate = ['Licensed', 'RFA Approved']
+export const cwsStatuses = ['Licensed', 'RFA Approved']
 
 export const resultsPerPage = ['5', '10', '25', '50', '100']
 
@@ -130,11 +128,14 @@ export const NoSearchResultsErrorMessage = 'No results were found with the selec
 export const NoSearchCriteriaMessage = 'Please select search criteria and try again.'
 
 export const handleLicenseEffectiveDate = (result) => {
-  if (isFacilitySourceLis(result.facility_source.value)) {
-    return checkforDateOrNa(result.license_effective_date)
+  let source = result.facility_source
+  let date = result.license_effective_date
+  if (isLisFacility(source)) {
+    return checkforDateOrNa(date)
   }
-  if (result.status) {
-    return cwsStatusesWithLicenseDate.indexOf(result.status.value) >= 0 ? checkforDateOrNa(result.license_effective_date) : 'N/A'
+  let cwsStatus = result.status
+  if (cwsStatus && cwsStatuses.indexOf(cwsStatus.value) >= 0) {
+    return checkforDateOrNa(date)
   }
   return 'N/A'
 }
