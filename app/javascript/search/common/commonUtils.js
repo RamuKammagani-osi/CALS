@@ -128,12 +128,12 @@ export const NoSearchResultsErrorMessage = 'No results were found with the selec
 export const NoSearchCriteriaMessage = 'Please select search criteria and try again.'
 
 export const handleLicenseEffectiveDate = (result) => {
-  let source = result.facility_source
-  let date = result.license_effective_date
+  const source = result.facility_source
+  const date = result.license_effective_date
   if (isLisFacility(source)) {
     return checkforDateOrNa(date)
   }
-  let cwsStatus = result.status
+  const cwsStatus = result.status
   if (cwsStatus && cwsStatuses.indexOf(cwsStatus.value) >= 0) {
     return checkforDateOrNa(date)
   }
