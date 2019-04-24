@@ -93,7 +93,10 @@ describe('check if license effective date or N/A is returned for LIS facilities'
   }
   const lisFacilityWithoutDate = {
     facility_source: 'LIS',
-    status: 'Unlicensed'
+    'status': {
+      'id': '1',
+      'value': 'Unlicensed'
+    }
   }
   it('should return valid date for LIS facility with license effective date', () => {
     expect(handleLicenseEffectiveDate(lisFacilityWithDate)).toEqual('12/31/1978')

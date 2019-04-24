@@ -2,7 +2,7 @@ import React from 'react'
 import Moment from 'moment'
 import escapeElastic from 'elasticsearch-sanitize'
 
-export const isLisFacility = (value) => value === 'LIS'
+export const isLisFacility = value => value === 'LIS'
 
 export const respectiveStreetAddressOrNA = (addresses, addressType) => {
   const addressObject = addresses && addresses.find(o => o.type === addressType)
