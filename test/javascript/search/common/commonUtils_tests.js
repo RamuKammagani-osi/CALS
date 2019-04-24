@@ -1,4 +1,4 @@
-import { checkAndSplitValue, checkForLicenseStatus, sortbyDate, formatDate } from 'search/common/commonUtils.js'
+import { checkAndSplitValue, checkForLicenseStatus, sortbyDate, formatDate, isLisFacility, handleLicenseEffectiveDate } from 'search/common/commonUtils.js'
 
 describe('check and split value method with different inputs', () => {
   it('should return wildcard tokens attached to both words', () => {
@@ -70,5 +70,91 @@ describe('format date', () => {
   })
   it('should return custom formatted date', () => {
     expect(formatDate('1978-12-31', 'DD/MM/YYYY')).toEqual('31/12/1978')
+  })
+})
+
+describe('check if facility source is LIS or CWS/CMS', () => {
+  it('should return true for LIS facilities', () => {
+    expect(isLisFacility('LIS')).toEqual(true)
+  })
+  it('should return false for CWS/CMS facilities', () => {
+    expect(isLisFacility('CWS/CMS')).toEqual(false)
+  })
+})
+
+describe('check if license effective date or N/A is returned for LIS facilities', () => {
+  const lisFacilityWithDate = {
+    facility_source: 'LIS',
+    license_effective_date: '1978-12-31',
+    'status': {
+      'id': '1',
+      'value': 'Unlicensed'
+    }
+  }
+  const lisFacilityWithoutDate = {
+    facility_source: 'LIS',
+    'status': {
+      'id': '1',
+      'value': 'Unlicensed'
+    }
+  }
+  it('should return valid date for LIS facility with license effective date', () => {
+    expect(handleLicenseEffectiveDate(lisFacilityWithDate)).toEqual('12/31/1978')
+  })
+  it('should return N/A for LIS facility without license effective date', () => {
+    expect(handleLicenseEffectiveDate(lisFacilityWithoutDate)).toEqual('N/A')
+  })
+})
+
+describe('check if license effective date or N/A is returned for CWS/CMS facilities', () => {
+  const cwsFacilityWithLicensedStatus = {
+    facility_source: 'CWS/CMS',
+    license_effective_date: '1978-12-31',
+    'status': {
+      'id': '3',
+      'value': 'Licensed'
+    }
+  }
+  const cwsFacilityWithRfaApprovedStatus = {
+    facility_source: 'CWS/CMS',
+    license_effective_date: '1978-12-31',
+    'status': {
+      'id': '30',
+      'value': 'RFA Approved'
+    }
+  }
+  const cwsFacilityUnlicensedLicense = {
+    facility_source: 'CWS/CMS',
+    license_effective_date: '1978-12-31',
+    'status': {
+      'id': '1',
+      'value': 'Unlicensed'
+    }
+  }
+  const cwsFacilityWithoutDate = {
+    facility_source: 'CWS/CMS',
+    'status': {
+      'id': '3',
+      'value': 'Licensed'
+    }
+  }
+  const cwsFacilityWithoutLicenseStatus = {
+    facility_source: 'CWS/CMS',
+    license_effective_date: '1978-12-31'
+  }
+  it('should return valid date for CWS/CMS facility with Licensed status and license effective date', () => {
+    expect(handleLicenseEffectiveDate(cwsFacilityWithLicensedStatus)).toEqual('12/31/1978')
+  })
+  it('should return valid date for CWS/CMS facility with RFA Approved status and license effective date', () => {
+    expect(handleLicenseEffectiveDate(cwsFacilityWithRfaApprovedStatus)).toEqual('12/31/1978')
+  })
+  it('should return N/A for CWS/CMS facility with Unlicensed status and license effective date', () => {
+    expect(handleLicenseEffectiveDate(cwsFacilityUnlicensedLicense)).toEqual('N/A')
+  })
+  it('should return N/A for CWS/CMS facility without effective date', () => {
+    expect(handleLicenseEffectiveDate(cwsFacilityWithoutDate)).toEqual('N/A')
+  })
+  it('should return N/A for CWS/CMS facility without license status', () => {
+    expect(handleLicenseEffectiveDate(cwsFacilityWithoutLicenseStatus)).toEqual('N/A')
   })
 })

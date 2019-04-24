@@ -82,7 +82,8 @@ describe('facilityDataSelectors', () => {
         license_effective_date: 'N/A',
         original_application_recieved_date: 'N/A',
         type: 'Foster Family Home',
-        status: 'APPLICATION WITHDRWN'
+        status: 'APPLICATION WITHDRWN',
+        facility_source: 'LIS'
       })
     })
   })
