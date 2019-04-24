@@ -32,6 +32,7 @@ const SearchInput = ({
         <DropDownField
           label='County Type'
           id='county_select'
+          labelForAll='All Counties'
           selectClassName='searchSelect'
           value={countyValue}
           optionList={countyList}
@@ -106,7 +107,7 @@ const SearchInput = ({
       <InputDataBlock columnWidth={12}>
         <div className='pull-right'>
           <button id='search' type='submit' className=' search-btn btn btn-primary margin-search-reset-btn'>Search</button>
-          <button id='reset' type='button' onClick={resetForm} className='reset-btn btn btn-primary reset-btn-color'>Reset</button>
+          <button id='reset' type='button' onClick={resetForm} className='reset-btn btn btn-primary reset-btn-color'>Clear</button>
         </div>
       </InputDataBlock>
     </div>
