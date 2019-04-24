@@ -83,7 +83,7 @@ describe('check if facility source is LIS or CWS/CMS', () => {
 })
 
 describe('check if license effective date or N/A is returned for LIS facilities', () => {
-  let lisFacilityWithDate = {
+  const lisFacilityWithDate = {
     facility_source: 'LIS',
     license_effective_date: '1978-12-31',
     'status': {
@@ -91,7 +91,7 @@ describe('check if license effective date or N/A is returned for LIS facilities'
       'value': 'Unlicensed'
     }
   }
-  let lisFacilityWithoutDate = {
+  const lisFacilityWithoutDate = {
     facility_source: 'LIS',
     status: 'Unlicensed'
   }
@@ -104,7 +104,7 @@ describe('check if license effective date or N/A is returned for LIS facilities'
 })
 
 describe('check if license effective date or N/A is returned for CWS/CMS facilities', () => {
-  let cwsFacilityWithLicensedStatus = {
+  const cwsFacilityWithLicensedStatus = {
     facility_source: 'CWS/CMS',
     license_effective_date: '1978-12-31',
     'status': {
@@ -112,7 +112,7 @@ describe('check if license effective date or N/A is returned for CWS/CMS facilit
       'value': 'Licensed'
     }
   }
-  let cwsFacilityWithRfaApprovedStatus = {
+  const cwsFacilityWithRfaApprovedStatus = {
     facility_source: 'CWS/CMS',
     license_effective_date: '1978-12-31',
     'status': {
@@ -120,7 +120,7 @@ describe('check if license effective date or N/A is returned for CWS/CMS facilit
       'value': 'RFA Approved'
     }
   }
-  let cwsFacilityUnlicensedLicense = {
+  const cwsFacilityUnlicensedLicense = {
     facility_source: 'CWS/CMS',
     license_effective_date: '1978-12-31',
     'status': {
@@ -128,14 +128,14 @@ describe('check if license effective date or N/A is returned for CWS/CMS facilit
       'value': 'Unlicensed'
     }
   }
-  let cwsFacilityWithoutDate = {
+  const cwsFacilityWithoutDate = {
     facility_source: 'CWS/CMS',
     'status': {
       'id': '3',
       'value': 'Licensed'
     }
   }
-  let cwsFacilityWithoutLicenseStatus = {
+  const cwsFacilityWithoutLicenseStatus = {
     facility_source: 'CWS/CMS',
     license_effective_date: '1978-12-31'
   }
