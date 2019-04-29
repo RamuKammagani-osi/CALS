@@ -1,4 +1,6 @@
-require "simplecov"
+# frozen_string_literal: true
+
+require 'simplecov'
 require 'selenium/webdriver'
 require 'chromedriver/helper'
 
@@ -38,8 +40,8 @@ RSpec.configure do |config|
   config.include FactoryBot::Syntax::Methods
   config.shared_context_metadata_behavior = :apply_to_host_groups
   config.filter_run_when_matching :focus
-  config.example_status_persistence_file_path = "reports/rspec_test_results.txt"
-  #config.disable_monkey_patching!
+  config.example_status_persistence_file_path = 'reports/rspec_test_results.txt'
+  # config.disable_monkey_patching!
   config.default_formatter = 'doc' if config.files_to_run.one?
   config.order = :random
   Kernel.srand config.seed

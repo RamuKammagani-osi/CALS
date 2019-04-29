@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class Rfa::B01Controller < CalsBaseController
   before_action -> { require_rfa_privilege(method(:edit)) }, only: [:edit]
   def index
@@ -18,7 +20,7 @@ class Rfa::B01Controller < CalsBaseController
     @rfa_a01_application['rfa1c_forms'] = rfa_c01_application_helper.all(@application_id)
   end
 
-  def update    
+  def update
     rfa_b01_application_helper.update(params[:b01][:id], params[:a01_id], b01_params.to_json)
     render json: rfa_b01_application_helper.find_by_id(params[:b01][:id], params[:a01_id])
   rescue ApiError => e
@@ -26,13 +28,13 @@ class Rfa::B01Controller < CalsBaseController
   end
 
   def submit
-     @a01_id= params[:a01_id]
-     @b01_id= params[:b01_id]
-     rfa_application_helper.submit_application(@a01_id)
-     render json: rfa_b01_application_helper.find_by_id(@b01_id, @a01_id)
-   rescue  => e
-     render json: e.response, status: e.status
-   end
+    @a01_id = params[:a01_id]
+    @b01_id = params[:b01_id]
+    rfa_application_helper.submit_application(@a01_id)
+    render json: rfa_b01_application_helper.find_by_id(@b01_id, @a01_id)
+  rescue StandardError => e
+    render json: e.response, status: e.status
+  end
 
   private
 
@@ -41,9 +43,9 @@ class Rfa::B01Controller < CalsBaseController
                                 :convicted_in_another_state, :arrested_for_crime, :resource_family_name,
                                 :applicant_first_name, :applicant_middle_name, :applicant_last_name,
                                 :ssn, :date_of_birth, :driver_license, :signature, :application_date,
-                                 metadata: :submit_enabled, applicant_name_prefix:  %i[id value],
-                                 applicant_name_suffix: %i[id value], application_county:  %i[id value],
-                                 driver_license_state:  %i[id value],
+                                metadata: :submit_enabled, applicant_name_prefix:  %i[id value],
+                                applicant_name_suffix: %i[id value], application_county:  %i[id value],
+                                driver_license_state: %i[id value],
                                 residence_address: [:street_address, :zip, :city, state: %i[id value]],
                                 other_states_of_living: [%i[id value]],
                                 convicted_in_california_disclosures: [%i[offense offense_city offense_date when_offense_happen offense_details]],

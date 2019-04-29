@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class Rfa::Application < CalsBase
   include Concerns::Rfa::ApplicationApiProtocolProvider
   attr_accessor :id, :is_initial_application, :is_other_type, :tracking_id, :application_county, :resource_family_name,

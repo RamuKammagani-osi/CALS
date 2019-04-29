@@ -40,10 +40,12 @@ group :development, :test do
   gem 'byebug', platforms: %i[mri mingw x64_mingw]
   gem 'capybara', '~> 3.6'
   gem 'capybara-accessible', github: 'ca-cwds/capybara-accessible', branch: 'master'
+  gem 'capybara-screenshot'
   gem 'chromedriver-helper', '1.2.0'
   # gem 'factory_bot'
   gem 'factory_bot_rails'
   gem 'faker'
+  gem 'geckodriver-helper'
   gem 'rails-controller-testing'
   gem 'rspec', '~> 3.7'
   gem 'rspec-rails', '~> 3.7'

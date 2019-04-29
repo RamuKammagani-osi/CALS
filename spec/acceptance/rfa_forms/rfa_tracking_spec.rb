@@ -5,7 +5,6 @@ require 'vcr'
 require 'faker'
 
 RSpec.feature 'RFATracking', js: true, inaccessible: true do
-
   before do
     visit root_path
     click_button 'Create RFA Application'
@@ -34,8 +33,8 @@ RSpec.feature 'RFATracking', js: true, inaccessible: true do
     click_button 'Submit'
     click_link 'RFA Application list'
     expect(page).to have_content('123Monteo, James')
-    page.find("a", :text => '0123Monteo, James', match: :first).find(:xpath,"..//..", match: :first).find("a", text: 'Profile link').click
-    page.find("a", :text => 'tracking link').click
+    page.find('a', text: '0123Monteo, James', match: :first).find(:xpath, '..//..', match: :first).find('a', text: 'Profile link').click
+    page.find('a', text: 'tracking link').click
   end
 
   scenario 'visit tracking page from dashboard', set_auth_header: true do
@@ -77,7 +76,7 @@ RSpec.feature 'RFATracking', js: true, inaccessible: true do
     expect(page).to have_button 'Save'
     expect(page).to have_button 'Cancel'
     fill_in('familyEditRecievedDate0', with: '11/11/1987', match: :prefer_exact)
-    fill_in('familyEditNotes0', with: 'familyEditNotes0 typo cancel' , match: :prefer_exact)
+    fill_in('familyEditNotes0', with: 'familyEditNotes0 typo cancel', match: :prefer_exact)
     fill_in('taskAndTrainingEditCompletedDate0', with: '11/12/1987', match: :prefer_exact)
     fill_in('taskAndTrainingEditNotes0', with: 'taskAndTrainingEditNotes0 typo cancel', match: :prefer_exact)
     fill_in('assessmentEditSubmittedDate0', with: '11/13/1987', match: :prefer_exact)

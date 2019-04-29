@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 unless ENV['TEST_END_TO_END'] || ENV['DISABLE_VCR']
   require 'vcr'
   require 'webmock/rspec'
@@ -15,7 +17,6 @@ unless ENV['TEST_END_TO_END'] || ENV['DISABLE_VCR']
     end
 
     # :host, :headers
-    c.default_cassette_options = {match_requests_on: [:path, :method]}
-
+    c.default_cassette_options = { match_requests_on: %i[path method] }
   end
 end

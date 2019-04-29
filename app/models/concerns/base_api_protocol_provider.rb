@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module Concerns::BaseApiProtocolProvider
   extend ActiveSupport::Concern
 
@@ -8,10 +10,10 @@ module Concerns::BaseApiProtocolProvider
       JSON.parse(response.body).map { |itm| new(itm) }
     end
 
-    #def find_by_id(id, auth_header)
+    # def find_by_id(id, auth_header)
     #  response = FaradayCals.get("/#{class_name_downcase_pluralized}/#{id}", auth_header)
     #  new(JSON.parse(response.body))
-    #end
+    # end
   end
 
   # instance methods

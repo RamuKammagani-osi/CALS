@@ -25,7 +25,6 @@ class Rfa::TrackingController < CalsBaseController
   private
 
   def tracking_params
-
     params.require(:tracking).permit(:id, :facility_name, :license_number, :rfa_1a_id,
                                      tracking_documents: [
                                        facility_documents:

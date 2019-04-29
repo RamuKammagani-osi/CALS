@@ -1,15 +1,17 @@
+# frozen_string_literal: true
+
 require_relative 'boot'
 
-require "rails"
+require 'rails'
 # Pick the frameworks you want:
-require "active_model/railtie"
-require "active_job/railtie"
-require "action_controller/railtie"
-require "action_mailer/railtie"
-require "action_view/railtie"
-require "action_cable/engine"
-#require "sprockets/railtie"
-require "rails/test_unit/railtie"
+require 'active_model/railtie'
+require 'active_job/railtie'
+require 'action_controller/railtie'
+require 'action_mailer/railtie'
+require 'action_view/railtie'
+require 'action_cable/engine'
+# require "sprockets/railtie"
+require 'rails/test_unit/railtie'
 
 # Require the gems listed in Gemfile, including any gems
 # you've limited to :test, :development, or :production.
@@ -27,15 +29,15 @@ module Cals
     config.react.addons = true
 
     # Settings for the pool of renderers:
-    config.react.server_renderer_timeout    ||= 20 # seconds
+    config.react.server_renderer_timeout ||= 20 # seconds
     config.react.server_renderer = React::ServerRendering::BundleRenderer
     config.react.server_renderer_options = {
-      files: ["server_rendering.js"],       # files to load for prerendering
+      files: ['server_rendering.js'],       # files to load for prerendering
       replay_console: true,                 # if true, console.* will be replayed client-side
     }
     # Changing files matching these dirs/exts will cause the server renderer to reload:
-    config.react.server_renderer_extensions = ["jsx", "js"]
-    config.react.server_renderer_directories = ["/app/assets/javascripts", "/app/javascripts/"]
+    config.react.server_renderer_extensions = %w[jsx js]
+    config.react.server_renderer_directories = ['/app/assets/javascripts', '/app/javascripts/']
 
     # use environment variable to set sub-directory/sub-uri for deployment
     config.relative_url_root = ENV['RAILS_RELATIVE_URL_ROOT'] || '/'

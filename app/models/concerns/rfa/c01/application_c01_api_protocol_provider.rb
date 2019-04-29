@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module Concerns::Rfa::C01::ApplicationC01ApiProtocolProvider
   extend ActiveSupport::Concern
   include Concerns::RfaBaseApiProtocolProvider

@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class Helpers::Rfa::A02Helper < Helpers::ModelHelperBase
   def model_class
     Rfa::A02

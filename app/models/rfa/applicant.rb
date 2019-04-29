@@ -1,17 +1,18 @@
+# frozen_string_literal: true
+
 class Rfa::Applicant < CalsBase
   include Concerns::Rfa::ApplicantApiProtocolProvider
 
   attr_accessor :language, :highest_education_level, :email, :date_of_birth, :ethnicity, :race, :gender,
-    :driver_license_number,:driver_license_state, :email_address, :employment, :exclusion_order,
-    :first_name, :middle_name, :last_name, :name_suffix, :name_prefix,  :issue_details
-
+                :driver_license_number, :driver_license_state, :email_address, :employment, :exclusion_order,
+                :first_name, :middle_name, :last_name, :name_suffix, :name_prefix, :issue_details
 
   attr_accessor :id
 
   attr_accessor :other_names, :phones
 
-  #TODO: what is an exclusion_order
-  #belongs_to :rfa_application
+  # TODO: what is an exclusion_order
+  # belongs_to :rfa_application
 
   # has_one :occupation
   #
@@ -37,5 +38,4 @@ class Rfa::Applicant < CalsBase
   def self.parent_path
     'rfa-1a-forms'
   end
-
 end

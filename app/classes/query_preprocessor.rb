@@ -1,5 +1,6 @@
-class QueryPreprocessor
+# frozen_string_literal: true
 
+class QueryPreprocessor
   def self.params_to_query_with_types(params)
     params_remove_blank_values(params)
 
@@ -15,11 +16,11 @@ class QueryPreprocessor
 
   def self.params_remove_blank_values(params)
     # remove blank values from each array
-    params.each do |k,v|
+    params.each do |k, v|
       params[k][:value] = [v[:value]] if v[:value].class != Array
       params[k][:value] = params[k][:value].reject(&:blank?)
     end
-    params.delete_if{|k,v| v[:value].empty?}
+    params.delete_if { |_k, v| v[:value].empty? }
   end
 
   def self.values_array_to_query_with_type(query_params, values, query_types)

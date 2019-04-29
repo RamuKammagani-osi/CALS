@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class Geoservice < CalsBase
   include Concerns::GeoserviceApiProtocolProvider
   attr_accessor :street_address, :city, :state, :zip, :zip_extension,
@@ -6,5 +8,4 @@ class Geoservice < CalsBase
   def self.api_resource_path
     'address'
   end
-
 end

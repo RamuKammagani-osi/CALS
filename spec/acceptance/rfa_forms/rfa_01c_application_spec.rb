@@ -5,7 +5,6 @@ require 'vcr'
 require 'faker'
 
 RSpec.feature 'RFA01C', js: true, inaccessible: true do
-
   scenario 'validate submit disabled when Rfa-01A is not valid', set_auth_header: true do
     visit root_path
     page.driver.browser.manage.window.resize_to 1200, 800
@@ -93,5 +92,5 @@ RSpec.feature 'RFA01C', js: true, inaccessible: true do
     expect(page).to have_button('Submit', disabled: true)
     fill_in('identified_children[0].first_name', with: 'G', match: :prefer_exact)
     expect(page).to have_button('Submit', disabled: true)
-    end
+  end
 end

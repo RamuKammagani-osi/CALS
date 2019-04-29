@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module Concerns::ChildApiProtocolProvider
   extend ActiveSupport::Concern
   include Concerns::BaseCalsApiProtocolProvider

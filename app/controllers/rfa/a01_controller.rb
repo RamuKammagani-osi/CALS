@@ -1,6 +1,8 @@
+# frozen_string_literal: true
+
 class Rfa::A01Controller < CalsBaseController
   before_action -> { require_rfa_privilege(method(:edit)) }, only: [:edit]
-  #include AuthenticationProvider
+  # include AuthenticationProvider
 
   def create
     # make api call to create application
@@ -18,7 +20,7 @@ class Rfa::A01Controller < CalsBaseController
   end
 
   def update
-    @application_id= params[:id]
+    @application_id = params[:id]
     response = rfa_application_helper.update(@application_id, params[:a01].to_json)
     render json: response
   rescue ApiError => e
@@ -26,11 +28,11 @@ class Rfa::A01Controller < CalsBaseController
   end
 
   def submit
-    @application_id= params[:id]
+    @application_id = params[:id]
     rfa_application_helper.submit_application(@application_id)
     render json: rfa_application_helper.find_by_application_id(@application_id)
-  rescue => e
-    render json: e.response,  status: e.status
+  rescue StandardError => e
+    render json: e.response, status: e.status
   end
 
   private

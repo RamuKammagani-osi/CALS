@@ -5,7 +5,6 @@ require 'vcr'
 require 'faker'
 
 RSpec.feature 'Profile', js: true, inaccessible: true do
-
   before do
     visit root_path
     click_button 'Create RFA Application'
@@ -35,11 +34,10 @@ RSpec.feature 'Profile', js: true, inaccessible: true do
     click_link 'RFA Application list'
     expect(page).to have_content('123Monteo, James')
     expect(page).to have_content('Submitted')
-    page.find("a", :text => '0123Monteo, James', match: :first).find(:xpath,"..//..", match: :first).find("a", text: 'Profile link').click
+    page.find('a', text: '0123Monteo, James', match: :first).find(:xpath, '..//..', match: :first).find('a', text: 'Profile link').click
   end
 
   scenario 'visit Profile page from dashboard', set_auth_header: true do
     expect(page).to have_content 'tracking link'
   end
-
 end

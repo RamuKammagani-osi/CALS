@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class Facility < CalsBase
   include Concerns::FacilityApiProtocolProvider
 
@@ -27,5 +29,4 @@ class Facility < CalsBase
   def complaints
     Complaint.find_by_facility(id)
   end
-
 end

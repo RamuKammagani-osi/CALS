@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 FactoryBot.define do
   factory :facility, class: 'Facility' do
     sequence(:name) { Faker::Lorem.sentence(1, true, 2) }

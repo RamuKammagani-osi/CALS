@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class Rfa::IdentifiedDesiredChild < CalsBase
   # FORM 01A
   attr_accessor :currently_in_home
@@ -7,5 +9,5 @@ class Rfa::IdentifiedDesiredChild < CalsBase
                 # TODO: should we make this into a school model with a has_one address?
                 :school_name, :school_street, :school_zip, :school_city, :school_state,
                 :legal_last, :legal_middle, :legal_first
-#belongs_to :rfa_application
+  # belongs_to :rfa_application
 end

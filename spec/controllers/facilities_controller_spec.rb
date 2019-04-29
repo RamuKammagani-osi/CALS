@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'rspec'
 require 'rails_helper'
 
@@ -9,7 +11,7 @@ describe FacilitiesController do
 
   describe 'GET show' do
     it 'renders the show template without requiring to check priviliges' do
-      allow(controller).to receive(:check_for_priviliges).and_return([{"name"=>"CALS (Facilities)", "id"=>"facility_search", "enabled"=>true, "roles"=>[], "privileges"=>[["Resource Management", "Facility-search-rollout"], ["CWS Case Management System", "Facility-search-rollout"], ["CWS Case Management System", "Resource Management", "Facility-search-rollout"]], "summary"=>"Search for Facility\n", "href"=>"/search"}, {"name"=>"CALS (RFA)", "id"=>"cals_rfa", "enabled"=>true, "roles"=>[], "privileges"=>[["RFA-rollout"]], "summary"=>"RFA\n", "href"=>"/"}])
+      allow(controller).to receive(:check_for_priviliges).and_return([{ 'name' => 'CALS (Facilities)', 'id' => 'facility_search', 'enabled' => true, 'roles' => [], 'privileges' => [['Resource Management', 'Facility-search-rollout'], ['CWS Case Management System', 'Facility-search-rollout'], ['CWS Case Management System', 'Resource Management', 'Facility-search-rollout']], 'summary' => "Search for Facility\n", 'href' => '/search' }, { 'name' => 'CALS (RFA)', 'id' => 'cals_rfa', 'enabled' => true, 'roles' => [], 'privileges' => [['RFA-rollout']], 'summary' => "RFA\n", 'href' => '/' }])
       get :show, params: { id: 'LUfrsLBAWW' }
       expect(response).to render_template('show')
     end
@@ -25,7 +27,7 @@ describe FacilitiesController do
       request.headers['Content-Type'] = 'application/json'
       request.headers['Accept'] = 'application/json'
 
-      post :search, body: {name: {query_type: 'match', value: ['xy']} }.to_json
+      post :search, body: { name: { query_type: 'match', value: ['xy'] } }.to_json
 
       expect(response.status).to eq(200)
       expect(response.body.include?('TWEEDLE'))

@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class Helpers::Rfa::B01::ApplicationHelper < Helpers::ModelHelperBase
   def model_class
     Rfa::B01::Application

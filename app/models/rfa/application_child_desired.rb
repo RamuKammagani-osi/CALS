@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class Rfa::ApplicationChildDesired < CalsBase
   include Concerns::Rfa::ApplicationChildDesiredApiProtocolProvider
 

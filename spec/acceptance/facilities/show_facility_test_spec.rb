@@ -49,5 +49,4 @@ RSpec.feature 'Facility Search & Profile', js: true, set_auth_header: true do
     select 'Riverside', from: 'county_select'
     find_button('Search').click
   end
-
 end

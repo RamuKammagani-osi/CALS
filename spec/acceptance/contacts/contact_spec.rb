@@ -5,7 +5,6 @@ require 'vcr'
 require 'faker'
 
 RSpec.feature 'Contact', js: true, set_auth_header: true, inaccessible: true do
-
   before(:each) do
     visit root_path
     page.driver.browser.manage.window.resize_to 1200, 800
@@ -36,7 +35,7 @@ RSpec.feature 'Contact', js: true, set_auth_header: true, inaccessible: true do
     sleep(3.seconds)
     click_link 'RFA Application list'
     expect(page).to have_content('0123Mont, James')
-    page.find("a", :text => '0123Mont, James', match: :first).find(:xpath,"..//..", match: :first).find("a", text: 'Profile link').click
+    page.find('a', text: '0123Mont, James', match: :first).find(:xpath, '..//..', match: :first).find('a', text: 'Profile link').click
     expect(page).to have_content '+ CREATE A NEW CONTACT'
     click_button '+ CREATE A NEW CONTACT'
   end
@@ -54,22 +53,22 @@ RSpec.feature 'Contact', js: true, set_auth_header: true, inaccessible: true do
     find('#contactNoticeYes').click
     find('#collateralVisitYes').click
 
-    fill_in('startTime', with: "12132000", match: :prefer_exact)
+    fill_in('startTime', with: '12132000', match: :prefer_exact)
     find('#startTime').send_keys :down
-    fill_in('endTime', with: "11132000", match: :prefer_exact)
-     find('#endTime').send_keys :down
+    fill_in('endTime', with: '11132000', match: :prefer_exact)
+    find('#endTime').send_keys :down
     fill_in('contactTitle', with: 'contact title', match: :prefer_exact)
     fill_in('contactNotes', with: 'contact notes', match: :prefer_exact)
 
     click_button 'Save'
     expect(find_field('dateOfContact').value).to eq '11/20/1990'
-    expect(find_field('contactClassificationtrue').value).to eq "true"
+    expect(find_field('contactClassificationtrue').value).to eq 'true'
     expect(find_field('methodOfContact').value).to eq '3'
     expect(find_field('contactLocation').value).to eq '1'
     expect(find_field('contactType').value).to eq '13'
 
-    expect(find_field('contactNoticetrue').value).to eq "true"
-    expect(find_field('contactNoticetrue').value).to eq "true"
+    expect(find_field('contactNoticetrue').value).to eq 'true'
+    expect(find_field('contactNoticetrue').value).to eq 'true'
     expect(find_field('startTime').value).to eq '12:13:20'
     expect(find_field('endTime').value).to eq '23:13:20'
 
@@ -84,5 +83,4 @@ RSpec.feature 'Contact', js: true, set_auth_header: true, inaccessible: true do
     expect(find_field('contactTitle').value).to eq ''
     expect(find_field('contactNotes').value).to eq ''
   end
-
 end

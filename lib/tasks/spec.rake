@@ -6,12 +6,12 @@ end
 
 namespace :build_rails do
   task :bundle_yarn do
-    command = "bundle install && yarn"
+    command = 'bundle install && yarn'
     system "docker-compose exec -T cals bash -c '#{command}'"
   end
 end
 
-namespace :spec do # rubocop:disable BlockLength
+namespace :spec do
   def file_list
     # first ARGV is task name
     args = ARGV.drop(1)
@@ -55,5 +55,4 @@ namespace :spec do # rubocop:disable BlockLength
   #     system 'bin/karma'
   #   end
   # end
-
 end

@@ -118,7 +118,7 @@ def lintStage() {
 
 def runTestInsideContainer() {
   appDockerImage.withRun { container ->
-  
+
     stage('Test - Jasmine') {
       sh "docker exec -t ${container.id} yarn karma-ci"
     }
@@ -278,7 +278,14 @@ def updateManifestStage(environment, version) {
        withEnv(["CAPYBARA_APP_HOST=https://web.${environment}.cwds.io/cals",
                 "CAPYBARA_DRIVER=selenium",
                 "USERNAME=${USERNAME}"]) {
-        sh "docker-compose -f docker/acceptance-tests/docker-compose.yml run -e SELENIUM_BROWSER=HEADLESS_CHROME -e TEST_END_TO_END=true cals_acceptance_test bundle exec rspec spec/acceptance/facilities"
+        sh "docker-compose -f docker/acceptance-tests/docker-compose.yml run \
+                           -e SELENIUM_BROWSER=HEADLESS_CHROME \
+                           -e TEST_END_TO_END=true \
+                           cals_acceptance_test bundle exec rspec spec/acceptance/facilities"
+        sh "docker-compose -f docker/acceptance-tests/docker-compose.yml run \
+                           -e SELENIUM_BROWSER=HEADLESS_FIREFOX \
+                           -e TEST_END_TO_END=true \
+                           cals_acceptance_test bundle exec rspec spec/acceptance/facilities"
        }
      } else {
        withCredentials([
@@ -288,7 +295,20 @@ def updateManifestStage(environment, version) {
        ]) {
          withEnv(["CAPYBARA_APP_HOST=https://web.${environment}.cwds.io/cals",
                   "CAPYBARA_DRIVER=selenium"]) {
-          sh "docker-compose -f docker/acceptance-tests/docker-compose.yml run -e SELENIUM_BROWSER=HEADLESS_CHROME -e TEST_END_TO_END=true -e ACCEPTANCE_TEST_USER=$SMOKE_TEST_USER -e ACCEPTANCE_TEST_PASSWORD=$SMOKE_TEST_PASSWORD -e VERIFICATION_CODE=$SMOKE_VERIFICATION_CODE cals_acceptance_test bundle exec rspec spec/acceptance/facilities"
+          sh "docker-compose -f docker/acceptance-tests/docker-compose.yml run \
+                             -e SELENIUM_BROWSER=HEADLESS_CHROME \
+                             -e TEST_END_TO_END=true \
+                             -e ACCEPTANCE_TEST_USER=$SMOKE_TEST_USER \
+                             -e ACCEPTANCE_TEST_PASSWORD=$SMOKE_TEST_PASSWORD \
+                             -e VERIFICATION_CODE=$SMOKE_VERIFICATION_CODE \
+                             cals_acceptance_test bundle exec rspec spec/acceptance/facilities"
+          sh "docker-compose -f docker/acceptance-tests/docker-compose.yml run \
+                             -e SELENIUM_BROWSER=HEADLESS_FIREFOX \
+                             -e TEST_END_TO_END=true \
+                             -e ACCEPTANCE_TEST_USER=$SMOKE_TEST_USER \
+                             -e ACCEPTANCE_TEST_PASSWORD=$SMOKE_TEST_PASSWORD \
+                             -e VERIFICATION_CODE=$SMOKE_VERIFICATION_CODE \
+                             cals_acceptance_test bundle exec rspec spec/acceptance/facilities"
          }
        }
      }

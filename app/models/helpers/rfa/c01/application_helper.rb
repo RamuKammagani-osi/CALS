@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class Helpers::Rfa::C01::ApplicationHelper < Helpers::ModelHelperBase
   def model_class
     Rfa::C01::Application
@@ -14,5 +16,4 @@ class Helpers::Rfa::C01::ApplicationHelper < Helpers::ModelHelperBase
   def update(application_id, rfa_c01_form_id, body)
     model_class.update(application_id, rfa_c01_form_id, body, auth_header)
   end
-
 end

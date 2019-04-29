@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class Elastic::QueryBuilder
   include ActiveModel::Model
 
@@ -8,7 +10,7 @@ class Elastic::QueryBuilder
       query_leaves << query_by_type(k, v)
     end
 
-    return query_leaves
+    query_leaves
   end
 
   def self.query_by_type(k, v)
@@ -21,7 +23,7 @@ class Elastic::QueryBuilder
 
   # wrap individual leaf queries in bool must
   def self.bool_and(query_leaves)
-    return {
+    {
       bool: {
         must: query_leaves
       }
@@ -38,7 +40,6 @@ class Elastic::QueryBuilder
   # {"query":{"bool":{"should":[{"bool":{"must":[{"match":{"fac_co_nbr":"28"}},{"match":{"fac_name":"home"}}]}},{"bool":{"must":[{"match":{"fac_co_nbr":"18"}}]}}]}}}
   #
   def self.match_boolean(query_array)
-
     # prepare array of match queries.
     combined_query_array = []
 
@@ -48,7 +49,7 @@ class Elastic::QueryBuilder
       combined_query_array << bool_and(leaf_queries(itm))
     end
     # wrap array in a bool OR query
-    return {
+    {
       query: {
         bool: {
           should: combined_query_array
@@ -59,7 +60,7 @@ class Elastic::QueryBuilder
 
   def self.sort_query(page_params)
     if page_params['sort_params'].present? && page_params['order_params'].present?
-      return {
+      {
         sort: [
           '_score',
           {
@@ -71,19 +72,19 @@ class Elastic::QueryBuilder
         ]
       }
     else
-      return { sort: [] }
+      { sort: [] }
     end
   end
 
   def self.paginate_query(page_params)
-    return {
+    {
       from: page_params['from_params'],
       size: page_params['size_params']
     }
   end
 
   def self.facility_search_v1(query_array, page_params)
-    address_params = query_array.map {|param| param[:'addresses.address']}.first
+    address_params = query_array.map { |param| param[:'addresses.address'] }.first
 
     if address_params
       query_array_without_address = [query_array.first.except(:'addresses.address')]
@@ -96,7 +97,7 @@ class Elastic::QueryBuilder
   end
 
   def self.address_query(address_params)
-    return {
+    {
       query_string: {
         query: address_params,
         fields: %w[full_residential_address full_mailing_address]

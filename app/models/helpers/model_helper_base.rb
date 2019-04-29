@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class Helpers::ModelHelperBase
   include ActiveModel::Model
 
@@ -35,5 +37,4 @@ class Helpers::ModelHelperBase
   def find_items_by_application_id(parent_id)
     model_class.find_items_by_application_id(auth_header, parent_id)
   end
-
 end

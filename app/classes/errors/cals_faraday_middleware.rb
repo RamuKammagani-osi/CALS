@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'faraday'
 require_relative 'api_error'
 
@@ -24,7 +26,7 @@ module CalsFaradayMiddleware
       end
     end
 
-    def raise_error(env, response)
+    def raise_error(_env, response)
       body = response.body
       raise ApiError.new(body, response[:status], response[:url])
     end

@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 # customizable error class
 class ApiError < StandardError
   attr_reader :status
