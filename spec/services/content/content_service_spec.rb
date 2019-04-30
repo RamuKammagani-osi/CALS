@@ -86,7 +86,6 @@ module Content
           filtered_result_size = actual_result[:services].select { |e| e['id'] == 'facility_search' }.size
           expect(filtered_result_size).to eq 0
         end
-
       end
     end
   end

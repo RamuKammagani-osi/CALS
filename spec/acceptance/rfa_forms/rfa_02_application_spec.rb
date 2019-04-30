@@ -5,21 +5,20 @@ require 'vcr'
 require 'faker'
 
 RSpec.feature 'RFA02', js: true, inaccessible: true do
-
   before(:each) do
-  visit root_path
-  page.driver.browser.manage.window.resize_to 1200, 800
+    visit root_path
+    page.driver.browser.manage.window.resize_to 1200, 800
 
-  click_button 'Create RFA Application'
-  fill_in('applicants[0].first_name', with: 'James', match: :prefer_exact)
-  fill_in('applicants[0].last_name', with:  '123Monteo', match: :prefer_exact)
-  click_button 'Save Progress'
-  fill_in('relationship_to_applicants0adult0relationship_to_applicant_freeform', with: 'Friend')
-  find('label[for="other_adults[0].is_residing_in_hometrue"]').click
-  fill_in('other_adults[0].first_name', with: Faker::Name.first_name, match: :prefer_exact)
-  click_button 'Save Progress'
-  click_link 'RFA Application list'
-  expect(page).to have_content("123Monteo, James")
+    click_button 'Create RFA Application'
+    fill_in('applicants[0].first_name', with: 'James', match: :prefer_exact)
+    fill_in('applicants[0].last_name', with:  '123Monteo', match: :prefer_exact)
+    click_button 'Save Progress'
+    fill_in('relationship_to_applicants0adult0relationship_to_applicant_freeform', with: 'Friend')
+    find('label[for="other_adults[0].is_residing_in_hometrue"]').click
+    fill_in('other_adults[0].first_name', with: Faker::Name.first_name, match: :prefer_exact)
+    click_button 'Save Progress'
+    click_link 'RFA Application list'
+    expect(page).to have_content('123Monteo, James')
   end
 
   scenario 'visit RFA02 page from Tracking', set_auth_header: true do
@@ -50,17 +49,17 @@ RSpec.feature 'RFA02', js: true, inaccessible: true do
     click_button 'Submit'
     click_link 'RFA Application list'
     expect(page).to have_content('123Monteo, James')
-    page.find("a", :text => '0123Monteo, James', match: :first).find(:xpath,"..//..", match: :first).find("a", text: 'Profile link').click
-    page.find("a", :text => 'tracking link').click
-    page.find("a", :text => 'Criminal Background Checklist (RFA-02)', match: :first).find(:xpath,"..//..", match: :first).find("a", text: 'Criminal Background Checklist (RFA-02)').click
+    page.find('a', text: '0123Monteo, James', match: :first).find(:xpath, '..//..', match: :first).find('a', text: 'Profile link').click
+    page.find('a', text: 'tracking link').click
+    page.find('a', text: 'Criminal Background Checklist (RFA-02)', match: :first).find(:xpath, '..//..', match: :first).find('a', text: 'Criminal Background Checklist (RFA-02)').click
     expect(page).to have_content 'RFA Application'
   end
 
   scenario 'visit RFA02 page from Tracking and validate edit ', set_auth_header: true do
     visit root_path
-    page.find("a", :text => '0123Monteo, James', match: :first).find(:xpath,"..//..", match: :first).find("a", text: 'Profile link').click
-    page.find("a", :text => 'tracking link').click
-    page.find("a", :text => 'Criminal Background Checklist (RFA-02)', match: :first).find(:xpath,"..//..", match: :first).find("a", text: 'Criminal Background Checklist (RFA-02)').click
+    page.find('a', text: '0123Monteo, James', match: :first).find(:xpath, '..//..', match: :first).find('a', text: 'Profile link').click
+    page.find('a', text: 'tracking link').click
+    page.find('a', text: 'Criminal Background Checklist (RFA-02)', match: :first).find(:xpath, '..//..', match: :first).find('a', text: 'Criminal Background Checklist (RFA-02)').click
     expect(page).to have_button 'Edit Checklist'
     click_button 'Edit Checklist'
     expect(page).to have_button 'Save'
@@ -69,9 +68,9 @@ RSpec.feature 'RFA02', js: true, inaccessible: true do
 
   scenario 'visit RFA02 page from Tracking and validate edit and save', set_auth_header: true do
     visit root_path
-    page.find("a", :text => '0123Monteo, James', match: :first).find(:xpath,"..//..", match: :first).find("a", text: 'Profile link').click
-    page.find("a", :text => 'tracking link').click
-    page.find("a", :text => 'Criminal Background Checklist (RFA-02)', match: :first).find(:xpath,"..//..", match: :first).find("a", text: 'Criminal Background Checklist (RFA-02)').click
+    page.find('a', text: '0123Monteo, James', match: :first).find(:xpath, '..//..', match: :first).find('a', text: 'Profile link').click
+    page.find('a', text: 'tracking link').click
+    page.find('a', text: 'Criminal Background Checklist (RFA-02)', match: :first).find(:xpath, '..//..', match: :first).find('a', text: 'Criminal Background Checklist (RFA-02)').click
     expect(page).to have_button 'Edit Checklist'
     click_button 'Edit Checklist'
     expect(page).to have_button 'Save'
@@ -84,10 +83,10 @@ RSpec.feature 'RFA02', js: true, inaccessible: true do
 
   scenario 'visit RFA02 page from Tracking and and handle api error', set_auth_header: true do
     visit root_path
-    expect(page).to have_content("123Monteo, James")
-    page.find("a", :text => '0123Monteo, James', match: :first).find(:xpath,"..//..", match: :first).find("a", text: 'Profile link').click
-    page.find("a", :text => 'tracking link').click
-    page.find("a", :text => 'Criminal Background Checklist (RFA-02)', match: :first).find(:xpath,"..//..", match: :first).find("a", text: 'Criminal Background Checklist (RFA-02)').click
+    expect(page).to have_content('123Monteo, James')
+    page.find('a', text: '0123Monteo, James', match: :first).find(:xpath, '..//..', match: :first).find('a', text: 'Profile link').click
+    page.find('a', text: 'tracking link').click
+    page.find('a', text: 'Criminal Background Checklist (RFA-02)', match: :first).find(:xpath, '..//..', match: :first).find('a', text: 'Criminal Background Checklist (RFA-02)').click
     expect(page).to have_button 'Edit Checklist'
     click_button 'Edit Checklist'
     expect(page).to have_button 'Save'

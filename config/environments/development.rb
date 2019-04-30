@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 Rails.application.configure do
   # Verifies that versions and hashed value of the package contents in the project's package.json
   config.webpacker.check_yarn_integrity = true
@@ -15,7 +17,7 @@ Rails.application.configure do
   # config.cache_store = :redis_store, 'redis://localhost:6379/0/cache', { expires_in: 180.minutes }
 
   # Do not eager load code on boot.
-  config.eager_load =true
+  config.eager_load = true
 
   # Show full error reports.
   config.consider_all_requests_local = true
@@ -52,7 +54,7 @@ Rails.application.configure do
   config.assets.quiet = true
 
   # change output to resolve conflicts with assets of other projects
-  config.assets.prefix = "/assets"
+  config.assets.prefix = '/assets'
 
   # Raises error for missing translations
   # config.action_view.raise_on_missing_translations = true

@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class Rfa::C01Controller < CalsBaseController
   before_action -> { require_rfa_privilege(method(:edit)) }, only: [:edit]
   def index
@@ -22,11 +24,11 @@ class Rfa::C01Controller < CalsBaseController
   end
 
   def submit
-    @a01_id= params[:a01_id].to_s
-    @c01_id= params[:c01_id].to_s
+    @a01_id = params[:a01_id].to_s
+    @c01_id = params[:c01_id].to_s
     rfa_application_helper.submit_application(@a01_id)
     render json: rfa_c01_application_helper.find_by_id(@a01_id, @c01_id)
-  rescue  => e
+  rescue StandardError => e
     render json: e.response, status: e.status
   end
 
@@ -36,7 +38,7 @@ class Rfa::C01Controller < CalsBaseController
     params.require(:c01).permit(:id, :child_identified, identified_children:
                                 [:child_in_home, :date_of_birth, :date_of_placement,
                                  :first_name, :middle_name, :last_name, :school_name,
-                               applicant_name_prefix:  %i[id value],
+                                 applicant_name_prefix: %i[id value],
                                  applicant_name_suffix: %i[id value], application_county:  %i[id value],
                                  name_suffix: %i[id value], school_grade: %i[id value],
                                  gender: %i[id value], county_of_jurisdiction: %i[id value],
@@ -44,7 +46,7 @@ class Rfa::C01Controller < CalsBaseController
                                  relationship_to_applicants: [:applicant_id,
                                                               :relationship_to_applicant_freeform,
                                                               relationship_to_applicant: %i[id value]]],
-                                application_county: %i[id value], metadata: :submit_enabled)
+                                                        application_county: %i[id value], metadata: :submit_enabled)
   end
 
   def rfa_c01_application_helper
@@ -52,10 +54,10 @@ class Rfa::C01Controller < CalsBaseController
   end
 
   def application_params
-    params.permit(:id, {metadata: :submit_enabled})
+    params.permit(:id, metadata: :submit_enabled)
   end
 
-   def rfa_b01_application_helper
+  def rfa_b01_application_helper
     Helpers::Rfa::B01::ApplicationHelper.new(auth_header: get_session_token)
   end
 

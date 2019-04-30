@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module Concerns::RfaBaseApiProtocolProvider
   extend ActiveSupport::Concern
   include Concerns::BaseCalsApiProtocolProvider
@@ -33,6 +35,5 @@ module Concerns::RfaBaseApiProtocolProvider
       response = FaradayCals.get("/#{parent_path}/#{application_id}/#{api_resource_path}", auth_header)
       response.status == 200 ? JSON.parse(response.body) : nil
     end
-
   end
 end

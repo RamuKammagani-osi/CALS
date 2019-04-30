@@ -1,5 +1,6 @@
-class Helpers::Complaint < Helpers::ModelHelperBase
+# frozen_string_literal: true
 
+class Helpers::Complaint < Helpers::ModelHelperBase
   def model_class
     Complaint
   end
@@ -7,5 +8,4 @@ class Helpers::Complaint < Helpers::ModelHelperBase
   def find_by_facility(id)
     Complaint.find_by_facility(id, auth_header)
   end
-
 end

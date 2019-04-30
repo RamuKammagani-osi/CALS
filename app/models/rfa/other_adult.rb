@@ -1,9 +1,9 @@
+# frozen_string_literal: true
+
 class Rfa::OtherAdult < CalsBase
   include Concerns::Rfa::ApplicationOtherAdultsApiProtocolProvider
   attr_accessor :id, :first_name, :middle_name, :last_name, :date_of_birth, :is_residing_in_home,
-  :relationship_to_applicants, :applicant_id, :relationship_to_applicant
-
-
+                :relationship_to_applicants, :applicant_id, :relationship_to_applicant
 
   # {
   #   "id": 0,
@@ -29,8 +29,6 @@ class Rfa::OtherAdult < CalsBase
   #     }
   #   ]
   # }
-
-
 
   def self.parent_path
     'rfa-1a-forms'

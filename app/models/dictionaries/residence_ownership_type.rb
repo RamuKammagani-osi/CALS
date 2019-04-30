@@ -1,3 +1,4 @@
-class Dictionaries::ResidenceOwnershipType < DictionaryBase
+# frozen_string_literal: true
 
+class Dictionaries::ResidenceOwnershipType < DictionaryBase
 end

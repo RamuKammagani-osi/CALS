@@ -1,5 +1,6 @@
 # frozen_string_literal: true
-class Rfa::ProfileController < CalsBaseController 
+
+class Rfa::ProfileController < CalsBaseController
   before_action -> { require_rfa_privilege(method(:edit)) }, only: [:edit]
 
   def index

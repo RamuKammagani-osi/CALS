@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class Child < CalsBase
   include Concerns::ChildApiProtocolProvider
 

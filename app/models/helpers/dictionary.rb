@@ -1,5 +1,6 @@
-class Helpers::Dictionary < Helpers::ModelHelperBase
+# frozen_string_literal: true
 
+class Helpers::Dictionary < Helpers::ModelHelperBase
   def race_types
     Dictionaries::RaceType.all(auth_header)
   end
@@ -28,29 +29,31 @@ class Helpers::Dictionary < Helpers::ModelHelperBase
     Dictionaries::RelationshipToApplicantType.all(auth_header)
   end
 
-  def  name_types
+  def name_types
     Dictionaries::NameType.all(auth_header)
   end
 
-  def  phone_types
+  def phone_types
     Dictionaries::PhoneNumberType.all(auth_header)
   end
 
-  def  sibling_groups
+  def sibling_groups
     Dictionaries::SiblingGroup.all(auth_header)
   end
 
-  def  age_groups
+  def age_groups
     Dictionaries::AgeGroup.all(auth_header)
   end
-  def  gender_types
+
+  def gender_types
     Dictionaries::Gender.all(auth_header)
   end
 
-  def  name_suffix_types
+  def name_suffix_types
     Dictionaries::NameSuffixType.all(auth_header)
   end
-  def  name_prefix_types
+
+  def name_prefix_types
     Dictionaries::NamePrefixType.all(auth_header)
   end
 
@@ -112,7 +115,7 @@ class Helpers::Dictionary < Helpers::ModelHelperBase
     dictionaries[:contact_locations] = contact_locations
     dictionaries[:contact_visit_types] = contact_visit_types
     dictionaries[:contact_methods] = contact_methods
-    return dictionaries
+    dictionaries
   end
 
   def facilities_dictionaries
@@ -120,7 +123,7 @@ class Helpers::Dictionary < Helpers::ModelHelperBase
     dictionaries[:county_types] = county_types
     dictionaries[:facility_types] = facility_types
     dictionaries[:license_status_types] = license_status_types
-    return dictionaries
+    dictionaries
   end
 
   def rfa_a01_dictioniaries
@@ -137,14 +140,14 @@ class Helpers::Dictionary < Helpers::ModelHelperBase
     dictionaries[:phone_types] = phone_types
     dictionaries[:gender_types] = gender_types
     dictionaries[:education_levels] = education_levels
-    dictionaries[:language_types] =  language_types
+    dictionaries[:language_types] = language_types
     dictionaries[:state_types] = state_types
     dictionaries[:salary_types] = salary_types
     dictionaries[:marriage_termination_reasons] = marriage_termination_reasons
     dictionaries[:age_groups] = age_groups
     dictionaries[:sibling_groups] = sibling_groups
     dictionaries[:county_types] = county_types
-    return dictionaries
+    dictionaries
   end
 
   def rfa_b01_dictioniaries
@@ -153,7 +156,7 @@ class Helpers::Dictionary < Helpers::ModelHelperBase
     dictionaries[:name_suffix_types] = name_suffix_types
     dictionaries[:name_prefix_types] = name_prefix_types
     dictionaries[:state_types] = state_types
-    return dictionaries
+    dictionaries
   end
 
   def rfa_c01_dictioniaries
@@ -163,6 +166,6 @@ class Helpers::Dictionary < Helpers::ModelHelperBase
     dictionaries[:county_types] = county_types
     dictionaries[:gender_types] = gender_types
     dictionaries[:school_grades] = school_grades
-    return dictionaries
+    dictionaries
   end
 end

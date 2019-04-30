@@ -5,7 +5,6 @@ require 'vcr'
 require 'faker'
 
 RSpec.feature 'RFA', js: true, inaccessible: true do
-
   scenario 'Dashboard page', set_auth_header: true do
     visit root_path
     expect(page).to have_button('Create RFA Application')

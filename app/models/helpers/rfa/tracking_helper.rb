@@ -13,7 +13,7 @@ class Helpers::Rfa::TrackingHelper < Helpers::ModelHelperBase
     Rfa::Tracking.find_by_id(auth_header, id)
   end
 
-  def update( id, application_id, body)
+  def update(id, application_id, body)
     Rfa::Tracking.update(auth_header, id, application_id, body)
   end
 end

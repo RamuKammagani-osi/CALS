@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class CalsBase
   include ActiveModel::Model
 
@@ -11,11 +13,10 @@ class CalsBase
     name.demodulize.downcase.pluralize
   end
 
-  def self.parent_path
-  end
+  def self.parent_path; end
 
   def self.new(*attributes)
-    attributes.first.reject!{|k| !self.instance_methods.include?(k.to_sym) } if attributes.first.present?
+    attributes.first.select! { |k| instance_methods.include?(k.to_sym) } if attributes.first.present?
     super
   end
 end

@@ -1,3 +1,4 @@
-class Dictionaries::SiblingGroup < DictionaryBase
+# frozen_string_literal: true
 
+class Dictionaries::SiblingGroup < DictionaryBase
 end

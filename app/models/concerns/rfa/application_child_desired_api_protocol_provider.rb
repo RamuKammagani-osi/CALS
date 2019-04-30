@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module Concerns::Rfa::ApplicationChildDesiredApiProtocolProvider
   extend ActiveSupport::Concern
   include Concerns::RfaBaseApiProtocolProvider
@@ -9,4 +11,3 @@ module Concerns::Rfa::ApplicationChildDesiredApiProtocolProvider
     end
   end
 end
-

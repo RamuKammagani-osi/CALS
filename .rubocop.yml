@@ -2,10 +2,43 @@ AllCops:
   TargetRubyVersion: 2.4.2
 #   Excludes:
     # - app/javascript
+Lint/AmbiguousBlockAssociation:
+  Enabled: false
+Lint/DuplicateMethods:
+  Enabled: false
+Lint/UselessAssignment:
+  Enabled: false
+Lint/ParenthesesAsGroupedExpression:
+  Enabled: false
+Metrics/AbcSize:
+  Enabled: false
 Metrics/LineLength:
   Enabled: false
+Metrics/BlockLength:
+  Enabled: false
 Metrics/MethodLength:
+  Enabled: false
   CountComments: false
+Metrics/ClassLength:
+  Enabled: false
+Naming/FileName:
+  Enabled: false
+Naming/AccessorMethodName:
+  Enabled: false
+Naming/MethodName:
+  Enabled: false
+Naming/UncommunicativeMethodParamName:
+  Enabled: false
 
+Security/JSONLoad:
+  Enabled: false
 Style/GuardClause:
+  Enabled: false
+Style/Documentation:
+  Enabled: false
+Style/GlobalVars:
+  Enabled: false
+Style/MixinUsage:
+  Enabled: false
+Style/ClassAndModuleChildren:
   Enabled: false

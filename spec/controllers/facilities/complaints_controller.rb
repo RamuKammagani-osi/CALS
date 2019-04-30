@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'rspec'
 require 'rails_helper'
 
@@ -9,7 +11,7 @@ describe Facilities::ComplaintsController do
 
   describe 'GET index' do
     it 'returns JSON of compalints' do
-      get :index, params: {facility_id: '100000299'}
+      get :index, params: { facility_id: '100000299' }
 
       expect(response.status).to eq(200)
       expect(response.body.include?('complaints'))

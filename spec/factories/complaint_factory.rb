@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 FactoryBot.define do
   factory :complaint, class: 'Complaint' do
     sequence(:id) { Faker::Number.number(9) }

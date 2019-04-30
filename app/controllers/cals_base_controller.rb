@@ -49,7 +49,7 @@ class CalsBaseController < ApplicationController
     session.delete(:token) if token.present?
     if session[:token].blank?
       if Cwds::Authentication.token_validation(token, AUTHENTICATION_API_BASE_URL)
-        store_token_in_redis(token)      
+        store_token_in_redis(token)
       else
         redirect_to Cwds::Authentication.authentication_url(AUTHENTICATION_API_BASE_URL, request.url)
         return

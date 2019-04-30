@@ -1,3 +1,4 @@
-class Dictionaries::County < DictionaryBase
+# frozen_string_literal: true
 
+class Dictionaries::County < DictionaryBase
 end

@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class SearchController < CalsBaseController
   before_action -> { require_search_privilege(method(:index)) }
   include Response
@@ -19,8 +21,8 @@ class SearchController < CalsBaseController
   end
 
   private
+
   def dictionaries_helper
     Helpers::Dictionary.new(auth_header: get_session_token)
   end
-
 end

@@ -5,7 +5,6 @@ require 'vcr'
 require 'faker'
 
 RSpec.feature 'RFA01B', js: true, inaccessible: true do
-
   scenario 'validate rfa01b creation and fields', set_auth_header: true do
     visit root_path
     page.driver.browser.manage.window.resize_to 1200, 800

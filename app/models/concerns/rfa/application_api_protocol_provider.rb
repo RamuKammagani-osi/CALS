@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module Concerns::Rfa::ApplicationApiProtocolProvider
   extend ActiveSupport::Concern
   include Concerns::RfaBaseApiProtocolProvider
@@ -9,8 +11,8 @@ module Concerns::Rfa::ApplicationApiProtocolProvider
     end
 
     def create_application(auth_header)
-      #create, so we aren't posting a body
-      response = FaradayCals.post('/rfa-1a-forms', auth_header,'{}')
+      # create, so we aren't posting a body
+      response = FaradayCals.post('/rfa-1a-forms', auth_header, '{}')
       JSON.parse(response.body)
     end
 

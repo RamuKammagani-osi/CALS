@@ -52,7 +52,7 @@
     "react-waypoint": "^8.0.0",
     "react-widgets": "4.1.0",
     "react-widgets-moment": "^4.0.4",
-    "react-wood-duck": "^0.1.79",
+    "react-wood-duck": "^0.1.82",
     "react_ujs": "^2.2.0",
     "recompose": "^0.26.0",
     "redux": "^3.6.0",
@@ -80,6 +80,8 @@
     "spec-ie": "SELENIUM_BROWSER=INTERNET_EXPLORER bundle exec rspec spec;",
     "spec-end2end-acceptance": "TEST_END_TO_END=true SELENIUM_BROWSER=HEADLESS_CHROME bundle exec rspec spec/acceptance",
     "spec-end2end-acceptance-chrome": "TEST_END_TO_END=true SELENIUM_BROWSER=CHROME bundle exec rspec spec/acceptance",
+    "spec-end2end-acceptance-headless-firefox": "TEST_END_TO_END=true SELENIUM_BROWSER=HEADLESS_FIREFOX bundle exec rspec spec/acceptance",
+    "spec-end2end-acceptance-firefox": "TEST_END_TO_END=true SELENIUM_BROWSER=FIREFOX bundle exec rspec spec/acceptance",
     "spec-end2end-acceptance-ie": "TEST_END_TO_END=true SELENIUM_BROWSER=INTERNET_EXPLORER bundle exec rspec spec/acceptance",
     "rebuild-assets": "rake tmp:cache:clear; rm -rf public/assets public/packs public/packs-test; bundle exec rails assets:precompile RAILS_ENV=test",
     "rebuild-assets-dev": "rake tmp:cache:clear; rm -rf public/assets public/packs public/packs-test; bundle exec rails assets:precompile RAILS_ENV=development"

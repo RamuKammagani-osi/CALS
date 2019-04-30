@@ -1,23 +1,24 @@
+# frozen_string_literal: true
+
 class Faraday::FaradayBase
   BODY_METHODS = %i[post put].freeze
 
   class_attribute :base_url
 
-
   def self.get(url, auth_header)
-    faraday_shared(:get, "#{self.base_url}#{url}", auth_header)
+    faraday_shared(:get, "#{base_url}#{url}", auth_header)
   end
 
   def self.post(url, auth_header, body)
-    faraday_shared(:post, "#{self.base_url}#{url}", auth_header, body)
+    faraday_shared(:post, "#{base_url}#{url}", auth_header, body)
   end
 
   def self.put(url, auth_header, body)
-    faraday_shared(:put, "#{self.base_url}#{url}", auth_header, body)
+    faraday_shared(:put, "#{base_url}#{url}", auth_header, body)
   end
 
   def self.delete(url, auth_header)
-    faraday_shared(:delete,  "#{self.base_url}#{url}", auth_header)
+    faraday_shared(:delete, "#{base_url}#{url}", auth_header)
   end
 
   # private
@@ -33,9 +34,7 @@ class Faraday::FaradayBase
       c.use CalsFaradayMiddleware::ApiErrorException
       c.adapter Faraday.default_adapter
 
-      unless Rails.env.test?
-        c.response :logger, Rails.logger, bodies: {request: false, response: true}
-      end
+      c.response :logger, Rails.logger, bodies: { request: false, response: true } unless Rails.env.test?
     end
 
     response = conn.send(method) do |req|
@@ -45,15 +44,15 @@ class Faraday::FaradayBase
       req.options.timeout = 10
     end
 
-    return response
+    response
   end
 
   def self.default_headers(auth_header)
     header_hash = {
-      :'Content-Type' => 'application/json'
+      'Content-Type': 'application/json'
     }
-    header_hash.merge!({:'Authorization' => auth_header}) if auth_header.present?
-    return header_hash
+    header_hash[:Authorization] = auth_header if auth_header.present?
+    header_hash
   end
 
   private_class_method :default_headers, :faraday_shared

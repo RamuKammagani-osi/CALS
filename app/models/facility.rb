@@ -1,7 +1,9 @@
+# frozen_string_literal: true
+
 class Facility < CalsBase
   include Concerns::FacilityApiProtocolProvider
 
-  attr_accessor :href, :id, :type, :name, :licensee_name, :fac_mail_street_addr, :addresses
+  attr_accessor :href, :facility_source, :id, :type, :name, :licensee_name, :fac_mail_street_addr, :addresses
   attr_accessor :fac_mail_city, :fac_mail_state, :fac_mail_zip_code, :fac_res_street_addr
   attr_accessor :fac_res_city, :fac_res_state, :fac_res_zip_code, :county, :phones
   attr_accessor :district_office, :status, :assigned_worker, :license_type, :license_number, :license_effective_date
@@ -27,5 +29,4 @@ class Facility < CalsBase
   def complaints
     Complaint.find_by_facility(id)
   end
-
 end

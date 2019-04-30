@@ -1,10 +1,12 @@
+# frozen_string_literal: true
+
 ENV['RAILS_ENV'] = 'test'
 
 require 'simplecov'
 require 'mock_redis'
 SimpleCov.start 'rails'
 
-require File.expand_path('../../config/environment', __FILE__)
+require File.expand_path('../config/environment', __dir__)
 abort('The Rails environment is running in production mode!') if Rails.env.production?
 require 'spec_helper'
 require 'rspec/rails'
@@ -13,17 +15,17 @@ require 'rspec/rails'
 # Dir[Rails.root.join('spec/support/**/*.rb')].each { |f| require f }
 # ActiveRecord::Migration.maintain_test_schema!
 
-Dir[File.dirname(__FILE__) + "/support/**/*.rb"].each {|f| require f }
+Dir[File.dirname(__FILE__) + '/support/**/*.rb'].each { |f| require f }
 
 RSpec.configure do |config|
   config.use_transactional_fixtures = false
   config.infer_spec_type_from_file_location!
   config.filter_rails_from_backtrace!
 
-  config.before(:each, :set_auth_header => true) do
+  config.before(:each, set_auth_header: true) do
     if ENV['TEST_END_TO_END']
       visit root_path
-      fill_in_login()
+      fill_in_login
     else
       stub_auth_tokens
     end
@@ -39,13 +41,11 @@ RSpec.configure do |config|
 
   def fill_in_login
     if ENV['CAPYBARA_APP_HOST'].include?('preint')
-      if page.has_content?('Sign In')
-        fill_in('username', with: USERNAME)
-        # fill_in('password', with: PASSWORD)
-        click_button 'Sign In'
-      end
+      fill_in('username', with: USERNAME)
+      click_button 'Sign In'
     else
       return unless need_login?
+
       Capybara.fill_in('Email', with: ENV['ACCEPTANCE_TEST_USER'])
       Capybara.fill_in('Password', with: ENV['ACCEPTANCE_TEST_PASSWORD'])
       if %i[selenium_ie selenium_edge].include?(Capybara.current_driver)
@@ -59,6 +59,7 @@ RSpec.configure do |config|
 
   def multi_factor_auth
     return unless mfa_page?
+
     Capybara.fill_in('Verification Code', with: ENV['VERIFICATION_CODE'])
     if %i[selenium_ie selenium_edge].include?(Capybara.current_driver)
       Capybara.execute_script('document.getElementById("validateButton").click()')
@@ -90,10 +91,9 @@ RSpec.configure do |config|
       if options[:record] == :skip
         VCR.turned_off(&example)
       else
-        name = example.metadata[:full_description].split(/\s+/, 2).join('/').underscore.gsub(/\./, '/').gsub(/[^\w\/]+/, '_').gsub(/\/$/, '')
+        name = example.metadata[:full_description].split(/\s+/, 2).join('/').underscore.tr('.', '/').gsub(%r{[^\w/]+}, '_').gsub(%r{/$}, '')
         VCR.use_cassette(name, options, &example)
       end
     end
   end
-
 end

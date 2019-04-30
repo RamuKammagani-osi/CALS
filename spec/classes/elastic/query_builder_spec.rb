@@ -116,7 +116,7 @@ describe FacilitiesController do
                     { match: { 'county.value': 'Los Angeles' } },
                     { term: { 'type.value': 'Resource Family Home' } },
                     { term: { 'status.value': 'Pending' } },
-                    { term: { 'status.active': true }},
+                    { term: { 'status.active': true } },
                     { match_phrase: { 'id': '123124' } },
                     { query_string: { 'default_field' => :name, 'query' => 'home' } }
                   ]
@@ -176,9 +176,9 @@ describe FacilitiesController do
       }
 
       query_array = [
-        { 'county.value':  { query_type: 'match', value: 'Los Angeles' }, 'type.value':  { query_type: 'term', value: 'Adoption Agency' }, 'id':  { query_type: 'match_phrase', value: '9jstosjaww' }, 'name':  { query_type: 'match', value: 'home' }, :'addresses.address' => { query_type: 'query_string', value: '4140 Roxanne Street' } },
-        { 'county.value':  { query_type: 'match', value: 'Los Angeles' }, 'type.value':  { query_type: 'term', value: 'Adoption Agency' }, 'id':  { query_type: 'match_phrase', value: '9jstosjaww' }, 'name':  { query_type: 'match', value: 'home' }, :'addresses.address' => { query_type: 'query_string', value: ' Los Angeles' } },
-        { 'county.value':  { query_type: 'match', value: 'Los Angeles' }, 'type.value':  { query_type: 'term', value: 'Adoption Agency' }, 'id':  { query_type: 'match_phrase', value: '9jstosjaww' }, 'name':  { query_type: 'match', value: 'home' }, :'addresses.address' => { query_type: 'query_string', value: ' CA 97777' } }
+        { 'county.value':  { query_type: 'match', value: 'Los Angeles' }, 'type.value':  { query_type: 'term', value: 'Adoption Agency' }, 'id':  { query_type: 'match_phrase', value: '9jstosjaww' }, 'name':  { query_type: 'match', value: 'home' }, 'addresses.address': { query_type: 'query_string', value: '4140 Roxanne Street' } },
+        { 'county.value':  { query_type: 'match', value: 'Los Angeles' }, 'type.value':  { query_type: 'term', value: 'Adoption Agency' }, 'id':  { query_type: 'match_phrase', value: '9jstosjaww' }, 'name':  { query_type: 'match', value: 'home' }, 'addresses.address': { query_type: 'query_string', value: ' Los Angeles' } },
+        { 'county.value':  { query_type: 'match', value: 'Los Angeles' }, 'type.value':  { query_type: 'term', value: 'Adoption Agency' }, 'id':  { query_type: 'match_phrase', value: '9jstosjaww' }, 'name':  { query_type: 'match', value: 'home' }, 'addresses.address': { query_type: 'query_string', value: ' CA 97777' } }
       ]
       page_params = { 'sort_params' => 'name.for_sort', 'order_params' => 'asc', 'size_params' => '5', 'from_params' => '0' }
       output = Elastic::QueryBuilder.facility_search_v1(query_array, page_params)
